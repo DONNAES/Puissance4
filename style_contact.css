@@ -1,0 +1,47 @@
+.body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: darkblue;
+}
+
+.correctlien {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+}
+
+.header {
+    background : url(background_contact_top.png) center;
+    background-size: 2000px;
+    color: white;
+    margin-bottom: 100px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+.divnav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    text-align: right;
+}
+
+.divhead {
+    margin-top: 200px;
+    font-size: 20px;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.contact {
+    margin-top: -150px;
+}
