@@ -28,15 +28,15 @@
 
     <section class="section_1">
         <div class="icons_individuel">
-            <i class="fa-solid fa-mobile-screen-button"></i>
+            <i class="fa-solid fa-mobile-screen-button fa-2x"></i>
             <p>06 05 04 03 02</p>
         </div>
         <div class="icons_individuel">
-            <i class="fa-regular fa-envelope"></i>
+            <i class="fa-regular fa-envelope fa-2x"></i>
             <p>support@powerofmemory.com</p>
         </div>
         <div class="icons_individuel">
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot fa-2x"></i>
             <p>Paris</p>
         </div>
     </section>
@@ -44,11 +44,13 @@
     <section class="section_2">
         <div class="contact">
             <form>
-                <div>
-                    <input type="text" placeholder="Nom" required>
-                </div>
-                <div>
-                    <input type="email" placeholder="Email" required>
+                <div class="demarcation">
+                    <div>
+                        <input type="text" placeholder="Nom" required>
+                    </div>
+                    <div class="email_ecart">
+                        <input type="email" placeholder="Email" required>
+                    </div>
                 </div>
                 <div>
                     <input type="text" placeholder="Sujet" required>
@@ -65,27 +67,24 @@
 
     <footer class="footer">
         <div>
-           <h2>Information</h2>
-           <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-           <p class="color_orange">Tel : </p>
-           <p class="color_gray">06 05 04 03 02</p>
-           <p class="color_orange">Email : </p>
-           <p class="color_gray">support@powerofmemory.com</p>
-           <p class="color_orange">Location : </p>
-           <p class="color_gray">Paris</p>
-           <div>
-               <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
-           </div>
-           <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
-        </div>
-        <div>
-           <h2>Power Of Memory</h2>
-           <ul>
-               <li class="color_gray">Jouer !</li>
-               <li class="color_gray">Les scores</li>
-               <li class="color_gray">Nous contacter</li>
-           </ul>
-        </div>
-   </footer>
+            <h2 class="space">Information</h2>
+            <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
+            <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
+            <p class="color_orange" class="copyright">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
+            <div>
+                <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
+            </div>
+            <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
+         </div>
+         <div class="footerdiv">
+            <h2>Power Of Memory</h2>
+            <ul class="move_lines">
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Jouer !</span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Les scores</span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Nous contacter</span></li>
+            </ul>
+         </div>        
+    </footer>
 </body>
 </html>
