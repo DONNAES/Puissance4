@@ -9,7 +9,7 @@
     <title>Contact</title>
 </head>
 <body class="body">
-    <header class="header">
+    <header>
         <section>
             <nav class="navbar">
                 <h3>The Power Of Memory</h3>
@@ -21,7 +21,7 @@
                 </div>
             </nav>
             <div class="divhead">
-                <h1 class="contact">NOUS CONTACTER</h1>
+                <h1>NOUS CONTACTER</h1>
             </div>
         </section>
     </header>
@@ -42,11 +42,25 @@
     </section>
 
     <section class="section_2">
-        <p class="zone_text_individuel">Nom</p>
-        <p class="zone_text_individuel">Email</p>
-        <p class="zone_text_individuel">Sujet</p>
-        <p class="zone_text_individuel">Message</p>
-        <a href="https://agar.io/#ffa"><button class="buttons">Envoyer</button></a>
+        <div class="contact">
+            <form>
+                <div>
+                    <input type="text" placeholder="Nom" required>
+                </div>
+                <div>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div>
+                    <input type="text" placeholder="Sujet" required>
+                </div>
+                <div>
+                    <textarea type="" placeholder="Message" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <footer class="footer">
