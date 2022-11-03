@@ -1,3 +1,9 @@
+.correctlien {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+}
+
 .header {
     background : url(./eslarena.png) center;
     color: white;
