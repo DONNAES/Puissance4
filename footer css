@@ -7,11 +7,18 @@
 }
 
 .footer {
+    display: flex;
     background-color: rgb(5, 5, 43);
+    justify-content: space-around;
 }
 
 .fa-brands {
     background-color: orange;
     background-size: auto;
     font-size: large;
+}
+
+.footerdiv {
+    display: flex;
+    flex-direction: column;
 }
