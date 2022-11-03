@@ -1,4 +1,4 @@
-    <footer class="footer">
+<footer class="footer">
         <div>
            <h2>Information</h2>
            <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -13,7 +13,7 @@
            </div>
            <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
         </div>
-        <div>
+        <div class="footerdiv">
            <h2>Power Of Memory</h2>
            <ul>
                <li class="color_gray">Jouer !</li>
@@ -21,4 +21,4 @@
                <li class="color_gray">Nous contacter</li>
            </ul>
         </div>
-   </footer>
+    </footer>
