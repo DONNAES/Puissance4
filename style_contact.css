@@ -12,20 +12,12 @@
     margin-left: 40px;
 }
 
-.header {
-    background : url(contact_header_background.png) center;
-    background-size: 2000px;
-    color: white;
-    margin-bottom: 100px;
-}
-
 .navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin-right: 200px;
-    margin-left: 200px;
+    justify-content: space-around;
+    color: white;;
 }
 
 .divnav {
@@ -36,20 +28,20 @@
 }
 
 .divhead {
-    margin-top: 200px;
     font-size: 20px;
     display: flex;
     text-align: right;
     flex-direction: column;
     align-items: center;   
-}
-
-.contact {
-    margin-top: -150px;
+    background : url(contact_header_background.png) 0% 35%;
+    background-size: 2000px;
+    padding-top: 55px;
+    padding-bottom: 55px;
 }
 
 .footer {
     background-color: rgb(5, 5, 43);
+    margin-top: 50px;
 }
 
 .buttons {
@@ -85,7 +77,8 @@
 .section_1 {
     display: flex;
     justify-content: space-around;
-    margin-left: 150px;
+    margin-left: 300px;
+    margin-top: 50px;
 }
 
 .icons_individuel {
@@ -104,12 +97,66 @@
 /*---------------------------- SECTION 2 -----------------------------------*/
 
 .section_2 {
-    margin-left: 150px;    
+    margin-left: 300px; 
+    margin-top: 50px;   
 }
 
 .zone_text_individuel {
     background-color: rgb(55, 55, 114);
     border-radius: 5px;
+}
+
+.contact {
+    display: flex;
+}
+
+form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 20px;
+    margin-top: 15px;
+    appearance: none;
+    color: rgba(181, 174, 174, 0.901);
+}
+
+form div > input {
+    background: #292f3fc7;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+    height: 50px;
+    padding-left: 10px;
+}
+
+form div > textarea {
+    background: #292f3fc7;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+    height: 50px;
+    padding-left: 10px;
+}
+
+form {
+    width: 450px;
+    max-width: 500px;
+}
+
+button{
+    width: 100px;
+    height: 50px;
+    background: orange;
+    border: rgba(0, 0, 50, 0.5) solid 1px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    color: white;
 }
 
 /*---------------------------------------------------------------*/
