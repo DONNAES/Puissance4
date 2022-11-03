@@ -1,0 +1,17 @@
+.color_orange {
+    color: orange;
+}
+
+.color_gray {
+    color: rgb(168, 167, 167);
+}
+
+.footer {
+    background-color: rgb(5, 5, 43);
+}
+
+.fa-brands {
+    background-color: orange;
+    background-size: auto;
+    font-size: large;
+}
