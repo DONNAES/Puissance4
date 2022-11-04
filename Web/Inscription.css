@@ -55,6 +55,7 @@ form div {
 }
 
 form div > input {
+    color: white;
     background: #292f3fc7;
     border: none;
     border-radius: 5px;
