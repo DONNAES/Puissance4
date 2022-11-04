@@ -107,6 +107,7 @@ body{
 .profiles {
     display: flex;
     justify-content: space-around;
+    background-color: rgb(5, 5, 43);
 }
 
 .profile1 {
@@ -115,7 +116,6 @@ body{
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: rgb(31, 26, 114);
     border-radius: 20px;
 }
 .profile2 {
@@ -124,7 +124,6 @@ body{
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: rgb(31, 26, 114);
     border-radius: 20px;
 }
 .profile3 {
@@ -133,7 +132,6 @@ body{
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: rgb(31, 26, 114);
     border-radius: 20px;
 }
 .profile4 {
@@ -142,7 +140,6 @@ body{
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: rgb(31, 26, 114);
     border-radius: 20px;
 }
 
@@ -286,4 +283,5 @@ html{
 }
 .marg {
     margin-left: 45%;
+    color: white;
 }
