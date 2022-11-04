@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
 </head>
@@ -13,52 +14,101 @@
             <nav class="navbar">
                 <h3>The Power Of Memory</h3>
                 <div class="divnav">
-                    <a href="index.html" class="correctlink">Accueil</a>
-                    <a href="index.html" class="correctlink">Jeu</a>
-                    <a href="#" class="correctlink">Login</a>
-                    <a href="contact.html" class="correctlink">Nous contacter</a>
+                    <a href="index.html" class="correctlink">ACCUEIL</a>
+                    <a href="index.html" class="correctlink">JEU</a>
+                    <a href="#" class="correctlink">LOGIN</a>
+                    <a href="contact.html" class="correctlink">NOUS CONTACTER</a>
                 </div>
             </nav>
         </section>
     </header>
     <section class="connex">
-        <h2>Connexion</h2>
-        <!--<img src="https://static.vecteezy.com/system/resources/previews/002/914/945/original/beautiful-of-ufo-invasion-in-the-city-multicolored-background-free-vector.jpg" alt="connexion background" class="backconnex">-->
+        <h2>connexion</h2>
     </section>
     <section class="login">
         <form action="traitement.php" method="post"></form>
             <div>
-                <input type="text" name="Email" id="Email" placeholder="Email">
+                <input type="email" 
+                       name="Email" 
+                       id="Email" 
+                       placeholder="Email">
             </div>
-            <div class="d2">
-                <input type="text" name="Password" id="Password" placeholder="Mot de passe">
+            <div>
+                <input type="password" 
+                       name="password" 
+                       id="pass" 
+                       placeholder="Mot de passe"
+                       autocomplete="current-password"
+                       minlength="8"
+                       maxlength="16"
+                       required>
             </div>
             <div class="button">
-                <button type="button">Connexion</button> <a href="inscription.html" class="reglink">Inscription</a>
+                <button type="button">connexion</button> <a href="inscription.html" class="reglink">Inscription</a>
             </div>
     </section>
+
+    <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
 
 
     <footer class="footer">
         <div>
-           <h2>Information</h2>
-           <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-           <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
-           <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
-           <p class="color_orange" class="copyright">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
-           <div>
-               <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
-           </div>
-           <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
+            <h2 class="space">Information</h2>
+            <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
+            <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
+            <p class="color_orange" class="copyright">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
+            <div>
+                <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
+            </div>
+            <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
         </div>
         <div class="footerdiv">
-           <h2>Power Of Memory</h2>
-           <ul>
-               <li class="color_orange"><span style="color: rgb(168, 167, 167)">Jouer !</span></li>
-               <li class="color_orange"><span style="color: rgb(168, 167, 167)">Les scores</span></li>
-               <li class="color_orange"><span style="color: rgb(168, 167, 167)">Nous contacter</span></li>
-           </ul>
-        </div>
+            <h2>Power Of Memory</h2>
+            <ul class="move_lines">
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Jouer !</span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Les scores</span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Nous contacter</span></li>
+            </ul>
+        </div>        
     </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
