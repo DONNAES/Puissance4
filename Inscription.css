@@ -38,6 +38,7 @@ h1{
     justify-content: center;
     padding-top: 85px;
     color: white;
+    font-size: 300%;
 }
 
 .contactez-nous {
@@ -52,28 +53,28 @@ form div {
     min-height: 20px;
     margin-top: 15px;
     appearance: none;
+    color: rgba(181, 174, 174, 0.901);
 }
 
 form div > input {
-    color: white;
     background: #292f3fc7;
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,50,0.25);
     height: 50px;
     padding-left: 10px;
 }
 
-form div{
-    color: rgba(181, 174, 174, 0.901);
-}
 
 form {
     width: 450px;
     max-width: 500px;
+    margin-bottom: 35px;
+    margin-top: 35px;
 }
 
 button{
@@ -84,4 +85,80 @@ button{
     border-radius: 5px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     color: white;
+}
+.footer {
+    display: flex;
+    background-color: rgb(5, 5, 43);
+    justify-content: space-around;
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fa-brands {
+    background-color: orange;
+    background-size: auto;
+    font-size: large;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 75px;
+    border-radius: 3px;
+}
+
+.footerdiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.up_line {
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.move_lines {
+    margin-top: -20px;
+}
+
+.footer h2{
+    color: white;
+}
+
+.space {
+    margin-top: 100px;
+}
+
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    bottom: 40px;
+    right: 50px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+
+    opacity: 50%;
+}
+
+ul{
+    list-style-type: square;
+}
+
+ul li{
+    margin-top: 15px;
+}
+/*------------------------- COLOR --------------------------------------*/
+
+.color_orange {
+    color: orange;
+}
+
+.color_gray {
+    color: rgb(168, 167, 167);
 }
