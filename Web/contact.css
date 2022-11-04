@@ -38,7 +38,7 @@ html {
     text-align: right;
     flex-direction: column;
     align-items: center;   
-    background : url(contact_header_background.png) 0% 35%;
+    background : url(images/contact_header_background.png) 0% 35%;
     background-size: 2000px;
     padding-top: 55px;
     padding-bottom: 55px;
@@ -89,14 +89,6 @@ ul li {
 
 .move_lines {
     margin-top: -20px;
-}
-
-.footer h2{
-    color: white;
-}
-
-li::before {
-    background-color: orange;
 }
 
 .space {
