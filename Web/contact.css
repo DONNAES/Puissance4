@@ -114,6 +114,8 @@ li::before {
     line-height: 50px;
     color: white;
     font-size: 22px;
+    
+    opacity: 50%;
 }
 
 /*------------------------- COLOR --------------------------------------*/
