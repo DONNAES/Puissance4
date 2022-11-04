@@ -49,8 +49,7 @@
     </section>
 
     <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
-
-
+    
     <footer class="footer">
         <div>
             <h2 class="space">Information</h2>
@@ -59,56 +58,22 @@
             <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
             <p class="color_orange" class="copyright">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
             <div>
-                <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-f"></i> 
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-instagram"></i>
             </div>
             <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
         </div>
         <div class="footerdiv">
             <h2>Power Of Memory</h2>
             <ul class="move_lines">
-                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Jouer !</span></li>
-                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Les scores</span></li>
-                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)">Nous contacter</span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="https://agar.io/#ffa" class="footlink">Jouer !</a></span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="Accueil.html" class="footlink">Les scores</a></span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
             </ul>
         </div>        
     </footer>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>

@@ -111,6 +111,10 @@ ul li {
 
     opacity: 50%;
 }
+.footlink{
+    text-decoration: none;
+    color: rgb(168, 167, 167)
+}
 
 /*------------------------- COLOR --------------------------------------*/
 
