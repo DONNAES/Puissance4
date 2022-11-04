@@ -1,5 +1,9 @@
 /*---------------------------------------------------------------*/
 
+html {
+    scroll-behavior: smooth;
+}
+
 .body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
@@ -97,6 +101,21 @@ li::before {
     margin-top: 100px;
 }
 
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    bottom: 40px;
+    right: 50px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+
 /*------------------------- COLOR --------------------------------------*/
 
 .color_orange {
@@ -109,11 +128,7 @@ li::before {
 
 /*-------------------------- ICONS -------------------------------------*/
 
-.fa-brands {
-    background-color: orange;
-    background-size: auto;
-    font-size: large;
-}
+
 
 /*---------------------------- SECTION 1 -----------------------------------*/
 
@@ -134,7 +149,7 @@ li::before {
     text-align: center;
 }
 
-.fa-solid{
+.fa-mobile-screen-button {
     background-color: orange;
     padding-top: 25px;
     padding-left: 30px;
@@ -143,7 +158,16 @@ li::before {
     border-radius: 50%;
 }
 
-.fa-regular{
+.fa-location-dot {
+    background-color: orange;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 25px;
+    border-radius: 50%;
+}
+
+.fa-envelope {
     background-color: orange;
     padding-top: 25px;
     padding-left: 25px;
@@ -198,6 +222,7 @@ form div > input {
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
     height: 50px;
     padding-left: 10px;
+    color: white;
 }
 
 form div > textarea {
@@ -210,6 +235,7 @@ form div > textarea {
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
     height: 50px;
     padding-left: 10px;
+    color: white;
 }
 
 form {
