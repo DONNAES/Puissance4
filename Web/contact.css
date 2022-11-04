@@ -79,10 +79,10 @@ html {
 .footerdiv {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
-.up_line {
+ul li {
     margin-top: 10px;
     margin-left: -20px;
 }
