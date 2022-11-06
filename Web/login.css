@@ -49,7 +49,12 @@ input{
     width: 350px;
     height: 35px;
     border: none;
-    background-color: rgba(28,31,69,255);
+    background-color: #292f3fc7;
+    height: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(181, 174, 174, 0.901);
+
     color: white;
 }
 
