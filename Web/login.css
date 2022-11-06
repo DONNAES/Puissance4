@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(12,11,47,255);
+    background-color: rgb(12,11,47);
     color: white;
 }
 .correctlink{
@@ -13,7 +13,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
 
 .divnav {
@@ -44,6 +44,8 @@ body{
 }
 input{
     margin-bottom: 15px;
+    border-radius: 5px;
+    padding-left: 20px;
     width: 350px;
     height: 35px;
     border: none;
@@ -53,7 +55,7 @@ input{
 
 .button{
     padding-top: 20px;
-    padding-right: 175px;
+    padding-right: 200px;
 }
 button{
     border: none;
