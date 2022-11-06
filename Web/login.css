@@ -43,6 +43,7 @@ body{
     padding-bottom: 5%;
 }
 input{
+    width: 100%;
     margin-bottom: 15px;
     border-radius: 5px;
     padding-left: 20px;
@@ -54,12 +55,10 @@ input{
     font-weight: 500;
     font-size: 16px;
     color: rgba(181, 174, 174, 0.901);
-
     color: white;
 }
 
 .button{
-    padding-top: 20px;
     padding-right: 200px;
 }
 button{
@@ -67,6 +66,8 @@ button{
     background-color: orange;
     color: white;
     padding: 10px 15px;
+    border-radius: 2px;
+
 }
 .reglink{
     text-decoration: none;
