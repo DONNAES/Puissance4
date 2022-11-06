@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(12,11,47);
+    background-color: rgb(12, 11, 47);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -10,9 +10,9 @@ body{
 }
 
 .backgroundImage{
-    background : url(https://as2.ftcdn.net/v2/jpg/02/36/42/21/1000_F_236422131_Dk723ix2edbTtnXiJ9kvr1MubrnCy5S2.jpg) 
-    0% 35%;
-    height: 200px;
+    background : url(images/backgroung_inscription.jpeg) 0% 35%;
+    height: 235px;
+    padding-top: 20px;
 }
 
 .header {
@@ -37,12 +37,12 @@ body{
 h1{
     display: flex;
     justify-content: center;
-    padding-top: 85px;
+    padding-top: 35px;
     color: white;
-    font-size: 35px;
+    font-size: 350%;
 }
 
-.contactez-nous {
+.inscription {
     display: flex;
     justify-content: center;
 }
@@ -54,32 +54,31 @@ form div {
     min-height: 20px;
     margin-top: 15px;
     appearance: none;
+    color: rgba(181, 174, 174, 0.901);
 }
 
 form div > input {
-    color: white;
     background: #292f3fc7;
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,50,0.25);
     height: 50px;
-    padding-left: 20px;
-}
-
-form div{
-    color: rgba(181, 174, 174, 0.901);
+    padding-left: 10px;
 }
 
 form {
     width: 450px;
     max-width: 500px;
+    margin-bottom: 35px;
+    margin-top: 85px;
 }
-.contactez-nous{
-    margin-top: 7%;
-    margin-bottom: 7%;
+
+.button{
+    display: flex;
+    flex-direction: row;
 }
 
 button{
@@ -91,12 +90,23 @@ button{
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     color: white;
 }
-/*footer*/
+
+.connexion{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: orange;
+    margin-left: 10px;
+    margin-top: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .footer {
     display: flex;
     background-color: rgb(5, 5, 43);
     justify-content: space-around;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .fa-brands {
@@ -109,7 +119,6 @@ button{
     padding-bottom: 10px;
     margin-bottom: 75px;
     border-radius: 3px;
-    color: white;
 }
 
 .footerdiv {
@@ -131,10 +140,6 @@ button{
     color: white;
 }
 
-li::before {
-    background-color: orange;
-}
-
 .space {
     margin-top: 100px;
 }
@@ -146,17 +151,24 @@ li::before {
     background-color: orange;
     bottom: 40px;
     right: 50px;
-    opacity: 50%;
+
     text-decoration: none;
     text-align: center;
     line-height: 50px;
     color: white;
     font-size: 22px;
+
+    opacity: 50%;
 }
-.footlink{
-    text-decoration: none;
-    color: rgb(168, 167, 167)
+
+ul{
+    list-style-type: square;
 }
+
+ul li{
+    margin-top: 15px;
+}
+/*------------------------- COLOR --------------------------------------*/
 
 .color_orange {
     color: orange;
@@ -165,6 +177,6 @@ li::before {
 .color_gray {
     color: rgb(168, 167, 167);
 }
-html{
-    scroll-behavior: smooth;
-}
+
+
+
