@@ -2,10 +2,16 @@ body{
     background-color: rgb(12,11,47);
     color: white;
 }
+
 .correctlink{
     text-decoration: none;
     color: white;
     margin-left: 40px;
+}
+
+.correctlink:hover{
+    color: orange;
+    border-top: 3px orange solid;
 }
 
 .navbar {
