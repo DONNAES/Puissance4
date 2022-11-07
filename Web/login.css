@@ -33,8 +33,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(https://as2.ftcdn.net/v2/jpg/02/36/42/21/1000_F_236422131_Dk723ix2edbTtnXiJ9kvr1MubrnCy5S2.jpg)
-     0% 35%;
+    background : url(assets/images/backgroung_inscription.jpeg) 0% 35%;
     padding-top: 55px;
     padding-bottom: 50px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
