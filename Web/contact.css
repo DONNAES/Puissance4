@@ -4,6 +4,11 @@ html {
     scroll-behavior: smooth;
 }
 
+a:hover {
+    color: orange;
+    border-top-style: solid;
+}
+
 .body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
@@ -106,6 +111,10 @@ ul li {
     color: rgb(168, 167, 167)
 }
 
+ul{
+    list-style-type: square;
+}
+
 /*------------------------- COLOR --------------------------------------*/
 
 .color_orange {
@@ -130,8 +139,9 @@ ul li {
 
 .icons_individuel {
     background-color: rgb(5, 5, 43);
-    padding: 3% 60px 2% 60px;
+    padding: 3% 102px 2% 102px;
     margin-left: 3%;
+    border-radius: 3px;
     text-align: center;
 }
 
@@ -170,11 +180,6 @@ ul li {
     margin-left: 21.5%;   
 }
 
-.zone_text_individuel {
-    background-color: rgb(55, 55, 114);
-    background-size: 40px;
-    border-radius: 5px;
-}
 .demarcation {
     flex-direction: row;
     justify-content: space-between;
