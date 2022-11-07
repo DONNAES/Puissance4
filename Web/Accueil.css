@@ -290,7 +290,7 @@ html{
     align-items: center;
     margin-left: 15%;
 }
-a:hover{
+.correctlien:hover{
     color: orange;
     font-size: 110%;
     border-top-style: solid;
