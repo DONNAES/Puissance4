@@ -19,6 +19,7 @@ a:hover {
     text-decoration: none;
     color: white;
     margin-left: 40px;
+    box-sizing:border-box;
 }
 
 .navbar {
