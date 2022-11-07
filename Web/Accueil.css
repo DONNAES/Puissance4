@@ -290,3 +290,9 @@ html{
     align-items: center;
     margin-left: 15%;
 }
+a:hover{
+    color: orange;
+    font-size: 110%;
+    border-top-style: solid;
+    border-color: orange;
+}
