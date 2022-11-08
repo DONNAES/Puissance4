@@ -134,8 +134,8 @@ ul{
 
 .section_1 {
     display: flex;
-    margin-left: 14.5%;
-    margin-top: 100px;
+    justify-content: center;
+    
 }
 
 .icons_individuel {
