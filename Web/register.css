@@ -18,7 +18,7 @@ body{
 }
 
 .backgroundImage{
-    background : url(assets/images/backgroung_inscription.jpeg) 0% 35%;
+    background : url(assets/images/backgroung_register.jpeg) 0% 35%;
     height: 235px;
     padding-top: 20px;
 }
@@ -50,7 +50,7 @@ h1{
     font-size: 350%;
 }
 
-.inscription {
+.register {
     display: flex;
     justify-content: center;
 }
