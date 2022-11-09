@@ -1,6 +1,7 @@
 body{
     color: white;
     background-color: rgb(12,11,47);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .correctlink{
     text-decoration: none;
@@ -41,4 +42,35 @@ body{
     padding-bottom: 50px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
+}
+.userinfo{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding-left: 20px;
+    width: 350px;
+    height: 35px;
+    border: none;
+    background-color: #292f3fc7;
+    height: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(181, 174, 174, 0.901);
+    color: white;
+}
+.button{
+    padding-right: 200px;
+}
+button{
+    border: none;
+    background-color: orange;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 2px;
 }

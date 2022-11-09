@@ -24,10 +24,58 @@
     <section class="account">
         <h2>My Account</h2>
     </section>
-    <section>
-        <div>
-            
+    <section class="userinfo">
+        <form action="traitement.php" method="post"></form>
+        <div class="username">
+            <h3>Username</h3>
+            <!--request username database-->
+                 <!--Username-->
+                    <input type="username"
+                    name="username"
+                    id="username"
+                    placeholder="Change Username">
+            <div class="userbutton">
+                <button type="button" >Validate</button>
+            </div>
         </div>
+        <div class=""> <!--Email-->
+            <input type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Current Email">
+            <input type="email"
+            name="email"
+            id="email"
+            placeholder="New Email">
+            <input type="email"
+            name="email"
+            id="email"
+            placeholder="Confirm New Email">
+        </div>
+        <div> <!--Password-->
+            <input type="password" 
+            name="password" 
+            id="pass" 
+            placeholder="Current Password"
+            minlength="8"
+            maxlength="16"
+            required>
+            <input type="password"
+            name="password"
+            id="pass"
+            placeholder="New Password"
+            minlength="8"
+            maxlength="16"
+            required>
+            <input type="password"
+            name="password"
+            id="pass"
+            placeholder="Confirm New Password"
+            minlength="8"
+            maxlength="16"
+            required>
+        </div>
+        </form>
     </section>
 </body>
 </html>
