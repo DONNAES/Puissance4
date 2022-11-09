@@ -8,6 +8,12 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+h4{
+    margin-bottom: -15%;
+    font-size: 200%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /*------------------------- HEADER --------------------------------------*/
 
 .correctlink{
@@ -47,7 +53,7 @@ body{
     text-align: right;
     flex-direction: column;
     align-items: center;   
-    background : url(assets/images/scores_header_background.png) 0% 35%;
+    background : url(assets/images/scores_header_background.png) 30% 0%;
     background-size: 2000px;
     padding-top: 55px;
     padding-bottom: 55px;
@@ -88,29 +94,18 @@ tbody tr:last-of-type {
     border-bottom: 2px solid orange;
 }
 
-/*-----*/
-
-.theme {
-    padding-top: 10%;
-    
-}
-
 .tableaux {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    background-color: rgb(5, 5, 43);
+    border-radius: 50px;
+    box-shadow: 6px 6px 6px black;
 }
-
-.title_theme {
-    display: flex;
-    justify-content: center;
-}
-h4{
-    margin-bottom: -15%;
-    font-size: 110%;
-}
-
 
 /*------------------------- FOOTER --------------------------------------*/
 
@@ -179,9 +174,7 @@ ul{
     list-style-type: square;
 }
 
-h2 {
-    display: flex;
-}
+
 
 
 /*------------------------- COLOR --------------------------------------*/
