@@ -32,8 +32,8 @@ CREATE TABLE `User` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nickname` varchar(255) NOT NULL,
-  `user_creation` date NOT NULL,
-  `last_connection` date NOT NULL
+  `user_creation` datetime NOT NULL,
+  `last_connection` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
