@@ -1,3 +1,3 @@
 # Puissance 4 by Coding Factory
 
-#HTML and CSS
+# HTML and CSS / SQL / PHP / JavaScript
