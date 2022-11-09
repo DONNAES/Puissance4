@@ -1,1 +1,3 @@
+/*-------------------story2_creer_compte-------------------*/
+
 #INSERT INTO User (email ,password ,nickname ,user_creation) VALUES ('mail','mdp','nickname',NOW())
