@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="myaccount.css">
     <title>Document</title>
 </head>
@@ -26,7 +27,7 @@
     </section>
     <section class="userinfo">
         <form action="traitement.php" method="post"></form>
-        <div class="username">
+        <section class="username">
             <h3>Username</h3>
             <!--request username database-->
                  <!--Username-->
@@ -37,8 +38,9 @@
             <div class="userbutton">
                 <button type="button" >Validate</button>
             </div>
-        </div>
-        <div class=""> <!--Email-->
+        </section>
+        <section class="emailform"> <!--Email-->
+            <h3>Email</h3>
             <input type="email" 
             name="email" 
             id="email" 
@@ -51,8 +53,12 @@
             name="email"
             id="email"
             placeholder="Confirm New Email">
-        </div>
-        <div> <!--Password-->
+            <div class="button_email">
+                <button type="button">Validate</button>
+            </div>
+        </section>
+        <section class="passform"> <!--Password-->
+            <h3>Password</h3>
             <input type="password" 
             name="password" 
             id="pass" 
@@ -74,8 +80,39 @@
             minlength="8"
             maxlength="16"
             required>
-        </div>
+            <div class="button_pass">
+                <button type="button">Validate</button>
+            </div>
+        </section>
         </form>
     </section>
+
+    <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
+
+    <footer class="footer">
+        <div>
+            <h2 class="space">Information</h2>
+            <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
+            <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
+            <p class="color_orange" class="copyright">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
+            <div>
+                <i class="fa-brands fa-facebook-f"></i> 
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
+        </div>
+        <div class="footerdiv">
+            <h2>Power Of Memory</h2>
+            <ul class="move_lines">
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="https://agar.io/#ffa" class="footlink">Jouer !</a></span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="index.html" class="footlink">Les scores</a></span></li>
+                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
+            </ul>
+        </div>        
+    </footer>
 </body>
 </html>
