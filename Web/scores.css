@@ -1,0 +1,34 @@
+body{
+    color: white;
+    background-color: rgb(12,11,47);
+}
+.correctlink{
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.correctlink:hover{
+    color: orange;
+    border-top-style: solid;
+    border-color: orange;
+    padding-top: 20px;
+    margin-top: -20px;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+.divnav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 20px;
+    text-align: right;
+}
