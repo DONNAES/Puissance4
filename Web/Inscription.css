@@ -2,16 +2,19 @@ body{
     background-color: rgb(12, 11, 47);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-.correctlien {
+.correctlien{
     text-decoration: none;
     color: white;
     margin-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-
 .correctlien:hover{
     color: orange;
-    border-top: 3px orange solid;
+    border-top-style: solid;
+    border-color: orange;
+    padding-top: 20px;
+    margin-top: -20px;
 }
 
 .backgroundImage{

@@ -230,11 +230,20 @@ html{
 .color_orange {
     color: orange;
 }
-
-.correctlien {
+.correctlien{
     text-decoration: none;
     color: white;
     margin-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.correctlien:hover{
+    color: orange;
+    border-top-style: solid;
+    border-color: orange;
+    padding-top: 20px;
+    margin-top: -20px;
 }
 
 .buttons {
@@ -294,9 +303,4 @@ html{
     align-items: center;
     margin-left: 15%;
 }
-.correctlien:hover{
-    color: orange;
-    font-size: 110%;
-    border-top-style: solid;
-    border-color: orange;
-}
+

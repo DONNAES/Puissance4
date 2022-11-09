@@ -2,18 +2,20 @@ body{
     background-color: rgb(12,11,47);
     color: white;
 }
-
 .correctlink{
     text-decoration: none;
     color: white;
     margin-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-
 .correctlink:hover{
     color: orange;
-    border-top: 3px orange solid;
+    border-top-style: solid;
+    border-color: orange;
+    padding-top: 20px;
+    margin-top: -20px;
 }
-
 .navbar {
     display: flex;
     flex-direction: row;
