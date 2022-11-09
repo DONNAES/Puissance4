@@ -38,6 +38,16 @@ body{
     align-items: center;
 }
 
+.fa-solid {
+    background-color: orange;
+    padding-top: 15px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 15px;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+
 /*-------------------corps-------------------*/
 
 .section1 {
