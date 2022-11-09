@@ -92,7 +92,12 @@ tbody tr:last-of-type {
 
 .theme {
     padding-top: 10%;
+    display: flex;
+    justify-content: center;
+}
 
+.tableaux {
+    align-items: center;
 }
 
 .title_theme {
@@ -181,6 +186,10 @@ ul li {
 
 ul{
     list-style-type: square;
+}
+
+h2 {
+    display: flex;
 }
 
 
