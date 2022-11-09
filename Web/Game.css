@@ -193,6 +193,9 @@ ul li{
 
 .correctlien:hover{
     color: orange;
-    border-top: 3px orange solid;
+    border-top-style: solid;
+    border-color: orange;
+    padding-top: 20px;
+    margin-top: -20px;
 }
 
