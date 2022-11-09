@@ -128,12 +128,6 @@ button{
     flex-direction: column;
     margin-top: 100px;
 }
-
-.up_line {
-    margin-top: 10px;
-    margin-left: -20px;
-}
-
 .move_lines {
     margin-top: -20px;
 }
