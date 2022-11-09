@@ -92,36 +92,25 @@ tbody tr:last-of-type {
 
 .theme {
     padding-top: 10%;
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
+    
 }
 
 .tableaux {
-    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-content: space-between;
 }
 
 .title_theme {
     display: flex;
     justify-content: center;
 }
-
-.facile_1 {
-    display: flex;
-    flex-direction: column;
+h4{
+    margin-bottom: -15%;
+    font-size: 110%;
 }
 
-.interim {
-    display: flex;
-}
-
-.expert {
-    display: flex;
-}
-
-.impo {
-    display: flex;
-}
 
 /*------------------------- FOOTER --------------------------------------*/
 
@@ -207,8 +196,6 @@ h2 {
 
 .color_green {
     color: rgb(39, 235, 39);
-    justify-content: center;
-    display: flex;
 }
 
 .color_yellow {
