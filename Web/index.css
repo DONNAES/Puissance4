@@ -235,6 +235,8 @@ html{
     text-decoration: none;
     color: white;
     margin-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .buttons {
@@ -296,7 +298,7 @@ html{
 }
 .correctlien:hover{
     color: orange;
-    font-size: 110%;
+    padding-top: 20px;
     border-top-style: solid;
     border-color: orange;
 }
