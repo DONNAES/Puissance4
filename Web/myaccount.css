@@ -46,8 +46,11 @@ html{
 }
 .userinfo{
     display: flex;
-    flex-flow: column wrap;
-    align-content: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 input{
@@ -125,11 +128,6 @@ button{
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-}
-
-.up_line {
-    margin-top: 10px;
-    margin-left: -20px;
 }
 
 .move_lines {

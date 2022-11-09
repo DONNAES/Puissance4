@@ -28,48 +28,69 @@
     <section class="userinfo">
         <form action="traitement.php" method="post"></form>
         <section class="username">
-            <h3>Username</h3>
+            <h3>Username : </h3>
             <!--request username database-->
                  <!--Username-->
                     <input type="username"
                     name="username"
-                    id="username"
-                    placeholder="Change Username">
+                    id="userNameInput"
+                    placeholder="Change Username"
+                    spellcheck="false"
+                    autocomplete="off">
             <div class="userbutton">
                 <button type="button" >Validate</button>
             </div>
         </section>
         <section class="emailform"> <!--Email-->
-            <h3>Email</h3>
+            <h3>Email : </h3>
             <input type="email" 
             name="email" 
-            id="email" 
+            id="emailInput" 
             placeholder="Current Email">
             <input type="email"
             name="email"
             id="email"
+            autocomplete="off"
             placeholder="New Email">
-            <input type="email"
-            name="email"
-            id="email"
-            placeholder="Confirm New Email">
-            <div class="button_email">
-                <button type="button">Validate</button>
-            </div>
-        </section>
-        <section class="passform"> <!--Password-->
-            <h3>Password</h3>
-            <input type="password" 
-            name="password" 
-            id="pass" 
-            placeholder="Current Password"
+            <input type="password"
+            name="password"
+            id="pass"
+            placeholder="Password"
+            autocomplete="off"
+            spellcheck="false"
             minlength="8"
             maxlength="16"
             required>
             <input type="password"
             name="password"
             id="pass"
+            placeholder="Confirm Password"
+            autocomplete="off"
+            spellcheck="false"
+            minlength="8"
+            maxlength="16"
+            required>
+            <div class="button_email">
+                <button type="button">Validate</button>
+            </div>
+        </section>
+        <section class="passform"> <!--Password-->
+            <h3>Password : ...</h3>
+            <input type="password" 
+            name="password" 
+            id="pass" 
+            placeholder="Current Password"
+            minlength="8"
+            maxlength="16"
+            autocomplete="off"
+            spellcheck="false"
+            required>
+            <input type="password"
+            name="password"
+            id="pass"
             placeholder="New Password"
+            autocomplete="off"
+            spellcheck="false"
             minlength="8"
             maxlength="16"
             required>
@@ -77,6 +98,8 @@
             name="password"
             id="pass"
             placeholder="Confirm New Password"
+            autocomplete="off"
+            spellcheck="false"
             minlength="8"
             maxlength="16"
             required>
@@ -108,9 +131,9 @@
         <div class="footerdiv">
             <h2>Power Of Memory</h2>
             <ul class="move_lines">
-                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="https://agar.io/#ffa" class="footlink">Jouer !</a></span></li>
-                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="index.html" class="footlink">Les scores</a></span></li>
-                <li class="color_orange up_line"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
+                <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="https://agar.io/#ffa" class="footlink">Jouer !</a></span></li>
+                <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="index.html" class="footlink">Les scores</a></span></li>
+                <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
             </ul>
         </div>        
     </footer>
