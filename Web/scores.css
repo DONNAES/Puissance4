@@ -92,6 +92,9 @@ tbody tr:last-of-type {
 
 .theme {
     padding-top: 10%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
 }
 
 .tableaux {
