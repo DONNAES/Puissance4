@@ -63,6 +63,7 @@ body{
     cursor: pointer;
     margin: 100px auto;
     border: 1px solid #ddd;
+    text-align: center;
 }
 
 thead tr {
@@ -85,6 +86,39 @@ tbody tr {
 
 tbody tr:last-of-type {
     border-bottom: 2px solid orange;
+}
+
+/*-----*/
+
+.theme {
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.tableaux {
+    align-items: center;
+}
+
+.title_theme {
+    display: flex;
+    justify-content: center;
+}
+
+.facile_1 {
+    display: flex;
+}
+
+.interim {
+    display: flex;
+}
+
+.expert {
+    display: flex;
+}
+
+.impo {
+    display: flex;
 }
 
 /*------------------------- FOOTER --------------------------------------*/
@@ -152,6 +186,10 @@ ul li {
 
 ul{
     list-style-type: square;
+}
+
+h2 {
+    display: flex;
 }
 
 
