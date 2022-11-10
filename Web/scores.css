@@ -112,7 +112,7 @@ tbody tr:last-of-type {
     margin-top: 5%;
     background-color: rgb(5, 5, 43);
     border-radius: 50px;
-    box-shadow: 5px 5px 100px rgb(235, 167, 41);
+    box-shadow: 0px 0px 25px rgb(235, 167, 41);
 }
 
 /*------------------------- FOOTER --------------------------------------*/
