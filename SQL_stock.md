@@ -17,7 +17,7 @@ WHERE id = 1
 
 /*-------------------story5_ajouter_jeu-------------------*/
 
-#
+#INSERT INTO Jeu (Nom_du_jeu) VALUES ('The Power Of Memory')
 
 /*-------------------story6_affichage_scores-------------------*/
 
