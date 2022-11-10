@@ -10,3 +10,15 @@ VALUES ('mail','mdp','nickname',NOW())
 #UPDATE User 
 SET password = 'mdp' 
 WHERE id = 1
+
+/*-------------------story4_sidentifier-------------------*/
+
+#
+
+/*-------------------story5_ajouter_jeu-------------------*/
+
+#
+
+/*-------------------story6_affichage_scores-------------------*/
+
+#
