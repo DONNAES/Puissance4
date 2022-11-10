@@ -28,8 +28,8 @@ h4{
     color: orange;
     border-top-style: solid;
     border-color: orange;
-    padding-top: 20px;
-    margin-top: -20px;
+    padding-top: 15px;
+    margin-top: -10px;
 }
 
 .navbar {
@@ -59,7 +59,14 @@ h4{
     padding-top: 55px;
     padding-bottom: 55px;
 }
-
+.fa-user {
+    background-color: orange;
+    padding: 13px 16px 13px 16px;
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-top: -8px;
+    color: white;
+}
 /*------------------------- SECTION --------------------------------------*/
 
 .tableau-style {
