@@ -22,8 +22,8 @@ html {
     color: orange;
     border-top-style: solid;
     border-color: orange;
-    padding-top: 20px;
-    margin-top: -20px;
+    padding-top: 15px;
+    margin-top: -10px;
 }
 
 .navbar {
@@ -55,14 +55,13 @@ html {
 }
 .fa-user {
     background-color: orange;
-    padding-top: 15px;
-    padding-left: 18px;
-    padding-right: 18px;
-    padding-bottom: 15px;
+    padding: 13px 16px 13px 16px;
     border-radius: 50%;
     margin-left: 25px;
+    margin-top: -8px;
     color: white;
 }
+
 
 /*------------------------- FOOTER --------------------------------------*/
 
