@@ -95,6 +95,7 @@ h1{
 
 textarea {
     vertical-align: top;
+    resize: none;
   }
 
 form div {
