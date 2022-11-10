@@ -8,6 +8,7 @@
 -- Version de PHP : 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,6 +35,8 @@ CREATE TABLE `Score` (
   `Difficulté de la partie` int(11) NOT NULL,
   `Score de la partie` float NOT NULL,
   `Date et heure de la partie` datetime NOT NULL
+  `Date de la partie` date NOT NULL,
+  `Heure de la partie` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
