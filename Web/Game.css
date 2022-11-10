@@ -43,6 +43,13 @@ h1{
     color: white;
     font-size: 350%;
 }
+.fa-user {
+    background-color: orange;
+    border-radius: 100%;
+    padding: 10px;
+    margin-left: 25px;
+    color: white;
+}
 
 /*------------------------- LEVEL --------------------------------------*/
 
