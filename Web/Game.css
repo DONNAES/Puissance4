@@ -240,6 +240,7 @@ a{
     border: 0;
     padding: 0;
 }
+
 /*------------------------- FOOTER --------------------------------------*/
 
 .footer {
@@ -265,10 +266,10 @@ a{
 .footerdiv {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
-.up_line {
+ul li {
     margin-top: 10px;
     margin-left: -20px;
 }
@@ -277,21 +278,36 @@ a{
     margin-top: -20px;
 }
 
-.footer h2{
-    color: white;
-}
-
 .space {
     margin-top: 100px;
+}
+
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    bottom: 40px;
+    right: 50px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+
+    opacity: 50%;
+}
+
+.footlink{
+    text-decoration: none;
+    color: rgb(168, 167, 167)
 }
 
 ul{
     list-style-type: square;
 }
 
-ul li{
-    margin-top: 15px;
-}
 /*------------------------- COLOR --------------------------------------*/
 
 .color_orange {
@@ -300,6 +316,7 @@ ul li{
 
 .color_gray {
     color: rgb(168, 167, 167);
+
 }
 
 .correctlien:hover{
@@ -309,4 +326,3 @@ ul li{
     padding-top: 15px;
     margin-top: -10px;
 }
-

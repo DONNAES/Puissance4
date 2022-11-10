@@ -1,5 +1,6 @@
 body{
     background-color: rgb(12, 11, 47);
+    color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .correctlien{
@@ -109,6 +110,8 @@ button{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/*------------------------- FOOTER --------------------------------------*/
+
 .footer {
     display: flex;
     background-color: rgb(5, 5, 43);
@@ -127,26 +130,21 @@ button{
     padding-bottom: 10px;
     margin-bottom: 75px;
     border-radius: 3px;
-    color: white;
 }
 
 .footerdiv {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
-.up_line {
+ul li {
     margin-top: 10px;
     margin-left: -20px;
 }
 
 .move_lines {
     margin-top: -20px;
-}
-
-.footer h2{
-    color: white;
 }
 
 .space {
@@ -170,13 +168,15 @@ button{
     opacity: 50%;
 }
 
+.footlink{
+    text-decoration: none;
+    color: rgb(168, 167, 167)
+}
+
 ul{
     list-style-type: square;
 }
 
-ul li{
-    margin-top: 15px;
-}
 /*------------------------- COLOR --------------------------------------*/
 
 .color_orange {
@@ -185,7 +185,5 @@ ul li{
 
 .color_gray {
     color: rgb(168, 167, 167);
+
 }
-
-
-

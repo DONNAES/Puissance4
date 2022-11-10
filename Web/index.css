@@ -5,6 +5,10 @@ body{
 
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /*-------------------header-------------------*/
 
 .header {
@@ -149,7 +153,7 @@ body{
     margin-right: 15px;
 }
 
-/*-------------------footer-------------------*/
+/*------------------------- FOOTER --------------------------------------*/
 
 .footer {
     display: flex;
@@ -174,28 +178,16 @@ body{
 .footerdiv {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
-.up_line {
+ul li {
     margin-top: 10px;
     margin-left: -20px;
 }
 
 .move_lines {
     margin-top: -20px;
-}
-
-.footer h2{
-    color: white;
-}
-
-li::before {
-    background-color: orange;
-}
-
-ul{
-    list-style-type: square;
 }
 
 .space {
@@ -209,19 +201,34 @@ ul{
     background-color: orange;
     bottom: 40px;
     right: 50px;
-    opacity: 50%;
+
     text-decoration: none;
     text-align: center;
     line-height: 50px;
     color: white;
     font-size: 22px;
+
+    opacity: 50%;
 }
-html{
-    scroll-behavior: smooth;
-}
+
 .footlink{
     text-decoration: none;
     color: rgb(168, 167, 167)
+}
+
+ul{
+    list-style-type: square;
+}
+
+/*------------------------- COLOR --------------------------------------*/
+
+.color_orange {
+    color: orange;
+}
+
+.color_gray {
+    color: rgb(168, 167, 167);
+
 }
 
 /*-------------------ajouts (estéthique sup)-------------------*/
@@ -231,13 +238,6 @@ html{
     font-size: 40px;
 }
 
-.color_gray {
-    color: rgb(168, 167, 167);
-}
-
-.color_orange {
-    color: orange;
-}
 .correctlien{
     text-decoration: none;
     color: white;
