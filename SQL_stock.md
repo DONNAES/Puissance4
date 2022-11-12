@@ -13,7 +13,8 @@ WHERE id = 1
 
 /*-------------------story4_sidentifier-------------------*/
 
-#
+#SELECT User
+
 
 /*-------------------story5_ajouter_jeu-------------------*/
 
