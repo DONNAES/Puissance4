@@ -15,16 +15,16 @@
                     <h3>The Power Of Memory</h3>
                     <div class="divnav">
                         <a href="#" class="correctlien">ACCUEIL</a>
-                        <a href="memory.html" class="correctlien">JEU</a>
-                        <a href="scores.html" class="correctlien">SCORES</a>
-                        <a href="contact.html" class="correctlien">NOUS CONTACTER</a>
-                        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                        <a href="memory.php" class="correctlien">JEU</a>
+                        <a href="scores.php" class="correctlien">SCORES</a>
+                        <a href="contact.php" class="correctlien">NOUS CONTACTER</a>
+                        <a href="login.php"><i class="fa-solid fa-user"></i></a>
                     </div>
                 </nav>
                 <div class="divhead">
                     <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
                     <p>Venez challenger les cerveaux les plus agiles !</p>
-                    <a href="memory.html"><button class="buttons">JOUER !</button></a>
+                    <a href="memory.php"><button class="buttons">JOUER !</button></a>
                 </div>
             </section>
         </header>
@@ -134,9 +134,9 @@
             <div class="footerdiv">
                 <h2>Power Of Memory</h2>
                 <ul class="move_lines">
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="memory.html" class="footlink">Jouer !</a></span></li>
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="scores.html" class="footlink">Les scores</a></span></li>
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="memory.php" class="footlink">Jouer !</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="scores.php" class="footlink">Les scores</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.php" class="footlink">Nous contacter</a></span></li>
                 </ul>
             </div>
         </footer>
