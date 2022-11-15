@@ -14,11 +14,11 @@
                 <nav class="navbar">
                     <h3>The Power Of Memory</h3>
                     <div class="divnav">
-                        <a href="index.html" class="correctlien">ACCUEIL</a>
+                        <a href="index.php" class="correctlien">ACCUEIL</a>
                         <a href="#" class="correctlien">JEU</a>
-                        <a href="scores.html" class="correctlien">SCORES</a>
-                        <a href="contact.html" class="correctlien">NOUS CONTACTER</a>
-                        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                        <a href="scores.php" class="correctlien">SCORES</a>
+                        <a href="contact.php" class="correctlien">NOUS CONTACTER</a>
+                        <a href="login.php"><i class="fa-solid fa-user"></i></a>
                     </div>
                 </nav>
             </section>
@@ -85,8 +85,8 @@
                 <h2>Power Of Memory</h2>
                 <ul class="move_lines">
                     <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="#" class="footlink">Jouer !</a></span></li>
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="scores.html" class="footlink">Les scores</a></span></li>
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="scores.php" class="footlink">Les scores</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.php" class="footlink">Nous contacter</a></span></li>
                 </ul>
             </div>
         </footer>
