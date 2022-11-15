@@ -21,12 +21,11 @@
                         <a href="login.php"><i class="fa-solid fa-user"></i></a>
                     </div>
                 </nav>
-                <div class="divhead">
-                    <h1>NOUS CONTACTER</h1>
-                </div>
             </section>
         </header>
-
+        <section class="divhead">
+                <h1>NOUS CONTACTER</h1>
+        </section>
         <section class="section_1">
             <div class="icons_individuel">
                 <i class="fa-solid fa-mobile-screen-button fa-2x"></i>
