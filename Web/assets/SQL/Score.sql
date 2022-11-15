@@ -34,7 +34,7 @@ CREATE TABLE `Score` (
   `Identifiant du jeu` int(11) NOT NULL,
   `Difficulté de la partie` int(11) NOT NULL,
   `Score de la partie` float NOT NULL,
-  `Date et heure de la partie` datetime NOT NULL
+  `Date et heure de la partie` datetime NOT NULL,
   `Date de la partie` date NOT NULL,
   `Heure de la partie` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
