@@ -16,7 +16,7 @@
                         <a href="index.php" class="correctlink">ACCUEIL</a>
                         <a href="memory.php" class="correctlink">JEU</a>
                         <a href="scores.php" class="correctlink">SCORES</a>
-                        <a href="#" class="correctlink">NOUS CONTACTER</a>
+                        <a href="contact.php" class="correctlink">NOUS CONTACTER</a>
                         <a href="login.php"><i class="fa-solid fa-user"></i></a>
                     </div>
                 </nav>

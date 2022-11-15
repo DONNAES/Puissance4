@@ -10,17 +10,9 @@
     </head>
     <body>
         <header>
-            <section>
-                <nav class="navbar">
-                    <h3>The Power Of Memory</h3>
-                    <div class="divnav">
-                        <a href="index.php" class="correctlink">ACCUEIL</a>
-                        <a href="memory.php" class="correctlink">JEU</a>
-                        <a href="scores.php" class="correctlink">SCORES</a>
-                        <a href="contact.php" class="correctlink">NOUS CONTACTER</a>
-                    </div>
-                </nav>
-            </section>
+            <?php
+                include 'assets/view/header.inc.php'
+            ?>
         </header>
         <section class="connex">
             <h2>CONNEXION</h2>
@@ -51,26 +43,10 @@
 
         <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
         
-        <footer class="footer">
-            <div>
-                <h2 class="space">Information</h2>
-                <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
-                <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
-                <p class="color_orange">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
-                <div>
-                    <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
-                </div>
-                <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
-            </div>
-            <div class="footerdiv">
-                <h2>Power Of Memory</h2>
-                <ul class="move_lines">
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="memory.php" class="footlink">Jouer !</a></span></li>
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="scores.php" class="footlink">Les scores</a></span></li>
-                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.php" class="footlink">Nous contacter</a></span></li>
-                </ul>
-            </div>
+        <footer>
+            <?php
+                include 'assets/view/footer.inc.php'
+            ?>
         </footer>
     </body>
 </html>
