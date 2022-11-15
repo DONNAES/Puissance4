@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="myaccount.css">
+        <title>The Power Of Memory - Mon Compte</title>
+    </head>
+    <body>
+        <header>
+            <section>
+                <nav class="navbar">
+                    <h3>The Power Of Memory</h3>
+                    <div class="divnav">
+                        <a href="index.html" class="correctlink">ACCUEIL</a>
+                        <a href="memory.html" class="correctlink">JEU</a>
+                        <a href="scores.html" class="correctlink">SCORES</a>
+                        <a href="contact.html" class="correctlink">NOUS CONTACTER</a>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <section class="account">
+            <h2>MON COMPTE</h2>
+        </section>
+        <section class="userinfo">
+            <form action="traitement.php" method="post"></form>
+            <section class="username">
+                <h3>Pseudo : </h3>
+                <!--request username database-->
+                    <!--Username-->
+                        <input type="username"
+                        name="username"
+                        id="userNameInput"
+                        placeholder="Pseudo"
+                        spellcheck="false"
+                        autocomplete="off">
+                <div class="userbutton">
+                    <button type="button" >Valider</button>
+                </div>
+            </section>
+            <section class="emailform"> <!--Email-->
+                <h3>Email : </h3>
+                <input type="email" 
+                name="email" 
+                id="emailInput" 
+                placeholder="Email Actuel">
+                <input type="email"
+                name="email"
+                id="email"
+                autocomplete="off"
+                placeholder="Nouvel Email">
+                <input type="password"
+                name="password"
+                id="pass"
+                placeholder="Mot de Passe"
+                autocomplete="off"
+                spellcheck="false"
+                minlength="8"
+                maxlength="16"
+                required>
+                <input type="password"
+                name="password"
+                id="pass"
+                placeholder="Confirmer le Mot de Passe"
+                autocomplete="off"
+                spellcheck="false"
+                minlength="8"
+                maxlength="16"
+                required>
+                <div class="button_email">
+                    <button type="button">Valider</button>
+                </div>
+            </section>
+            <section class="passform"> <!--Password-->
+                <h3>Mot de Passe :</h3>
+                <input type="password" 
+                name="password" 
+                id="pass" 
+                placeholder="Mot de Passe Actuel"
+                minlength="8"
+                maxlength="16"
+                autocomplete="off"
+                spellcheck="false"
+                required>
+                <input type="password"
+                name="password"
+                id="pass"
+                placeholder="Nouveau Mot de Passe"
+                autocomplete="off"
+                spellcheck="false"
+                minlength="8"
+                maxlength="16"
+                required>
+                <input type="password"
+                name="password"
+                id="pass"
+                placeholder="Confirmer le Mot de Passe"
+                autocomplete="off"
+                spellcheck="false"
+                minlength="8"
+                maxlength="16"
+                required>
+                <div class="button_pass">
+                    <button type="button">Valider</button>
+                </div>
+            </section>
+            </form>
+        </section>
+
+        <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
+
+        <footer class="footer">
+            <div>
+                <h2 class="space">Information</h2>
+                <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
+                <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
+                <p class="color_orange" class="copyright">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
+                <div>
+                    <i class="fa-brands fa-facebook-f"></i> 
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
+            </div>
+            <div class="footerdiv">
+                <h2>Power Of Memory</h2>
+                <ul class="move_lines">
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="game.html" class="footlink">Jouer !</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="scores.html" class="footlink">Les scores</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.html" class="footlink">Nous contacter</a></span></li>
+                </ul>
+            </div>        
+        </footer>
+    </body>
+</html>

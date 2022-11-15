@@ -1,0 +1,313 @@
+body{
+    color: white;
+    background-color: rgb(12,11,47);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/*-------------------header-------------------*/
+
+.header {
+    background : url(assets/images/eslarena.png) center;
+    color: white;
+    margin-bottom: 150px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*---dans navbar---*/
+.divnav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    text-align: right;
+}
+
+.divhead {
+    margin-top: 150px;
+    font-size: 30px;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    align-items: center;
+}
+.fa-user {
+    background-color: orange;
+    padding: 13px 16px 13px 16px;
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-top: -8px;
+    color: white;
+}
+
+/*-------------------corps-------------------*/
+
+.section1 {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.divtxt {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 250px;
+}
+
+/*---dans divtxt---*/
+.txt1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+.txt2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+.txt3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+/*---dans divtxt---*/
+
+/*-------------------corps pt2-------------------*/
+
+.section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 250px;
+}
+
+.divssection2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.divsepare1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.divsepare2 {
+    display: flex;
+    flex-direction: column;
+}
+
+/*-------------------profiles devs-------------------*/
+
+.profiles {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2%;
+}
+
+.profile1 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 5, 43);
+    padding: 4%;
+    margin-right: 15px;
+}
+.profile2 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 5, 43);
+    padding: 4%;
+    margin-right: 15px;
+
+}
+.profile3 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 5, 43);
+    padding: 4%;
+    margin-right: 15px;
+
+}
+.profile4 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 5, 43);
+    padding: 4%;
+    margin-right: 15px;
+}
+
+/*------------------------- FOOTER --------------------------------------*/
+
+.footer {
+    display: flex;
+    background-color: rgb(5, 5, 43);
+    justify-content: space-around;
+    margin-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fa-brands {
+    background-color: orange;
+    background-size: auto;
+    font-size: large;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 75px;
+    border-radius: 3px;
+}
+
+.footerdiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+ul li {
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.move_lines {
+    margin-top: -20px;
+}
+
+.space {
+    margin-top: 100px;
+}
+
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    bottom: 40px;
+    right: 50px;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+
+    opacity: 50%;
+}
+
+.footlink{
+    text-decoration: none;
+    color: rgb(168, 167, 167)
+}
+
+ul{
+    list-style-type: square;
+}
+
+/*------------------------- COLOR --------------------------------------*/
+
+.color_orange {
+    color: orange;
+}
+
+.color_gray {
+    color: rgb(168, 167, 167);
+
+}
+
+/*-------------------ajouts (estéthique sup)-------------------*/
+
+.blue {
+    color: rgb(68, 68, 154);
+    font-size: 40px;
+}
+
+.correctlien{
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.correctlien:hover{
+    color: orange;
+    border-top-style: solid;
+    border-color: orange;
+    padding-top: 15px;
+    margin-top: -10px;
+}
+
+.buttons {
+    margin-top: 75px;
+    color: white;
+    font-size: 25px;
+    background-color: orange;
+    border: 20px solid orange;
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+
+.bgbleu {
+    background-color: rgb(18, 18, 194);
+    padding: 20px;
+    border-radius: 10px;
+}
+.bgrose {
+    background-color: rgb(216, 71, 139);
+    padding: 20px;
+    border-radius: 10px;
+}
+.bgvert {
+    background-color: rgb(6, 137, 6);
+    padding: 20px;
+    border-radius: 10px;
+}
+.bgorange {
+    background-color: rgb(234, 168, 44);
+    padding: 20px;
+    border-radius: 10px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+.padd {
+    padding-left: 33%;
+}
+.arrondi {
+    border-radius: 200px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(6, 127, 248);
+}
+.bggris {
+    background-color: gray;
+}
+.marg { /*logo profile*/
+    margin-left: 45%;
+    color: white;
+    background-color: transparent;
+}
+.proflogo{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 15%;
+}

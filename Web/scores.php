@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="scores.css">
+        <title>The Power Of Memory - Scores</title>
+    </head>
+    <body>
+        <header>
+            <section>
+                <nav class="navbar">
+                    <h3>The Power Of Memory</h4>
+                    <div class="divnav">
+                        <a href="index.php" class="correctlink">ACCUEIL</a>
+                        <a href="memory.php" class="correctlink">JEU</a>
+                        <a href="#" class="correctlink">SCORES</a>
+                        <a href="contact.php" class="correctlink">NOUS CONTACTER</a>
+                        <a href="login.php"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                </nav>
+                <div class="divhead">
+                    <h1>SCORES</h1>
+                </div>
+            </section>
+        </header>
+
+        <section>
+            <div class="tableaux">
+                <div>
+                    <h4 class="color_green">Facile</h4>
+                    <table class="tableau-style">
+                        <thead>
+                            <tr>
+                                <th>The Power Of Memory</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                                <th>Heure</th>
+                                <th>Thème</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pseudo 1</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 2</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 3</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 4</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 5</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 6</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 7</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 8</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 9</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 10</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="interim_1">
+                    <h4 class="color_blue">Intermédiaire</h4>
+                    <table class="tableau-style">
+                        <thead>
+                            <tr>
+                                <th>The Power Of Memory</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                                <th>Heure</th>
+                                <th>Thème</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pseudo 1</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 2</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 3</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 4</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 5</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 6</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 7</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 8</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 9</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 10</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="expert_1">
+                    <h4 class="color_yellow">Expert</h4>
+                    <table class="tableau-style">
+                        <thead>
+                            <tr>
+                                <th>The Power Of Memory</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                                <th>Heure</th>
+                                <th>Thème</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pseudo 1</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 2</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 3</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 4</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 5</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 6</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 7</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 8</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 9</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 10</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="impo_1">
+                    <h4 class="color_red">Impossible</h4>
+                    <table class="tableau-style">
+                        <thead>
+                            <tr>
+                                <th>The Power Of Memory</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                                <th>Heure</th>
+                                <th>Thème</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pseudo 1</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 2</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 3</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 4</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 5</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 6</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 7</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 8</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 9</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                            <tr>
+                                <td>Pseudo 10</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                                <td>Contenu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
+
+        <footer class="footer">
+            <div>
+                <h2 class="space">Information</h2>
+                <p class="color_gray">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="color_orange">Tel : <span style="color:rgb(168, 167, 167)"> 06 05 04 03 02</span></p>
+                <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
+                <p class="color_orange">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
+                <div>
+                    <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
+            </div>
+            <div class="footerdiv">
+                <h2>Power Of Memory</h2>
+                <ul class="move_lines">
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="memory.php" class="footlink">Jouer !</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="#" class="footlink">Les scores</a></span></li>
+                    <li class="color_orange"><span style="color: rgb(168, 167, 167)"><a href="contact.php" class="footlink">Nous contacter</a></span></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

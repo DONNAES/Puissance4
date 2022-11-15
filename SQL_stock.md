@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -- envoi de message sur le chat
 
 INSERT INTO `message` (`game_id`, `author_id`, `message` , `message_time`) VALUES 
