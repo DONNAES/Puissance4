@@ -1,3 +1,7 @@
+<?php
+    require ('./assets/includes/database.inc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

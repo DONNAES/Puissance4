@@ -29,7 +29,7 @@ if(isset($_POST['pseudo']) || isset($_POST['mail']))
             <h1>INSCRIPTION</h1>
         </section>
         <div class="register">
-            <form>
+            <form method='post'>
                 <div>
                     <input type="email" id="email" name="mail" placeholder="Email" required>
                 </div>
