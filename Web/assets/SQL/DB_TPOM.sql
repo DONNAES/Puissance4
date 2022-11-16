@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `jeu` (
   `id` int(11) NOT NULL,
-  `nom du jeu` text NOT NULL
+  `nom_du_jeu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -54,10 +54,10 @@ CREATE TABLE `liaisons` (
 
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `identifiant du jeu` int(11) NOT NULL,
-  `identifiant de l'expediteur` int(11) NOT NULL,
+  `identifiant_du_jeu` int(11) NOT NULL,
+  `identifiant_de_l'expediteur` int(11) NOT NULL,
   `message` text NOT NULL,
-  `date et heure du message` datetime NOT NULL
+  `date_et_heure_du_message` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -68,11 +68,11 @@ CREATE TABLE `messages` (
 
 CREATE TABLE `score` (
   `id` int(11) NOT NULL,
-  `identifiant du joueur` int(11) NOT NULL,
-  `identifiant du jeu` int(11) NOT NULL,
-  `difficulté de la partie` int(11) NOT NULL,
-  `score de la partie` float NOT NULL,
-  `date et heure de la partie` datetime NOT NULL
+  `identifiant_du_joueur` int(11) NOT NULL,
+  `identifiant_du_jeu` int(11) NOT NULL,
+  `difficulté_de_la_partie` int(11) NOT NULL,
+  `score_de_la_partie` float NOT NULL,
+  `date_et_heure_de_la_partie` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
