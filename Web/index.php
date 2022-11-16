@@ -10,7 +10,7 @@
     </head>
     <body class="generale">
         <section class="header">
-            <header>
+            <header
                 <?php
                     include 'assets/view/header.inc.php'
                 ?>
