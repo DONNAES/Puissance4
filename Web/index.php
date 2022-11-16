@@ -9,15 +9,17 @@
         <title>The Power Of Memory - Accueil</title>
     </head>
     <body class="generale">
-        <header>
-            <?php
-                include 'assets/view/header.inc.php'
-            ?>
-        </header>
-        <section class="divhead">
-                    <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
-                    <p>Venez challenger les cerveaux les plus agiles !</p>
-                    <a href="memory.php"><button class="buttons">JOUER !</button></a>
+        <section class="header">
+            <header>
+                <?php
+                    include 'assets/view/header.inc.php'
+                ?>
+            </header>
+            <div class="divhead">
+                <h1>BIENVENUE DANS NOTRE STUDIO !</h1>
+                <p>Venez challenger les cerveaux les plus agiles !</p>
+                <a href="memory.php"><button class="buttons">JOUER !</button></a>
+            </div>
         </section>
         <section>
             <div class="section1">
