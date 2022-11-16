@@ -34,24 +34,40 @@
 
         <section class="section_2">
             <div class="contact">
-                <form>
+                <form method="POST">
                   <div class="demarcation">
                         <div>
-                            <input type="text" id="Nom" placeholder="Nom" required>
+                            <input type="text" id="Nom" placeholder="Nom" name="username" required>
                         </div>
                         <div class="email_ecart">
-                            <input type="email" id="Email" placeholder="Email" required>
+                            <input type="email" id="Email" placeholder="Email" name="email" required>
                         </div>
                     </div>
                     <div>
-                        <input type="text" id="Sujet" placeholder="Sujet" required>
+                        <input type="text" id="Sujet" placeholder="Sujet" name="sujet" required>
                     </div>
                     <div>
-                        <textarea type="" id="Message" placeholder="Message" required></textarea>
+                        <textarea type="" id="Message" placeholder="Message" name="message" required></textarea>
                     </div>
                     <div>
-                        <button type="submit">Envoyer</button>
+                        <button type="submit" name="valider">Envoyer</button>
                     </div>
+
+                    <?php
+                        if (isset($_POST['valider'])) {
+                          if (isset($_POST['username']) AND isset($_POST['email']) AND isset($_POST['sujet']) AND isset($_POST['message'])) {
+                            if (!empty($_POST['username']) AND !empty($_POST['email']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) {
+                                $name=htmlspecialchars($_POST['username']);
+                                $adress_mail=htmlspecialchars($_POST['email']);
+                                $msg=htmlspecialchars($_POST['message']);
+                                
+                                echo "Votre formulaire a bien été envoyé";
+                            }
+                          } else {
+                            echo "Veuillez vérifier le formulaire";
+                          }
+                        }
+                    ?>
                 </form>
             </div>
         </section>
