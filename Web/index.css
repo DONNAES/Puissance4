@@ -12,7 +12,7 @@ html{
 /*-------------------header-------------------*/
 
 .header {
-    background : url(assets/images/eslarena.png) center;
+    background : url(assets/images/eslarena.png) center 0% 35%;
     color: white;
     margin-bottom: 150px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
