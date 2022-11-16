@@ -7,36 +7,32 @@
         <title>Document</title>
     </head>
     <body>
-    <section class="login">
-                <form action="traitement.php" method="post">
-                    <div>
-                        <input type="email" 
-                            name="Email" 
-                            id="Email" 
-                            placeholder="Email">
-                    </div>
-                    <div>
-                        <input type="password" 
-                            name="password" 
-                            id="pass" 
-                            placeholder="Mot de passe"
-                            autocomplete="current-password"
-                            minlength="8"
-                            maxlength="16"
-                            required>
-                    </div>
-                    <div class="button">
-                        <button type="button">connexion</button> <a href="register.html" class="reglink">Inscription</a>
-                    </div>
-                </form>
-            </section>
+        <div class="register">
+            <form>
+                <div>
+                    <input type="email" id="Email" placeholder="Email" required>
+                </div>
+                <div>
+                    <input type="text" id="Pseudo" placeholder="Pseudo" required>
+                </div>
+                <div>
+                    <input type="password" id="Password" placeholder="Mot de passe" required>
+                </div>
+                <div>
+                    <input type="password" id="Confirmpassword" placeholder="Confirmer le mot de passe" required>
+                </div>
+                <div class="button">
+                    <button class="bouton" type="submit">Inscription</button><a href="login.html" class="connexion">Connexion</a>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "database";
+$dbname = "DB_TPOM";
 
 // Créer une conexion
 $conn = new mysqli($servername, $username, $password, $dbname);
