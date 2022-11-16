@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `jeu`
 --
 
+DROP TABLE IF EXISTS `jeu`;
 CREATE TABLE `jeu` (
   `id` int(11) NOT NULL,
   `nom_du_jeu` text NOT NULL
@@ -39,6 +40,7 @@ CREATE TABLE `jeu` (
 -- Table structure for table `liaisons`
 --
 
+DROP TABLE IF EXISTS `liaisons`;
 CREATE TABLE `liaisons` (
   `id_jeu` int(11) NOT NULL,
   `id_message` int(11) NOT NULL,
@@ -52,6 +54,7 @@ CREATE TABLE `liaisons` (
 -- Table structure for table `messages`
 --
 
+DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `identifiant_du_jeu` int(11) NOT NULL,
@@ -66,6 +69,7 @@ CREATE TABLE `messages` (
 -- Table structure for table `score`
 --
 
+DROP TABLE IF EXISTS `score`;
 CREATE TABLE `score` (
   `id` int(11) NOT NULL,
   `identifiant_du_joueur` int(11) NOT NULL,
@@ -81,10 +85,11 @@ CREATE TABLE `score` (
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `user_creation` datetime NOT NULL,
   `last_connection` datetime NOT NULL
