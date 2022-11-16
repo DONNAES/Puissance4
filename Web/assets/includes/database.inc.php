@@ -2,5 +2,5 @@
 
 $user = "root";
 $pass = "root";
-$dbh = new PDO('mysql:host=localhost;dbname=The_Power_Of_Memory', $user, $pass);
+$dbh = new PDO('mysql:host=localhost;dbname=thepowerofmemory', $user, $pass);
 ?>
