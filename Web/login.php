@@ -18,6 +18,10 @@
             <h2>CONNEXION</h2>
         </section>
         <section class="login">
+            <?php
+                require ("./assets/includes/user.php");
+
+            ?>
             <form action="traitement.php" method="post">
                 <div>
                     <input type="email" 
