@@ -70,7 +70,7 @@ CREATE TABLE `score` (
   `id` int(11) NOT NULL,
   `identifiant_du_joueur` int(11) NOT NULL,
   `identifiant_du_jeu` int(11) NOT NULL,
-  `difficulté_de_la_partie` int(11) NOT NULL,
+  `difficulte_de_la_partie` int(11) NOT NULL,
   `score_de_la_partie` float NOT NULL,
   `date_et_heure_de_la_partie` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
