@@ -1,10 +1,10 @@
 <?php
 require('./assets/includes/database.inc.php')
 
-if(isset($Test['username'] || isset($Test['email'])))
+if(isset($_Test['username'] || isset($_Test['email'])))
 {
-    $bonjour = $hihi->prepare("INSERT INTO user (email, password, username, user_creation VALUES (?,?,?,NOW())");
-    $bonour->execute([$Test['email'],$Test['password'],$Test['pseudo']]);
+    $bonjour = $hihi->prepare("INSERT INTO user (email, mdp, username, user_creation VALUES (?,?,?,NOW())");
+    $bonour->execute([$_Test['email'],$_Test['password'],$_Test['pseudo']]);
 }
 ?> 
 

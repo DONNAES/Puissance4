@@ -84,7 +84,7 @@ CREATE TABLE `score` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `user_creation` datetime NOT NULL,
   `last_connection` datetime NOT NULL
