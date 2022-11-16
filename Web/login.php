@@ -23,7 +23,7 @@
         </section>
         <section class="login">
             <?php
-                require ("./assets/includes/user.php");
+                require ("./assets/includes/database.inc.php");
 
             ?>
             <form action="traitement.php" method="post">

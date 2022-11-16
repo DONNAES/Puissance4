@@ -16,7 +16,7 @@
                 <p class="color_orange">Email : <span style="color:rgb(168, 167, 167)"> support@powerofmemory.com</span></p>
                 <p class="color_orange">Location : <span style="color:rgb(168, 167, 167)"> Paris</span></p>
                 <div>
-                    <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-google"></i> <i class="fa-brands fa-pinterest"></i> <i class="fa-brands fa-instagram"></i>
+                    <i class="foo-brands fa-brands fa-facebook-f"></i> <i class="foo-brands fa-brands fa-twitter"></i> <i class="foo-brands fa-brands fa-google"></i> <i class="foo-brands fa-brands fa-pinterest"></i> <i class="foo-brands fa-brands fa-instagram"></i>
                 </div>
                 <p class="color_gray">Copyright © 2022 Tous droits réservés</p>
             </div>

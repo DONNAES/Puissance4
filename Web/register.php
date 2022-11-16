@@ -19,8 +19,16 @@
         </section>
         <div class="register">
             <?php
-                require ("./assets/includes/database.inc.php");
                 session_start();
+                //variable
+                $username = "";
+                $email = "";
+                $errors = array();
+
+                //Database connection
+                require ("./assets/includes/database.inc.php");
+
+                //Register user
                 if(isset ($_POST['reg_user'])){
                     //Receive all input values from the form
                     $username = mysqli_real_escape_string($dbh, $_POST['username']);
@@ -43,7 +51,7 @@
                 }
                 //first check database
                 //if user already exist
-                $user_check_query = "SELECT 'username','email' FROM user WHERE username= '$username' OR email='$email' LIMIT 1";
+                $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
                 $result = mysqli_query($dbh, $user_check_query);
                 $user = mysqli_fetch_assoc($result);
                 if($user){  //if user exists

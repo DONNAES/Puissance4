@@ -153,73 +153,6 @@ html{
     margin-right: 15px;
 }
 
-/*------------------------- FOOTER --------------------------------------*/
-
-.footer {
-    display: flex;
-    background-color: rgb(5, 5, 43);
-    justify-content: space-around;
-    margin-top: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.fa-brands {
-    background-color: orange;
-    background-size: auto;
-    font-size: large;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 75px;
-    border-radius: 3px;
-}
-
-.footerdiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 90px;
-}
-
-ul li {
-    margin-top: 10px;
-    margin-left: -20px;
-}
-
-.move_lines {
-    margin-top: -20px;
-}
-
-.space {
-    margin-top: 100px;
-}
-
-.gotopbtn {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    background-color: orange;
-    bottom: 40px;
-    right: 50px;
-
-    text-decoration: none;
-    text-align: center;
-    line-height: 50px;
-    color: white;
-    font-size: 22px;
-
-    opacity: 50%;
-}
-
-.footlink{
-    text-decoration: none;
-    color: rgb(168, 167, 167)
-}
-
-ul{
-    list-style-type: square;
-}
-
 /*------------------------- COLOR --------------------------------------*/
 
 .color_orange {
@@ -310,4 +243,14 @@ ul{
     flex-flow: row wrap;
     align-items: center;
     margin-left: 15%;
+}
+.fa-brands {
+    background-size: auto;
+    font-size: large;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 75px;
+    border-radius: 3px;
 }
