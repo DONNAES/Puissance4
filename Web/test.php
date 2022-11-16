@@ -3,7 +3,7 @@ require ('./assets/includes/database.inc.php');
 
 if(isset($_POST['pseudo']) || isset($_POST['mail']))
 {
-    $sth = $dbh->prepare("INSERT INTO user (email, 'password', username, user_creation VALUES (?,?,?,NOW())");
+    $sth = $dbh->prepare("INSERT INTO user (email, password, username, user_creation,last_connection) VALUES (?,?,?,NOW(),NOW())");
     $sth->execute([$_POST['mail'],$_POST['password'],$_POST['pseudo']]); 
 }
 
@@ -28,7 +28,7 @@ if(isset($_POST['pseudo']) || isset($_POST['mail']))
         <section class="backgroundImage">
             <h1>INSCRIPTION</h1>
         </section>
-        <div class="register">
+        <div class="register"> 
             <form method='post'>
                 <div>
                     <input type="email" id="email" name="mail" placeholder="Email" required>
