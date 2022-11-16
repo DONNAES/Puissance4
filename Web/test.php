@@ -1,6 +1,12 @@
 <?php
 require ('./assets/includes/database.inc.php');
 
+if(isset($_POST['pseudo']) || isset($_POST['mail']))
+{
+    $sth = $dbh->prepare("INSERT INTO user (email, mdp, username, user_creation VALUES (?,?,?,NOW())");
+    $sth->execute([$_POST['mail'],$_POST['password'],$_POST['pseudo']]); 
+}
+
 ?> 
 
 <!DOCTYPE html>
@@ -25,10 +31,10 @@ require ('./assets/includes/database.inc.php');
         <div class="register">
             <form>
                 <div>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="email" id="email" name="mail" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="text" id="pseudo" name="username" placeholder="Pseudo" required>
+                    <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
                 </div>
                 <div>
                     <input type="password" id="password" name="password" placeholder="Mot de passe" required>
