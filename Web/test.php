@@ -1,11 +1,6 @@
 <?php
-require('assets/includes/database.inc.php')
+require ('assets/includes/database.inc.php')
 
-if(isset($_Test['username'] || isset($_Test['email'])))
-{
-    $bonjour = $hihi->prepare("INSERT INTO user (email, mdp, username, user_creation VALUES (?,?,?,NOW())");
-    $bonour->execute([$_Test['email'],$_Test['password'],$_Test['pseudo']]);
-}
 ?> 
 
 <!DOCTYPE html>
@@ -30,16 +25,16 @@ if(isset($_Test['username'] || isset($_Test['email'])))
         <div class="register">
             <form>
                 <div>
-                    <input type="email" id="Email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="text" id="Pseudo" placeholder="Pseudo" required>
+                    <input type="text" id="pseudo" name="username" placeholder="Pseudo" required>
                 </div>
                 <div>
-                    <input type="password" id="Password" placeholder="Mot de passe" required>
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required>
                 </div>
                 <div>
-                    <input type="password" id="Confirmpassword" placeholder="Confirmer le mot de passe" required>
+                    <input type="password" id="confirmpassword" placeholder="Confirmer le mot de passe" required>
                 </div>
                 <div class="button">
                     <button class="bouton" type="submit">Inscription</button><a href="login.php" class="connexion">Connexion</a>
