@@ -1,3 +1,3 @@
 <?php 
-$dbh = new PDO('mysql:host=localhost;dbname=power_of_memory', $user, $pass); 
+$dbh = new PDO('mysql:host=localhost;dbname=DB_TPOM', $user, $pass); 
 ?>
