@@ -1,11 +1,12 @@
 <?php
-require('assets/includes/database.inc.php')
+require ('./assets/includes/database.inc.php');
 
-if(isset($_Test['username'] || isset($_Test['email'])))
+if(isset($_POST['pseudo']) || isset($_POST['mail']))
 {
-    $bonjour = $hihi->prepare("INSERT INTO user (email, mdp, username, user_creation VALUES (?,?,?,NOW())");
-    $bonour->execute([$_Test['email'],$_Test['password'],$_Test['pseudo']]);
+    $sth = $dbh->prepare("INSERT INTO user (email, 'password', username, user_creation VALUES (?,?,?,NOW())");
+    $sth->execute([$_POST['mail'],$_POST['password'],$_POST['pseudo']]); 
 }
+
 ?> 
 
 <!DOCTYPE html>
@@ -30,16 +31,16 @@ if(isset($_Test['username'] || isset($_Test['email'])))
         <div class="register">
             <form>
                 <div>
-                    <input type="email" id="Email" placeholder="Email" required>
+                    <input type="email" id="email" name="mail" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="text" id="Pseudo" placeholder="Pseudo" required>
+                    <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required>
                 </div>
                 <div>
-                    <input type="password" id="Password" placeholder="Mot de passe" required>
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required>
                 </div>
                 <div>
-                    <input type="password" id="Confirmpassword" placeholder="Confirmer le mot de passe" required>
+                    <input type="password" id="confirmpassword" placeholder="Confirmer le mot de passe" required>
                 </div>
                 <div class="button">
                     <button class="bouton" type="submit">Inscription</button><a href="login.php" class="connexion">Connexion</a>

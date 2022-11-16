@@ -24,80 +24,80 @@
                     <table class="tableau-style">
                         <thead>
                             <tr>
-                                <th>The Power Of Memory</th>
+                                <th>Nom du Jeu</th>
+                                <th>Joueur</th>
+                                <th>Difficulté</th>
                                 <th>Score</th>
-                                <th>Date</th>
-                                <th>Heure</th>
-                                <th>Thème</th>
+                                <th>Date et Heure</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 1</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                            <td>Contenu</td>
                                 <td>Pseudo 2</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 3</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 4</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 5</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>    
                                 <td>Pseudo 6</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>   
                                 <td>Pseudo 7</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 8</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 9</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
-                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
+                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
@@ -111,80 +111,80 @@
                     <table class="tableau-style">
                         <thead>
                             <tr>
-                                <th>The Power Of Memory</th>
+                                <th>Nom du Jeu</th>
+                                <th>Joueur</th>
+                                <th>Difficulté</th>
                                 <th>Score</th>
-                                <th>Date</th>
-                                <th>Heure</th>
-                                <th>Thème</th>
+                                <th>Date et Heure</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 1</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                            <td>Contenu</td>
                                 <td>Pseudo 2</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 3</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 4</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 5</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>    
                                 <td>Pseudo 6</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>   
                                 <td>Pseudo 7</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 8</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 9</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
-                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
+                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
@@ -198,80 +198,80 @@
                     <table class="tableau-style">
                         <thead>
                             <tr>
-                                <th>The Power Of Memory</th>
+                                <th>Nom du Jeu</th>
+                                <th>Joueur</th>
+                                <th>Difficulté</th>
                                 <th>Score</th>
-                                <th>Date</th>
-                                <th>Heure</th>
-                                <th>Thème</th>
+                                <th>Date et Heure</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 1</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                            <td>Contenu</td>
                                 <td>Pseudo 2</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 3</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 4</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 5</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>    
                                 <td>Pseudo 6</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>   
                                 <td>Pseudo 7</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 8</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 9</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
-                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
+                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
@@ -285,80 +285,80 @@
                     <table class="tableau-style">
                         <thead>
                             <tr>
-                                <th>The Power Of Memory</th>
+                                <th>Nom du Jeu</th>
+                                <th>Joueur</th>
+                                <th>Difficulté</th>
                                 <th>Score</th>
-                                <th>Date</th>
-                                <th>Heure</th>
-                                <th>Thème</th>
+                                <th>Date et Heure</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 1</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                            <td>Contenu</td>
                                 <td>Pseudo 2</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 3</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 4</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 5</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>    
                                 <td>Pseudo 6</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>   
                                 <td>Pseudo 7</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 8</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
+                                <td>Contenu</td>
                                 <td>Pseudo 9</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
-                                <td>Contenu</td>
                             </tr>
                             <tr>
-                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
+                                <td>Pseudo 10</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>
                                 <td>Contenu</td>

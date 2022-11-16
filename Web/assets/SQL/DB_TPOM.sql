@@ -28,9 +28,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `jeu`
 --
 
+DROP TABLE IF EXISTS `jeu`;
 CREATE TABLE `jeu` (
   `id` int(11) NOT NULL,
-  `nom du jeu` text NOT NULL
+  `nom_du_jeu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -39,6 +40,7 @@ CREATE TABLE `jeu` (
 -- Table structure for table `liaisons`
 --
 
+DROP TABLE IF EXISTS `liaisons`;
 CREATE TABLE `liaisons` (
   `id_jeu` int(11) NOT NULL,
   `id_message` int(11) NOT NULL,
@@ -52,12 +54,13 @@ CREATE TABLE `liaisons` (
 -- Table structure for table `messages`
 --
 
+DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
-  `identifiant du jeu` int(11) NOT NULL,
-  `identifiant de l'expediteur` int(11) NOT NULL,
+  `identifiant_du_jeu` int(11) NOT NULL,
+  `identifiant_de_l'expediteur` int(11) NOT NULL,
   `message` text NOT NULL,
-  `date et heure du message` datetime NOT NULL
+  `date_et_heure_du_message` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -66,13 +69,14 @@ CREATE TABLE `messages` (
 -- Table structure for table `score`
 --
 
+DROP TABLE IF EXISTS `score`;
 CREATE TABLE `score` (
   `id` int(11) NOT NULL,
-  `identifiant du joueur` int(11) NOT NULL,
-  `identifiant du jeu` int(11) NOT NULL,
-  `difficulté de la partie` int(11) NOT NULL,
-  `score de la partie` float NOT NULL,
-  `date et heure de la partie` datetime NOT NULL
+  `identifiant_du_joueur` int(11) NOT NULL,
+  `identifiant_du_jeu` int(11) NOT NULL,
+  `difficulte_de_la_partie` int(11) NOT NULL,
+  `score_de_la_partie` float NOT NULL,
+  `date_et_heure_de_la_partie` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -81,10 +85,11 @@ CREATE TABLE `score` (
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `user_creation` datetime NOT NULL,
   `last_connection` datetime NOT NULL
