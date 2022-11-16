@@ -1,3 +1,13 @@
+<?php
+require('./assets/includes/database.inc.php')
+
+if(isset($Test['username'] || isset($Test['email'])))
+{
+    $bonjour = $hihi->prepare("INSERT INTO user (email, password, username, user_creation VALUES (?,?,?,NOW())");
+    $bonour->execute([$Test['email'],$Test['password'],$Test['pseudo']]);
+}
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,13 +20,13 @@
         <div class="register">
             <form>
                 <div>
-                    <input type="email" id="Email" placeholder="Email" required>
+                    <input type="email" id="email" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="text" id="Pseudo" placeholder="Pseudo" required>
+                    <input type="text" id="pseudo" placeholder="Pseudo" required>
                 </div>
                 <div>
-                    <input type="password" id="Password" placeholder="Mot de passe" required>
+                    <input type="password" id="password" placeholder="Mot de passe" required>
                 </div>
                 <div>
                     <input type="password" id="Confirmpassword" placeholder="Confirmer le mot de passe" required>
@@ -28,30 +38,3 @@
         </div>
     </body>
 </html>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "DB_TPOM";
-
-// Créer une conexion
-$conn = new mysqli($servername, $username, $password, $dbname);
-// verifier la connexion
-if ($conn->connect_error) {
-  die("La connexion a échouée: " . $conn->connect_error);
-}
-
-$sql = "INSERT INTO `visiteurs` ( `nom`, `prenom`, `age`, `paye`, `sexe`, `dateInscrit`)
-VALUES( 'Griffin', 'Peter', 35, 'France', 'Homme', '2003-01-12'),
-( 'Glenn', 'Roberta', 19, 'Brésil', 'femme', '2003-02-12')
-";
-
-if ($conn->query($sql) === TRUE) {
-  echo "les nouveaux enregistrements ajoutés avec succés";
-} else {
-  echo "Erreur: " . $sql . "
-" . $conn->error;
-}
-
-$conn->close();
-?> 
