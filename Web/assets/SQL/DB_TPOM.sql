@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 16, 2022 at 07:52 AM
+-- Generation Time: Nov 16, 2022 at 08:28 AM
 -- Server version: 5.7.34
 -- PHP Version: 8.0.8
 
@@ -58,7 +58,9 @@ CREATE TABLE `Score` (
   `Identifiant du jeu` int(11) NOT NULL,
   `Difficulté de la partie` int(11) NOT NULL,
   `Score de la partie` float NOT NULL,
-  `Date et heure de la partie` datetime NOT NULL
+  `Date et heure de la partie` datetime NOT NULL,
+  `Date de la partie` date NOT NULL,
+  `Heure de la partie` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -71,7 +73,7 @@ CREATE TABLE `User` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `nickname` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `user_creation` datetime NOT NULL,
   `last_connection` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
