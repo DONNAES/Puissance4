@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `jeu` (
-  `ID` int(11) NOT NULL,
-  `Nom du jeu` text NOT NULL
+  `id` int(11) NOT NULL,
+  `nom du jeu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -40,10 +40,10 @@ CREATE TABLE `jeu` (
 --
 
 CREATE TABLE `liaisons` (
-  `ID_Jeu` int(11) NOT NULL,
-  `ID_Message` int(11) NOT NULL,
-  `ID_Score` int(11) NOT NULL,
-  `ID_User` int(11) NOT NULL
+  `id_jeu` int(11) NOT NULL,
+  `id_message` int(11) NOT NULL,
+  `id_score` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -53,10 +53,10 @@ CREATE TABLE `liaisons` (
 --
 
 CREATE TABLE `messages` (
-  `ID` int(11) NOT NULL,
-  `Identifiant du jeu` int(11) NOT NULL,
-  `Identifiant de l'expediteur` int(11) NOT NULL,
-  `Message` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `identifiant du jeu` int(11) NOT NULL,
+  `identifiant de l'expediteur` int(11) NOT NULL,
+  `message` text NOT NULL,
   `date et heure du message` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -67,12 +67,12 @@ CREATE TABLE `messages` (
 --
 
 CREATE TABLE `score` (
-  `ID` int(11) NOT NULL,
-  `Identifiant du joueur` int(11) NOT NULL,
-  `Identifiant du jeu` int(11) NOT NULL,
-  `Difficulté de la partie` int(11) NOT NULL,
-  `Score de la partie` float NOT NULL,
-  `Date et heure de la partie` datetime NOT NULL
+  `id` int(11) NOT NULL,
+  `identifiant du joueur` int(11) NOT NULL,
+  `identifiant du jeu` int(11) NOT NULL,
+  `difficulté de la partie` int(11) NOT NULL,
+  `score de la partie` float NOT NULL,
+  `date et heure de la partie` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -98,19 +98,19 @@ CREATE TABLE `user` (
 -- Indexes for table `jeu`
 --
 ALTER TABLE `jeu`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `messages`
 --
 ALTER TABLE `messages`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `score`
 --
 ALTER TABLE `score`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
@@ -126,19 +126,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `jeu`
 --
 ALTER TABLE `jeu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `score`
 --
 ALTER TABLE `score`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
