@@ -1,5 +1,5 @@
 <?php
-require ('assets/includes/database.inc.php')
+require ('./assets/includes/database.inc.php');
 
 ?> 
 
