@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Nov 16, 2022 at 08:28 AM
--- Server version: 5.7.34
--- PHP Version: 8.0.8
+-- Host: localhost:3306
+-- Generation Time: Nov 16, 2022 at 08:41 AM
+-- Server version: 5.7.24
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,16 +19,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `DB_TPOM`
+-- Database: `puissance4`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Jeu`
+-- Table structure for table `jeu`
 --
 
-CREATE TABLE `Jeu` (
+CREATE TABLE `jeu` (
   `ID` int(11) NOT NULL,
   `Nom du jeu` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -35,10 +36,23 @@ CREATE TABLE `Jeu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Messages`
+-- Table structure for table `liaisons`
 --
 
-CREATE TABLE `Messages` (
+CREATE TABLE `liaisons` (
+  `ID_Jeu` int(11) NOT NULL,
+  `ID_Message` int(11) NOT NULL,
+  `ID_Score` int(11) NOT NULL,
+  `ID_User` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
   `ID` int(11) NOT NULL,
   `Identifiant du jeu` int(11) NOT NULL,
   `Identifiant de l'expediteur` int(11) NOT NULL,
@@ -49,27 +63,25 @@ CREATE TABLE `Messages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Score`
+-- Table structure for table `score`
 --
 
-CREATE TABLE `Score` (
+CREATE TABLE `score` (
   `ID` int(11) NOT NULL,
   `Identifiant du joueur` int(11) NOT NULL,
   `Identifiant du jeu` int(11) NOT NULL,
   `Difficulté de la partie` int(11) NOT NULL,
   `Score de la partie` float NOT NULL,
-  `Date et heure de la partie` datetime NOT NULL,
-  `Date de la partie` date NOT NULL,
-  `Heure de la partie` time NOT NULL
+  `Date et heure de la partie` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `User`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -83,27 +95,27 @@ CREATE TABLE `User` (
 --
 
 --
--- Indexes for table `Jeu`
+-- Indexes for table `jeu`
 --
-ALTER TABLE `Jeu`
+ALTER TABLE `jeu`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `Messages`
+-- Indexes for table `messages`
 --
-ALTER TABLE `Messages`
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `Score`
+-- Indexes for table `score`
 --
-ALTER TABLE `Score`
+ALTER TABLE `score`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `User`
+-- Indexes for table `user`
 --
-ALTER TABLE `User`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -111,27 +123,27 @@ ALTER TABLE `User`
 --
 
 --
--- AUTO_INCREMENT for table `Jeu`
+-- AUTO_INCREMENT for table `jeu`
 --
-ALTER TABLE `Jeu`
+ALTER TABLE `jeu`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Messages`
+-- AUTO_INCREMENT for table `messages`
 --
-ALTER TABLE `Messages`
+ALTER TABLE `messages`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Score`
+-- AUTO_INCREMENT for table `score`
 --
-ALTER TABLE `Score`
+ALTER TABLE `score`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `User`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `User`
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
