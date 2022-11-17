@@ -15,7 +15,7 @@
     <body class="body">
         <header>
             <?php
-            include 'assets/view/header.inc.php'
+                include 'assets/view/header.inc.php'
             ?>
         </header>
         <section class="divhead">
@@ -41,41 +41,22 @@
                 <form name="post_contact" method="POST">
                   <div class="demarcation">
                     <div>
-                        <input type="text" name="username" placeholder="Nom" autocomplete="off" required>
+                        <input class="text" type="text" name="username" placeholder="Nom" autocomplete="off" required>
                     </div>
                     <div class="email_ecart">
-                        <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+                        <input class="text" type="email" name="email" placeholder="Email" autocomplete="off" required>
                     </div>
                     </div>
                     <div>
-                        <input type="text" name="sujet" placeholder="Sujet" required>
+                        <input class="text" type="text" name="sujet" placeholder="Sujet" required>
                     </div>
                     <div>
                         <textarea rows="2" name="message" placeholder="Message" required></textarea>
                     </div>
                     <div>
-                        <button type="submit" name="valider">Envoyer</button>
-                        <?php if(!empty($message)) { echo $message; } ?>
+                        <input class="test" type="submit" name="valider" placeholder="Envoyer">
                     </div>
                 </form>
-                <?php
-                    if(!empty($_POST["valider"])) {
-                        $username = $_POST["username"];
-                        $email = $_POST["email"];
-                        $sujet = $_POST["sujet"];
-                        $message = $_POST["message"];
-                        $toEmail = "support@powerofmemory.com";
-
-                        $mailHeaders = "Demande de contact bien reçu !" . 
-                        "\r\n Vous : " . $email . 
-                        "\r\n Sujet : " . $sujet . 
-                        "\r\n Message : " . $message . "\r\n";
-
-                        if(mail($toEmail, $username, $mailHeaders)) {
-                            $message = "Votre formulaire a bien été envoillez";
-                        }
-                    }
-                ?>
             </div>
         </section>
 
@@ -83,7 +64,7 @@
 
         <footer>
             <?php
-            include 'assets/view/footer.inc.php'
+                include 'assets/view/footer.inc.php'
             ?>
         </footer>
     </body>
