@@ -38,41 +38,44 @@
 
         <section class="section_2">
             <div class="contact">
-                <form method="POST">
+                <form name="post_contact" method="POST">
                   <div class="demarcation">
-                        <div>
-                            <input type="text" id="Nom" placeholder="Nom" name="username" required>
-                        </div>
-                        <div class="email_ecart">
-                            <input type="email" id="Email" placeholder="Email" name="email" required>
-                        </div>
+                    <div>
+                        <input type="text" name="username" placeholder="Nom" autocomplete="off" required>
+                    </div>
+                    <div class="email_ecart">
+                        <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+                    </div>
                     </div>
                     <div>
-                        <input type="text" id="Sujet" placeholder="Sujet" name="sujet" required>
+                        <input type="text" name="sujet" placeholder="Sujet" required>
                     </div>
                     <div>
-                        <textarea type="" id="Message" placeholder="Message" name="message" required></textarea>
+                        <textarea rows="2" name="message" placeholder="Message" required></textarea>
                     </div>
                     <div>
                         <button type="submit" name="valider">Envoyer</button>
+                        <?php if(!empty($message)) { echo $message; } ?>
                     </div>
-
-                    <?php
-                        if (isset($_POST['valider'])) {
-                          if (isset($_POST['username']) AND isset($_POST['email']) AND isset($_POST['sujet']) AND isset($_POST['message'])) {
-                            if (!empty($_POST['username']) AND !empty($_POST['email']) AND !empty($_POST['sujet']) AND !empty($_POST['message'])) {
-                                $name=htmlspecialchars($_POST['username']);
-                                $adress_mail=htmlspecialchars($_POST['email']);
-                                $msg=htmlspecialchars($_POST['message']);
-                                
-                                echo "Votre formulaire a bien été envoyé";
-                            }
-                          } else {
-                            echo "Veuillez vérifier le formulaire";
-                          }
-                        }
-                    ?>
                 </form>
+                <?php
+                    if(!empty($_POST["valider"])) {
+                        $username = $_POST["username"];
+                        $email = $_POST["email"];
+                        $sujet = $_POST["sujet"];
+                        $message = $_POST["message"];
+                        $toEmail = "support@powerofmemory.com";
+
+                        $mailHeaders = "Demande de contact bien reçu !" . 
+                        "\r\n Vous : " . $email . 
+                        "\r\n Sujet : " . $sujet . 
+                        "\r\n Message : " . $message . "\r\n";
+
+                        if(mail($toEmail, $username, $mailHeaders)) {
+                            $message = "Votre formulaire a bien été envoillez";
+                        }
+                    }
+                ?>
             </div>
         </section>
 
@@ -84,4 +87,4 @@
             ?>
         </footer>
     </body>
-</php>
+</html>
