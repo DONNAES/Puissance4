@@ -23,7 +23,7 @@
                     <input type="email" name="username" id="email" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="text" name="username" id="username" placeholder="Pseudo" required>
+                    <input type="text" name="username" id="username" placeholder="proute" required>
                 </div>
                 <div>
                     <input type="password" name="password" id="password" placeholder="Mot de passe" required>

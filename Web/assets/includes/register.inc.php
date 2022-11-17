@@ -14,6 +14,7 @@
                 $connect->exec($sql);
 
 
+                // 
                 if($username != null){
                     $check_username = strlen($username);
                     if($check_username < 4) {
