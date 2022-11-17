@@ -8,7 +8,7 @@ if(ISSET($_POST['register'])){
             $email = $_POST['email'];
             // md5 encrypted
             // $password = md5($_POST['password']);
-            $password = md5($_POST['password']);
+            $password = $_POST['password'];
             $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO `user` VALUES ('$username', '$email', '$password')";
             $connect->exec($sql);
