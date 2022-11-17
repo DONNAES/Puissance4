@@ -107,5 +107,14 @@ input{
 
 .color_gray {
     color: rgb(168, 167, 167);
+}
 
+.button_dl {
+    background-color: orange;
+    width: 40%;
+}
+
+.align {
+    display: flex;
+    align-items: center;
 }
