@@ -40,7 +40,7 @@
                         required>
                 </div>
                 <div class="button">
-                    <button type="button">connexion</button> <a href="register.php" class="reglink">Inscription</a>
+                    <input type="submit" name="connection" value="connexion" class="inpbutton"> <a href="register.php" class="reglink">Inscription</a>
                 </div>
             </form>
         </section>

@@ -68,7 +68,7 @@ input{
 .button{
     padding-right: 200px;
 }
-button{
+.impbutton{
     border: none;
     background-color: orange;
     color: white;
