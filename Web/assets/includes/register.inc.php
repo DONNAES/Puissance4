@@ -1,8 +1,8 @@
 <?php
     session_start();
     require_once 'database.inc.php';
-    if(ISSET($_POST['register'])){
-        if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != ""){
+    if(ISSET($_POST['reg_user'])){
+        if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != "" || $_POST['confirm_password'] != ""){
             try{
                 $username = $_POST['username'];
                 $email = $_POST['email'];

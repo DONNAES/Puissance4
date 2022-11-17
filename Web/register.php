@@ -18,7 +18,7 @@
             <h1>INSCRIPTION</h1>
         </section>
         <div class="register">
-            <form action="register.inc.php" method="post">
+            <form action="assets/includes/register.inc.php" method="post">
                 <div>
                     <input type="email" name="username" id="email" placeholder="Email" required>
                 </div>
