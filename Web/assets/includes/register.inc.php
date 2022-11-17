@@ -19,7 +19,8 @@
                     echo "Les mots de passe doivent être identiques";
                         return false;
                     } else {
-                      $longueur = strlen($password);				
+                      $longueur = strlen($password);	
+                    }			
                     if ($longueur < 8) {
                         echo "Votre mot de passe doit contenir au moins 8 caractère";
                         return false;
@@ -37,8 +38,8 @@
                             return true;
                         }
                     }
-                }
-            }
+                
+			    }
             catch(PDOException $e){
                 echo $e->getMessage();
             }
