@@ -112,6 +112,7 @@ input{
 .button_dl {
     background-color: orange;
     width: 40%;
+    margin-bottom: -1%;
 }
 
 .align {
