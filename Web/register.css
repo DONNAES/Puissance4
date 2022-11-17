@@ -66,7 +66,7 @@ form div {
     color: rgba(181, 174, 174, 0.901);
 }
 
-form div > input {
+.integrate_text {
     background: #292f3fc7;
     color: white;
     border: none;
@@ -85,12 +85,9 @@ form {
     margin-top: 85px;
 }
 
-.button{
-    display: flex;
-    flex-direction: row;
-}
 
-button{
+
+.button{
     width: 100px;
     height: 50px;
     background: orange;

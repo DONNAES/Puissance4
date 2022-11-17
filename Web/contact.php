@@ -41,20 +41,20 @@
                 <form name="post_contact" method="POST">
                   <div class="demarcation">
                     <div>
-                        <input class="text" type="text" name="username" placeholder="Nom" autocomplete="off" required>
+                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" required>
                     </div>
                     <div class="email_ecart">
-                        <input class="text" type="email" name="email" placeholder="Email" autocomplete="off" required>
+                        <input class="integrate_text" type="email" name="email" placeholder="Email" autocomplete="off" required>
                     </div>
                     </div>
                     <div>
-                        <input class="text" type="text" name="sujet" placeholder="Sujet" required>
+                        <input class="integrate_text" type="text" name="sujet" placeholder="Sujet" required>
                     </div>
                     <div>
                         <textarea rows="2" name="message" placeholder="Message" required></textarea>
                     </div>
                     <div>
-                        <input class="test" type="submit" name="valider" placeholder="Envoyer">
+                        <input class="button" type="submit" name="valider" placeholder="Envoyer">
                     </div>
                 </form>
             </div>

@@ -20,19 +20,19 @@
         <div class="register">
             <form action="assets/includes/register.inc.php" method="post">
                 <div>
-                    <input type="email" name="username" id="email" placeholder="Email" required>
+                    <input class="integrate_text" type="email" name="username" id="email" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="text" name="username" id="username" placeholder="Pseudo" required>
+                    <input class="integrate_text" type="text" name="username" id="username" placeholder="Pseudo" required>
                 </div>
                 <div>
-                    <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+                    <input class="integrate_text" type="password" name="password" id="password" placeholder="Mot de passe" required>
                 </div>
                 <div>
-                    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le mot de passe" required>
+                    <input class="integrate_text" type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le mot de passe" required>
                 </div>
-                <div class="button">
-                    <button class="bouton" type="submit" name="reg_user">Inscription</button><a href="login.php" class="connexion">Connexion</a>
+                <div">
+                    <input class="button" type="submit" name="reg_user" placeholder="Inscription"><a href="login.php" class="connexion">Connexion</a>
                 </div>
             </form>
         </div>
