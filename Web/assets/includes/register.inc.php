@@ -14,6 +14,16 @@
                 $connect->exec($sql);
 
 
+                if($username != null){
+                    $check_username = strlen($username);
+                    if($check_username < 4) {
+                        echo "Votre pseudo doit contenir au moins 4 caractères";
+                        return false;
+                    } else {
+                        
+                    }
+                }
+
                 // Vérifier si le mdp et la confirmation mdp sont identiques
                 if($password != $confirm_password){
                     echo "Les mots de passe doivent être identiques";
@@ -22,7 +32,7 @@
                       $longueur = strlen($password);	
                     }			
                     if ($longueur < 8) {
-                        echo "Votre mot de passe doit contenir au moins 8 caractère";
+                        echo "Votre mot de passe doit contenir au moins 8 caractères";
                         return false;
                     } else {
                         $password = sha1($password);
