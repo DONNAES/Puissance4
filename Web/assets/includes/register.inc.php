@@ -1,19 +1,4 @@
 <?php
-<<<<<<< HEAD
-session_start();
-require_once 'database.inc.php';
-if(ISSET($_POST['register'])){
-    if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != ""){
-        try{
-            $username = $_POST['username'];
-            $email = $_POST['email'];
-            // md5 encrypted
-            // $password = md5($_POST['password']);
-            $password = $_POST['password'];
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO `user` VALUES ('$username', '$email', '$password')";
-            $connect->exec($sql);
-=======
     session_start();
     require_once 'database.inc.php';
     if(ISSET($_POST['reg_user'])){
@@ -81,7 +66,6 @@ if(ISSET($_POST['register'])){
             }else{
                 echo "L'adresse e-mail n'est pas valide";
             }
->>>>>>> 1494e2ae5c45c0fb527085f091efde7188557457
         }
         else{
             echo "
