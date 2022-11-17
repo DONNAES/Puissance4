@@ -20,24 +20,24 @@
                         return false;
                     } else {
                       $longueur = strlen($password);				
-                      if ($longueur < 8) {
-                          echo "Votre mot de passe doit contenir au moins 8 caractère";
-                          return false;
-                      } else {
+                    if ($longueur < 8) {
+                        echo "Votre mot de passe doit contenir au moins 8 caractère";
+                        return false;
+                    } else {
+                        $password = sha1($password);
+                        $req=$this->db->prepare("select * from site where username=?");
+                        $req->execute(array($username));
+                        if($req->rowCount() !=0){
+                            echo "Le pseudo est déjà pris ! ";
+                            return false;
+                        } else {
                             $password = sha1($password);
-                            $req=$this->db->prepare("select * from site where username=?");
-                            $req->execute(array($username));
-                            if($req->rowCount() !=0){
-                                echo "Le pseudo est déjà pris ! ";
-                                return false;
-                            } else {
-                                $password = sha1($password);
-                                $reponse = $this->db->prepare("INSERT INTO site VALUES(Default,?,?,?,?,?)");
-                                $reponse->execute(array($nom,$prenom,$email,$pseudo,$password));
-                                return true;
-                            }
+                            $reponse = $this->db->prepare("INSERT INTO site VALUES(Default,?,?,?,?,?)");
+                            $reponse->execute(array($nom,$prenom,$email,$pseudo,$password));
+                            return true;
                         }
-                  }
+                    }
+                }
             }
             catch(PDOException $e){
                 echo $e->getMessage();
