@@ -52,12 +52,10 @@ body{
     padding-bottom: 5%;
 }
 input{
-    width: 100%;
     margin-bottom: 15px;
     border-radius: 5px;
     padding-left: 20px;
     width: 350px;
-    height: 35px;
     border: none;
     background-color: #292f3fc7;
     height: 50px;
