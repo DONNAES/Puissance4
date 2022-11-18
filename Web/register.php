@@ -31,7 +31,7 @@
                 <div>
                     <input class="integrate_text" type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le mot de passe" required>
                 </div>
-                <div">
+                <div>
                     <input class="button" type="submit" name="reg_user" placeholder="Inscription"><a href="login.php" class="connexion">Connexion</a>
                 </div>
             </form>

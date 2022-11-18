@@ -98,6 +98,8 @@ form {
 }
 
 .connexion{
+    display: flex;
+    flex-direction: row;
     text-decoration: none;
     color: orange;
     margin-left: 10px;

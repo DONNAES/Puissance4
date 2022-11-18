@@ -39,14 +39,12 @@ html {
     background-color: orange;
     bottom: 40px;
     right: 50px;
-
+    opacity: 50%;
     text-decoration: none;
     text-align: center;
     line-height: 50px;
     color: white;
     font-size: 22px;
-
-    opacity: 50%;
 }
 
 

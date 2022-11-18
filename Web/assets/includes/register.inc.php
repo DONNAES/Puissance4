@@ -1,19 +1,16 @@
 <?php
     session_start();
-    require_once 'database.inc.php';
+    require 'database.inc.php';
     if(ISSET($_POST['reg_user'])){
         if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != "" || $_POST['confirm_password'] != ""){
             try{
                 $username = $_POST['username'];
                 $email = $_POST['email'];
-                // md5 encrypted
-                // $password = md5($_POST['password']);
                 $password = $_POST['password'];
-                $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $confirm_password = $_POST['confirm_password'];
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "INSERT INTO `user` VALUES ('$username', '$email', '$password')";
-                $connect->exec($sql);
-
-
+                $dbh->exec($sql);
                 // 
                 if($username != null){
                     $check_username = strlen($username);
@@ -24,7 +21,6 @@
                         
                     }
                 }
-
                 // Vérifier si le mdp et la confirmation mdp sont identiques
                 if($password != $confirm_password){
                     echo "Les mots de passe doivent être identiques";
@@ -55,8 +51,7 @@
                 echo $e->getMessage();
             }
             $_SESSION['message']=array("text"=>"User successfully created.","alert"=>"info");
-            $connect = null;
-            header('location:index.php');
+            $dbh = null;
 
 
 
