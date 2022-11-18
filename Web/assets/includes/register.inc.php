@@ -21,7 +21,9 @@
                         echo "Votre pseudo doit contenir au moins 4 caractères";
                         return false;
                     } else {
-                        
+                        $username = sha1($username);
+                        $reponse = $this->db->prepare("INSERT INTO site VALUES(Default,?,?,?,?,?)");
+                        $reponse->execute(array($nom,$prenom,$email,$pseudo,$password));
                     }
                 }
 
@@ -37,17 +39,18 @@
                         return false;
                     } else {
                         $password = sha1($password);
-                        $req=$this->db->prepare("select * from site where username=?");
+                        $req=$this->db->prepare("select * from user where username=?");
                         $req->execute(array($username));
-                        if($req->rowCount() !=0){
-                            echo "Le pseudo est déjà pris ! ";
-                            return false;
-                        } else {
-                            $password = sha1($password);
-                            $reponse = $this->db->prepare("INSERT INTO site VALUES(Default,?,?,?,?,?)");
-                            $reponse->execute(array($nom,$prenom,$email,$pseudo,$password));
-                            return true;
-                        }
+                    }
+
+                    if($req->rowCount() !=0){
+                        echo "Le pseudo est déjà pris ! ";
+                        return false;
+                    } else {
+                        $password = sha1($password);
+                        $reponse = $this->db->prepare("INSERT INTO site VALUES(Default,?,?,?,?,?)");
+                        $reponse->execute(array($nom,$prenom,$email,$pseudo,$password));
+                        return true;
                     }
                 
 			    }

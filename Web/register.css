@@ -61,7 +61,6 @@ h1{
 form div {
     width: 100%;
     display: flex;
-    flex-direction: column;
     min-height: 20px;
     margin-top: 15px;
     appearance: none;
@@ -84,7 +83,13 @@ form {
     width: 450px;
     max-width: 500px;
     margin-bottom: 35px;
+    flex-direction: column;
     margin-top: 85px;
+}
+
+.zone {
+    display: flex;
+    flex-direction: column;
 }
 
 .button{
@@ -95,55 +100,15 @@ form {
     border-radius: 5px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     color: white;
+    margin-top: -19%;
 }
 
 .connexion{
     text-decoration: none;
     color: orange;
     margin-left: 10px;
-    margin-top: 15px;
+    margin-top: -16%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-/*------------------------- FOOTER --------------------------------------*/
-
-.footer {
-    display: flex;
-    background-color: rgb(5, 5, 43);
-    justify-content: space-around;
-    margin-top: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.fa-brands {
-    background-color: orange;
-    background-size: auto;
-    font-size: large;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 75px;
-    border-radius: 3px;
-}
-
-.footerdiv {
-    display: flex;
-    flex-direction: column;
-    margin-top: 90px;
-}
-
-ul li {
-    margin-top: 10px;
-    margin-left: -20px;
-}
-
-.move_lines {
-    margin-top: -20px;
-}
-
-.space {
-    margin-top: 100px;
 }
 
 .gotopbtn {
@@ -161,15 +126,6 @@ ul li {
     font-size: 22px;
 
     opacity: 50%;
-}
-
-.footlink{
-    text-decoration: none;
-    color: rgb(168, 167, 167)
-}
-
-ul{
-    list-style-type: square;
 }
 
 /*------------------------- COLOR --------------------------------------*/
