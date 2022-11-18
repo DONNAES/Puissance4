@@ -23,10 +23,10 @@
                     <input class="integrate_text" type="email" name="username" id="email" placeholder="Email" required>
                 </div>
                 <div class="zone">
-                    <input class="integrate_text" type="text" name="username" id="username" placeholder="Pseudo" required>
+                    <input class="integrate_text" type="text" name="username" id="username" placeholder="Pseudo" minlength="4" required>
                 </div>
                 <div class="zone">
-                    <input class="integrate_text" type="password" name="password" id="password" placeholder="Mot de passe" required>
+                    <input class="integrate_text" type="password" name="password" id="password" placeholder="Mot de passe" minlength="8" required>
                 </div>
                 <div class="zone">
                     <input class="integrate_text" type="password" name="confirm_password" id="confirm_password" placeholder="Confirmer le mot de passe" required>

@@ -1,5 +1,6 @@
 <?php
     require ('./assets/includes/database.inc.php');
+    include 'assets/includes/contact.inc.php'
 ?>
 
 <!DOCTYPE html>
@@ -38,10 +39,10 @@
 
         <section class="section_2">
             <div class="contact">
-                <form name="post_contact" method="POST">
+                <form  name="post_contact" method="POST">
                   <div class="demarcation">
                     <div>
-                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" required>
+                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" minlength="4" required>
                     </div>
                     <div class="email_ecart">
                         <input class="integrate_text" type="email" name="email" placeholder="Email" autocomplete="off" required>
@@ -51,10 +52,10 @@
                         <input class="integrate_text" type="text" name="sujet" placeholder="Sujet" required>
                     </div>
                     <div>
-                        <textarea rows="2" name="message" placeholder="Message" required></textarea>
+                        <textarea rows="2" name="message" placeholder="Message" minlength="15" required></textarea>
                     </div>
                     <div>
-                        <input class="button" type="submit" name="valider" placeholder="Envoyer">
+                        <input class="button" type="submit" onclick="valider();" placeholder="Envoyer">
                     </div>
                 </form>
             </div>
