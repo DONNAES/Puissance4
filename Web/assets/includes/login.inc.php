@@ -21,9 +21,9 @@
         }
         else
     {
-        $user_id = ('SELECT id FROM user WHERE email= $mail');
+        $user_id = ('SELECT id FROM user WHERE email= '$mail'');
         header('Location: index.php');
-        echo 'Vous êtes connécté';
+        echo 'Vous êtes connecté';
     }
     }
     
