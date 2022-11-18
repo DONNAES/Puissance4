@@ -1,10 +1,37 @@
 <?php
 require ('./assets/includes/database.inc.php');
 
-if(isset($_POST['pseudo']) || isset($_POST['mail']))
-{
-    $sth = $dbh->prepare("INSERT INTO user (email, password, username, user_creation,last_connection) VALUES (?,?,?,NOW(),NOW())");
-    $sth->execute([$_POST['mail'],hash('sha256', $_POST['password']),$_POST['pseudo']]); 
+if(isset($_POST['pseudo']) || isset($_POST['mail'])){
+    $password = $_POST['password'];
+    $errors = array();
+    if (strlen($password) < 8 || strlen($password) > 16) {
+        $errors[] = "Password should be min 8 characters and max 16 characters";
+    }
+    if (!preg_match("/\d/", $password)) {
+        $errors[] = "Password should contain at least one digit";
+    }
+    if (!preg_match("/[A-Z]/", $password)) {
+        $errors[] = "Password should contain at least one Capital Letter";
+    }
+    if (!preg_match("/[a-z]/", $password)) {
+        $errors[] = "Password should contain at least one small Letter";
+    }
+    if (!preg_match("/\W/", $password)) {
+        $errors[] = "Password should contain at least one special character";
+    }
+    if (preg_match("/\s/", $password)) {
+        $errors[] = "Password should not contain any white space";
+    }
+    if ($errors) {
+        foreach ($errors as $error) {
+            echo $error . "\n";
+        }
+        die();
+    } else {
+        echo "$password => MATCH\n";
+        $sth = $dbh->prepare("INSERT INTO user (email, password, username, user_creation,last_connection) VALUES (?,?,?,NOW(),NOW())");
+        $sth->execute([$_POST['mail'],hash('sha256', $_POST['password']),$_POST['pseudo']]);
+    } 
 }
 
 ?> 
