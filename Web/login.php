@@ -1,7 +1,7 @@
 <?php
     require ('./assets/includes/database.inc.php');
 
-    $req = $dbh->prepare("SELECT id FROM user WHERE email = :email AND password = :password");
+    $req = $dbh->prepare("SELECT email, password FROM user");
     $req->execute([$_POST['email'],$_POST['password']]); 
     $resultat = $req->fetch();
     if (!$resultat)
@@ -39,7 +39,7 @@
                     <input type="email" 
                         name="email" 
                         id="email" 
-                        placeholder="Email">
+                        placeholder="Email" required>
                 </div>
                 <div>
                     <input type="password" 
