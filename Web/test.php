@@ -43,7 +43,7 @@ if(isset($_POST['pseudo']) || isset($_POST['mail']))
                     <input type="password" id="confirmpassword" placeholder="Confirmer le mot de passe" required>
                 </div>
                 <div class="button">
-                    <button class="bouton" type="submit">Inscription</button><a href="login.php" class="connexion">Connexion</a>
+                    <input class="bouton" type="submit" placeholder="Inscription"><a href="login.php" class="connexion">Connexion</a>
                 </div>
             </form>
         </div>

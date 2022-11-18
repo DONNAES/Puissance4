@@ -1,17 +1,32 @@
 <?php
     require ('./assets/includes/database.inc.php');
 
-    $req = $dbh->prepare("SELECT email, password FROM user");
-    $req->execute([$_POST['email'],$_POST['password']]); 
-    $resultat = $req->fetch();
-    if (!$resultat)
-    {
-        echo 'Email ou mot de passe invalide !';
-    }else{
-        echo 'Vous êtes connecté !';
-    }
-       
-                  
+    if (isset($_POST['email']) AND isset($_POST['password']))
+            {
+                if (!empty($_POST['email']) AND !empty($_POST['password']))
+                {
+                    $mail = $_POST['email'];
+                    $req = $dbh->prepare('SELECT id, password FROM user WHERE email = :email');
+                    $req-> execute(array('email' => $mail));
+ 
+                    $resultat = $req->fetch();
+ 
+                     
+                    if (!$resultat OR !password_verify($_POST['password'], $resultat['password']))
+                    {
+                        echo 'Email ou mot de passe invalide.<br/>';
+                    }
+                    else
+                    {
+                        echo 'Vous êtes connecté ! :-)<br/>';
+                    }
+                    $req->closeCursor();
+                }
+                else
+                {
+                    echo 'Renseignez un mail et un Mot De Passe.<br/>';
+                }
+            }     
 ?>
 
 <!DOCTYPE html>
