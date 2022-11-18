@@ -1,12 +1,14 @@
 <?php
+
     session_start();
     require_once 'database.inc.php';
-    function valider() {
+    if(isset($_POST['valider'])) {
         $username = $_POST["username"];
         $email = $_POST["email"];
         $sujet = $_POST["sujet"];
         $message = $_POST["message"];
         $toEmail = "support@powerofmemory.com";
+        $error_contact = '';
 
         // Mail de confirmation
         $mailHeaders = "Demande de contact bien reçu !" . 
@@ -19,20 +21,15 @@
         }
 
         // En cas d’erreur dans le formulaire, un message est affiché : « Veuillez  vérifier le formulaire »
-        $error_contact = "Veuillez  vérifier le formulaire";
-        echo "test";
-
         if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['sujet']) || empty($_POST['message'])) {
-            echo $error_contact;
+            $error_contact = "Veuillez vérifier le formulaire";
         } elseif ($username < 4) {
-            echo $error_contact; 
+            $error_contact = "Votre pseudo doit contenir au moins 15 caractères";
         } elseif (filter_var($email, !FILTER_VALIDATE_EMAIL)){
-            echo("$email n'est pas une adressse mail valide");
+            $error_contact = "$email n'est pas une adressse mail valide";
         } elseif ($message < 15) {
-            echo $error_contact;
-        }   
+            $error_contact = "Votre message doit contenir au moins 15 caractères";
+        } 
+    }    
     
-
-
-    }
 ?>
