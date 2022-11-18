@@ -1,5 +1,17 @@
 <?php
     require ('./assets/includes/database.inc.php');
+
+    $req = $dbh->prepare("SELECT id FROM user WHERE email = :email AND password = :password");
+    $req->execute([$_POST['email'],$_POST['password']]); 
+    $resultat = $req->fetch();
+    if (!$resultat)
+    {
+        echo 'Email ou mot de passe invalide !';
+    }else{
+        echo 'Vous êtes connecté !';
+    }
+       
+                  
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +34,11 @@
             <h2>CONNEXION</h2>
         </section>
         <section class="login">
-            <form action="traitement.php" method="post">
+            <form method="post">
                 <div>
                     <input type="email" 
-                        name="Email" 
-                        id="Email" 
+                        name="email" 
+                        id="email" 
                         placeholder="Email">
                 </div>
                 <div>
