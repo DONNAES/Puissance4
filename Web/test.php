@@ -4,7 +4,7 @@ require ('./assets/includes/database.inc.php');
 if(isset($_POST['pseudo']) || isset($_POST['mail']))
 {
     $sth = $dbh->prepare("INSERT INTO user (email, password, username, user_creation,last_connection) VALUES (?,?,?,NOW(),NOW())");
-    $sth->execute([$_POST['mail'],$_POST['password'],$_POST['pseudo']]); 
+    $sth->execute([$_POST['mail'],hash('sha256', $_POST['password']),$_POST['pseudo']]); 
 }
 
 ?> 

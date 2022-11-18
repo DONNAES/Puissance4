@@ -2,31 +2,31 @@
     require ('./assets/includes/database.inc.php');
 
     if (isset($_POST['email']) AND isset($_POST['password']))
-            {
-                if (!empty($_POST['email']) AND !empty($_POST['password']))
-                {
-                    $mail = $_POST['email'];
-                    $req = $dbh->prepare('SELECT id, password FROM user WHERE email = :email');
-                    $req-> execute(array('email' => $mail));
- 
-                    $resultat = $req->fetch();
- 
-                     
-                    if (!$resultat OR !password_verify($_POST['password'], $resultat['password']))
-                    {
-                        echo 'Email ou mot de passe invalide.<br/>';
-                    }
-                    else
-                    {
-                        echo 'Vous êtes connecté ! :-)<br/>';
-                    }
-                    $req->closeCursor();
-                }
-                else
-                {
-                    echo 'Renseignez un mail et un Mot De Passe.<br/>';
-                }
-            }     
+    {
+        $mail     = $_POST['email'];
+        $password = $_POST['password'];
+
+        if (!empty($mail) AND !empty($password))
+        {
+
+            
+            $hashpassword = hash('sha256', $password);
+            $req = $dbh->prepare('SELECT * FROM user WHERE email = :toto and password = :titi');
+            $req-> execute(array('toto' => $mail, 'titi' => $hashpassword));
+
+            $resultat = $req->fetch(); 
+        }
+        if (!$resultat){
+            echo 'Email ou mot de passe invalide';
+        }
+        else
+    {
+        header('Location: index.php');
+        echo 'Vous êtes connécté';
+    }
+    }
+    
+      
 ?>
 
 <!DOCTYPE html>
