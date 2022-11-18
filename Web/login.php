@@ -14,7 +14,7 @@
                      
                     if (!$resultat OR !password_verify($_POST['password'], $resultat['password']))
                     {
-                        echo 'Email ou mot de passe incorrect.<br/>';
+                        echo 'Email ou mot de passe invalide.<br/>';
                     }
                     else
                     {
@@ -24,7 +24,7 @@
                 }
                 else
                 {
-                    echo 'Renseignez un Pseudo/Derbyname et un Mot De Passe.<br/>';
+                    echo 'Renseignez un mail et un Mot De Passe.<br/>';
                 }
             }     
 ?>
