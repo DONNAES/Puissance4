@@ -44,7 +44,7 @@
                 id="emailInput" 
                 placeholder="Email Actuel">
                 <input type="email"
-                name="email"
+                name="newmail"
                 id="email"
                 autocomplete="off"
                 placeholder="Nouvel Email">
@@ -58,7 +58,7 @@
                 maxlength="16"
                 required>
                 <input type="password"
-                name="password"
+                name="newpassword"
                 id="pass"
                 placeholder="Confirmer le Mot de Passe"
                 autocomplete="off"
