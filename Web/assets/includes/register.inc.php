@@ -1,5 +1,5 @@
 <?php
-require ('./assets/includes/database.inc.php');
+require ('./database.inc.php');
 session_start();
 $errusername = $erremail = $errpassword = $errconfpassword = "";
 if(ISSET($_POST['reg_user'])){
