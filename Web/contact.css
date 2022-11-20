@@ -181,8 +181,12 @@ form {
 
 .error_contact {
     color: red;
+    margin-left: 125px;
+    margin-top: -35px;
 }
 
 .success_contact {
     color: green;
+    margin-left: 125px;
+    margin-top: -35px;
 }

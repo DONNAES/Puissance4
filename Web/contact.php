@@ -73,7 +73,7 @@
                 <form  action="./../WEB/contact.php" method="POST">
                   <div class="demarcation">
                     <div>
-                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" required>
+                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" minlength="4" required>
                     </div>
                     <div class="email_ecart">
                         <input class="integrate_text" type="email" name="email" placeholder="Email" autocomplete="off" required>
@@ -83,7 +83,7 @@
                         <input class="integrate_text" type="text" name="sujet" placeholder="Sujet" required> <?php $error ?>
                     </div>
                     <div>
-                        <textarea rows="2" name="message" placeholder="Message" required></textarea>
+                        <textarea rows="2" name="message" placeholder="Message" minlength="15" required></textarea>
                     </div>
                     <div>
                         <input class="button" name="valider" type="submit" placeholder="Envoyer">
