@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    require_once 'database.inc.php';
+    require_once 'assets/includes/database.inc.php';
     if(isset($_POST['valider'])) {
         $username = $_POST["username"];
         $email = $_POST["email"];
@@ -23,11 +23,11 @@
         // En cas d’erreur dans le formulaire, un message est affiché : « Veuillez  vérifier le formulaire »
         if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['sujet']) || empty($_POST['message'])) {
             $error_contact = "Veuillez vérifier le formulaire";
-        } elseif ($username < 4) {
-            $error_contact = "Votre pseudo doit contenir au moins 15 caractères";
-        } elseif (filter_var($email, !FILTER_VALIDATE_EMAIL)){
+        } elseif (strlen($username) < 4) {
+            $error_contact = "Votre pseudo doit contenir au moins 4 caractères";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $error_contact = "$email n'est pas une adressse mail valide";
-        } elseif ($message < 15) {
+        } elseif (strlen($message) < 15) {
             $error_contact = "Votre message doit contenir au moins 15 caractères";
         } 
     }    
@@ -70,10 +70,10 @@
 
         <section class="section_2">
             <div class="contact">
-                <form  action="./../WEB/assets/includes/contact.inc.php" method="POST">
+                <form  action="./../WEB/contact.php" method="POST">
                   <div class="demarcation">
                     <div>
-                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" minlength="4" required>
+                        <input class="integrate_text" type="text" name="username" placeholder="Nom" autocomplete="off" required>
                     </div>
                     <div class="email_ecart">
                         <input class="integrate_text" type="email" name="email" placeholder="Email" autocomplete="off" required>
@@ -83,17 +83,20 @@
                         <input class="integrate_text" type="text" name="sujet" placeholder="Sujet" required> <?php $error ?>
                     </div>
                     <div>
-                        <textarea rows="2" name="message" placeholder="Message" minlength="15" required></textarea>
+                        <textarea rows="2" name="message" placeholder="Message" required></textarea>
                     </div>
                     <div>
                         <input class="button" name="valider" type="submit" placeholder="Envoyer">
+                        <?php
+                            if ( $error_contact != '') {
+                                echo "<div class='error_contact'>".$error_contact."</div>";
+                            } else {
+                                $success_contact = "Votre formulaire a bien été envoillez !";
+                                echo "<div class='success_contact'>".$success_contact."</div>";
+                            }
+                        ?>
                     </div>
                 </form>
-                <?php
-                    if ( $error_contact != '') {
-                        echo $error_contact;
-                    }
-                ?>
             </div>
         </section>
 
@@ -106,3 +109,4 @@
         </footer>
     </body>
 </html>
+
