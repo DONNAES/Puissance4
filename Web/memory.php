@@ -43,6 +43,9 @@
         </section>
         <section class="game">
             <div class="boxchat">
+                <div class="headerchat">
+                    <h4>Chat général</h4>
+                </div>
             <div class='framechat'>
             <!-- Vérifier si l'utilisateur est connecté ou non -->
             <?php 
