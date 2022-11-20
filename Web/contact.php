@@ -28,6 +28,8 @@
             $error_contact = "Votre pseudo doit contenir au moins 4 caractères";
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $error_contact = "$email n'est pas une adressse mail valide";
+        } elseif (strlen($sujet) < 1) {
+            $error_contact = "Vous devez renseigner un sujet";
         } elseif (strlen($message) < 15) {
             $error_contact = "Votre message doit contenir au moins 15 caractères";
         }  else {
