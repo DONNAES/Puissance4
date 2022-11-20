@@ -9,6 +9,7 @@
         $message = $_POST["message"];
         $toEmail = "support@powerofmemory.com";
         $error_contact = '';
+        $success_contact = '';
 
         // Mail de confirmation
         $mailHeaders = "Demande de contact bien reçu !" . 
@@ -29,7 +30,9 @@
             $error_contact = "$email n'est pas une adressse mail valide";
         } elseif (strlen($message) < 15) {
             $error_contact = "Votre message doit contenir au moins 15 caractères";
-        } 
+        }  else {
+            $success_contact = "Votre formulaire a bien été envoillez";
+        }
     }    
     
 ?>
@@ -90,8 +93,7 @@
                         <?php
                             if ( $error_contact != '') {
                                 echo "<div class='error_contact'>".$error_contact."</div>";
-                            } else {
-                                $success_contact = "Votre formulaire a bien été envoillez !";
+                            } elseif ($success_contact) {
                                 echo "<div class='success_contact'>".$success_contact."</div>";
                             }
                         ?>
