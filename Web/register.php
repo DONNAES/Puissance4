@@ -11,22 +11,22 @@
     </head>
     <body>
     <?php
-require ('./assets/includes/database.inc.php');
-session_start();
-$errusername = $erremail = $errpassword = $errconfpassword = "";
-$mdpreq = $confmdpreq = $userok = $emailok = 0;
-if(ISSET($_POST['reg_user'])){
-    if(ISSET($_POST['username'],$_POST['email'],$_POST['password'],$_POST['confirm_password'])
+    require ('./assets/includes/database.inc.php');
+    session_start();
+    $errusername = $erremail = $errpassword = $errconfpassword = "";
+    $mdpreq = $confmdpreq = $userok = $emailok = 0;
+    if(ISSET($_POST['reg_user'])){
+        if(ISSET($_POST['username'],$_POST['email'],$_POST['password'],$_POST['confirm_password'])
        && !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirm_password']))
-    {
+        {
         $username = trim($_POST['username']);
         $email = trim($_POST['email']);
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
         $userreq = array("cost" => 4);
-        $username = array();
+        $usererrors = array();
         $mdperrors = array();
-/*--------------Password check----------------*/
+//--------------Password check---------------
             if (strlen($password) < 8 || strlen($password) > 16) {
                 $mdperrors[] = "Password should be min 8 characters and max 16 characters";
             }
@@ -56,10 +56,15 @@ if(ISSET($_POST['reg_user'])){
             if(empty($_POST["confirm_password"])){
                 $errconfpassword = "Confirm password is required";
                 $confmdpreq = 1;
-            } elseif($_POST["confirm_password"] == $_POST["password"]){
+            } elseif($_POST["password"] == $_POST["confirm_password"]){
                 $confmdpreq = 2;
+                echo "confpass ok!"
+            } else{
+                $errconfpassword = "password is different";
+                $confmdpreq = 3;
+                echo $errconfpassword;
             }
-/*----------------username check------------------*/
+//----------------username check------------------
             if (empty($_POST["username"])){
                 $usererrors = "username is required";
             } 
@@ -72,12 +77,13 @@ if(ISSET($_POST['reg_user'])){
             if($usererrors){
                 foreach ($usererrors as $erroruser){
                     $userok = 1;
+                    echo $erroruser . "\n";
                 }
                 die();
             } else {
                 $userok = 2;
             }
-/*----------------email check------------------*/
+//----------------email check------------------
             if (empty($_POST["email"])) {
                 $erremail = "Email is required";
                 $emailok = 1;
@@ -89,10 +95,16 @@ if(ISSET($_POST['reg_user'])){
             }
         if($mdpreq == 2 && $confmdpreq == 2 && $emailok == 2 && $userok == 2){
             echo "OK!";
-        $sth = $dbh->prepare("INSERT INTO user (email, `password`, username, user_creation, last_connection) VALUES (?,?,?,NOW(),NOW())");
-        $sth->execute([$_POST['email'],hash('sha256', $_POST['password']),$_POST['username']]); 
+            $sth = $dbh->prepare("INSERT INTO user (email, `password`, username, user_creation, last_connection) VALUES (?,?,?,NOW(),NOW())");
+            $sth->execute([$_POST['email'],hash('sha256', $_POST['password']),$_POST['username']]); 
         }
     } 
+}
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 ?>
         <header>
@@ -122,7 +134,7 @@ if(ISSET($_POST['reg_user'])){
                     <a href="<?php echo $confirm_password ?>"></a>
                 </div>
                 <div class="space">
-                    <input class="button" type="submit" name="submit" placeholder="Inscription"><a href="login.php" class="connexion">Connexion</a>
+                    <input class="button" type="submit" name="reg_user" placeholder="Inscription"><a href="login.php" class="connexion">Connexion</a>
                 </div>
             </form>
         </div>
