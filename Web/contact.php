@@ -18,22 +18,22 @@
         "\r\n Message : " . $message . "\r\n";
 
         if(mail($toEmail, $username, $mailHeaders)) {
-            $message = "Votre formulaire a bien été envoillez";
+            $message_send = "Votre formulaire a bien été envoyé";
         }
 
         // En cas d’erreur dans le formulaire, un message est affiché : « Veuillez  vérifier le formulaire »
         if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['sujet']) || empty($_POST['message'])) {
             $error_contact = "Veuillez vérifier le formulaire";
         } elseif (strlen($username) < 4) {
-            $error_contact = "Votre pseudo doit contenir au moins 4 caractères";
+            $error_contact = "Votre nom doit contenir au moins 4 caractères";
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $error_contact = "$email n'est pas une adressse mail valide";
         } elseif (strlen($sujet) < 1) {
-            $error_contact = "Vous devez renseigner un sujet";
+            $error_contact = "Veuillez renseigner un sujet";
         } elseif (strlen($message) < 15) {
             $error_contact = "Votre message doit contenir au moins 15 caractères";
         }  else {
-            $success_contact = "Votre formulaire a bien été envoillez";
+            $success_contact = "Votre formulaire a bien été envoyé";
         }
     }    
     
@@ -94,9 +94,9 @@
                         <input class="button" name="valider" type="submit" placeholder="Envoyer">
                         <?php
                             if ( $error_contact != '') {
-                                echo "<div class='error_contact'>".$error_contact."</div>";
+                                echo "<div class='error_message'>".$error_contact."</div>";
                             } elseif ($success_contact) {
-                                echo "<div class='success_contact'>".$success_contact."</div>";
+                                echo "<div class='success_message'>".$success_contact."</div>";
                             }
                         ?>
                     </div>
