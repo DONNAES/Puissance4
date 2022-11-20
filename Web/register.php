@@ -13,8 +13,9 @@
     <?php
     require ('./assets/includes/database.inc.php');
     session_start();
-    $errusername = $erremail = $errpassword = $errconfpassword = $errormdp = $erroruser = "";
+    $errusername = $erremail = $errpassword = $errconfpassword = $errormdp = $erroruser = $success = "";
     $mdpreq = $confmdpreq = $userok = $emailok = 0;
+    
     if(ISSET($_POST['reg_user'])){
         if(ISSET($_POST['username'],$_POST['email'],$_POST['password'],$_POST['confirm_password'])
        && !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirm_password']))
@@ -95,7 +96,8 @@
             }
         if($mdpreq == 2 && $confmdpreq == 2 && $emailok == 2 && $userok == 2){
             $sth = $dbh->prepare("INSERT INTO user (email, `password`, username, user_creation, last_connection) VALUES (?,?,?,NOW(),NOW())");
-            $sth->execute([$_POST['email'],hash('sha256', $_POST['password']),$_POST['username']]); 
+            $sth->execute([$_POST['email'],hash('sha256', $_POST['password']),$_POST['username']]);
+            $success = 'User has been created successfully'; 
         }
     } 
 }
@@ -114,6 +116,13 @@ function test_input($data) {
         <section class="backgroundImage">
             <h1>INSCRIPTION</h1>
         </section>
+        <?php 
+                if(isset($success))
+                {
+                    
+                    echo '<div class="alert alert-success">'.$success.'</div>';
+                }
+			?>
         <section class="register">
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <div class="zone">
