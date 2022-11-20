@@ -32,7 +32,7 @@
             $error_contact = "Veuillez renseigner un sujet";
         } elseif (strlen($message) < 15) {
             $error_contact = "Votre message doit contenir au moins 15 caractères";
-        }  else {
+        } else {
             $success_contact = "Votre formulaire a bien été envoyé";
         }
     }    
@@ -46,6 +46,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="assets/images/icon_site.png" type="images/png">
         <link rel="stylesheet" href="contact.css">
         <title>The Power Of Memory - Contact</title>
     </head>
@@ -93,9 +94,9 @@
                     <div>
                         <input class="button" name="valider" type="submit" placeholder="Envoyer">
                         <?php
-                            if ( $error_contact != '') {
+                            if ($error_contact != '') {
                                 echo "<div class='error_message'>".$error_contact."</div>";
-                            } elseif ($success_contact) {
+                            } elseif ($success_contact != '') {
                                 echo "<div class='success_message'>".$success_contact."</div>";
                             }
                         ?>
