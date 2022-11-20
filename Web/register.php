@@ -52,13 +52,14 @@
                 die();
             } else {
                 $mdpreq = 2;
+                echo "pass ok!";
             }
             if(empty($_POST["confirm_password"])){
                 $errconfpassword = "Confirm password is required";
                 $confmdpreq = 1;
             } elseif($_POST["password"] == $_POST["confirm_password"]){
                 $confmdpreq = 2;
-                echo "confpass ok!"
+                echo "confpass ok!";
             } else{
                 $errconfpassword = "password is different";
                 $confmdpreq = 3;
@@ -82,16 +83,19 @@
                 die();
             } else {
                 $userok = 2;
+                echo "user ok!";
             }
 //----------------email check------------------
             if (empty($_POST["email"])) {
                 $erremail = "Email is required";
                 $emailok = 1;
             } else {
-                $email = test_input($_POST["email"]);
+                $emailok = 2;
+                /*$email = test_input($_POST["email"]);
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                     $emailok = 2;
-                }
+                    echo "email ok!";
+                }*/
             }
         if($mdpreq == 2 && $confmdpreq == 2 && $emailok == 2 && $userok == 2){
             echo "OK!";
