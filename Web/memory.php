@@ -4,7 +4,6 @@
 ?>
 
 <?php
-    session_start();
     //Créez une session
     if(isset($_POST['username'])){
       $_SESSION['username']=$_POST['username'];
