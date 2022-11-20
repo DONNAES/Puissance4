@@ -13,7 +13,7 @@
     <?php
     require ('./assets/includes/database.inc.php');
     session_start();
-    $errusername = $erremail = $errpassword = $errconfpassword = "";
+    $errusername = $erremail = $errpassword = $errconfpassword = $errormdp = $erroruser = "";
     $mdpreq = $confmdpreq = $userok = $emailok = 0;
     if(ISSET($_POST['reg_user'])){
         if(ISSET($_POST['username'],$_POST['email'],$_POST['password'],$_POST['confirm_password'])
@@ -46,20 +46,18 @@
                 $mdperrors[] = "Password should not contain any white space";
             }
             if ($mdperrors) {
-                foreach ($mdperrors as $error) {
+                foreach ($mdperrors as $errormdp) {
                     $mdpreq = 1;
                 }
                 die();
             } else {
                 $mdpreq = 2;
-                echo "pass ok!";
             }
             if(empty($_POST["confirm_password"])){
                 $errconfpassword = "Confirm password is required";
                 $confmdpreq = 1;
             } elseif($_POST["password"] == $_POST["confirm_password"]){
                 $confmdpreq = 2;
-                echo "confpass ok!";
             } else{
                 $errconfpassword = "password is different";
                 $confmdpreq = 3;
@@ -78,27 +76,24 @@
             if($usererrors){
                 foreach ($usererrors as $erroruser){
                     $userok = 1;
-                    echo $erroruser . "\n";
                 }
                 die();
             } else {
                 $userok = 2;
-                echo "user ok!";
             }
 //----------------email check------------------
             if (empty($_POST["email"])) {
                 $erremail = "Email is required";
                 $emailok = 1;
             } else {
-                $emailok = 2;
-                /*$email = test_input($_POST["email"]);
+                $email = test_input($_POST["email"]);
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    $erremail = "Invalid email format";
+                }else{
                     $emailok = 2;
-                    echo "email ok!";
-                }*/
+                }
             }
         if($mdpreq == 2 && $confmdpreq == 2 && $emailok == 2 && $userok == 2){
-            echo "OK!";
             $sth = $dbh->prepare("INSERT INTO user (email, `password`, username, user_creation, last_connection) VALUES (?,?,?,NOW(),NOW())");
             $sth->execute([$_POST['email'],hash('sha256', $_POST['password']),$_POST['username']]); 
         }
@@ -119,29 +114,29 @@ function test_input($data) {
         <section class="backgroundImage">
             <h1>INSCRIPTION</h1>
         </section>
-        <div class="register">
+        <section class="register">
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <div class="zone">
                     <input class="integrate_text" type="email" name="email" placeholder="Email" required>
-                    <a href="<?php echo $erreamil ?>"></a>
+                    <span class="error"><?php echo $erremail ?></span>
                 </div>
                 <div class="zone">
                     <input class="integrate_text" type="text" name="username" placeholder="Pseudo" minlength="4" required>
-                    <a href="<?php echo $errusername ?>"></a>
+                    <span class="error"><?php echo $erroruser ?></span>
                 </div>
                 <div class="zone">
                     <input class="integrate_text" type="password" name="password" placeholder="Mot de passe" minlength="8" maxlength="16" required>
-                    <a href="<?php echo $mdperror ?>"></a>
+                    <span class="error"><?php echo $errormdp ?></span>
                 </div>
                 <div class="zone">
                     <input class="integrate_text" type="password" name="confirm_password" placeholder="Confirmer le mot de passe" required>
-                    <a href="<?php echo $confirm_password ?>"></a>
+                    <span class="error"><?php echo $errconfpassword ?></span>
                 </div>
                 <div class="space">
                     <input class="button" type="submit" name="reg_user" placeholder="Inscription"><a href="login.php" class="connexion">Connexion</a>
                 </div>
             </form>
-        </div>
+        </section>
 
         <a class="gotopbtn" href="#"><i class="fa-solid fa-angle-up"></i></a>
         
