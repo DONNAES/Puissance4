@@ -110,11 +110,11 @@ if(ISSET($_POST['reg_user'])){
                     <a href="<?php echo $erreamil ?>"></a>
                 </div>
                 <div class="zone">
-                    <input class="integrate_text" type="text" name="username" placeholder="Pseudo" required>
+                    <input class="integrate_text" type="text" name="username" placeholder="Pseudo" minlength="4" required>
                     <a href="<?php echo $errusername ?>"></a>
                 </div>
                 <div class="zone">
-                    <input class="integrate_text" type="password" name="password" placeholder="Mot de passe" required>
+                    <input class="integrate_text" type="password" name="password" placeholder="Mot de passe" minlength="8" maxlength="16" required>
                     <a href="<?php echo $mdperror ?>"></a>
                 </div>
                 <div class="zone">
