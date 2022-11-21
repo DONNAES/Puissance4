@@ -58,7 +58,7 @@
                 maxlength="16"
                 required>
                 <input type="password"
-                name="newpassword"
+                name="confirmpassword"
                 id="pass"
                 placeholder="Confirmer le Mot de Passe"
                 autocomplete="off"
