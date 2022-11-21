@@ -2,14 +2,14 @@
 
     session_start();
     require_once 'assets/includes/database.inc.php';
+    $error_contact = '';
+    $success_contact = '';
     if(isset($_POST['valider'])) {
         $username = $_POST["username"];
         $email = $_POST["email"];
         $sujet = $_POST["sujet"];
         $message = $_POST["message"];
         $toEmail = "support@powerofmemory.com";
-        $error_contact = '';
-        $success_contact = '';
 
         // Mail de confirmation
         $mailHeaders = "Demande de contact bien reçu !" . 
