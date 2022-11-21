@@ -177,4 +177,16 @@ form {
     color: white;
 }
 
-/*---------------------------------------------------------------*/
+/*-------------------------- PHP -------------------------------------*/
+
+.error_message {
+    color: rgb(255, 0, 0);
+    margin-left: 106px;
+    margin-top: -35px;
+}
+
+.success_message {
+    color: rgb(39, 235, 39);
+    margin-left: 106px;
+    margin-top: -35px;
+}

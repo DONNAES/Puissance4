@@ -1,11 +1,12 @@
 <?php
 $user = "root";
 $pass = "root";
-$errors = array();
-
+try{
 $dbh = new PDO('mysql:host=localhost;dbname=DB_TPOM', $user, $pass);
-if(!$dbh){
-    die("Fatal Error: Connection Failed!");
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-
+catch(PDOException $e){
+    echo "PDO error".$e->getMessage();
+    die();
+}
 ?>

@@ -1,10 +1,50 @@
 <?php
 require ('./assets/includes/database.inc.php');
 
-if(isset($_POST['pseudo']) || isset($_POST['mail']))
-{
-    $sth = $dbh->prepare("INSERT INTO user (email, password, username, user_creation,last_connection) VALUES (?,?,?,NOW(),NOW())");
-    $sth->execute([$_POST['mail'],hash('sha256', $_POST['password']),$_POST['pseudo']]); 
+if(isset($_POST['pseudo']) || isset($_POST['mail'])){
+        $password = $_POST['password'];
+        $mdperrors = array();
+        if (strlen($password) < 8 || strlen($password) > 16) {
+            $mdperrors[] = "Password should be min 8 characters and max 16 characters";
+        }
+        if (!preg_match("/\d/", $password)) {
+            $mdperrors[] = "Password should contain at least one digit";
+        }
+        if (!preg_match("/[A-Z]/", $password)) {
+            $mdperrors[] = "Password should contain at least one Capital Letter";
+        }
+        if (!preg_match("/[a-z]/", $password)) {
+            $mdperrors[] = "Password should contain at least one small Letter";
+        }
+        if (!preg_match("/\W/", $password)) {
+            $mdperrors[] = "Password should contain at least one special character";
+        }
+        if (preg_match("/\s/", $password)) {
+            $mdperrors[] = "Password should not contain any white space";
+        }
+        if ($mdperrors) {
+            foreach ($mdperrors as $error) {
+                echo $error . "\n";
+            }
+            die();
+        } else {
+            echo "$password => MATCH\n";
+        }
+        if (empty($_POST["email"])) {
+            $emailErr = "Email is required";
+        } 
+        else {
+            $email = test_input($_POST["email"]);
+                if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    echo "L'adresse e-mail est valide";
+                }else{
+                echo "L'adresse e-mail n'est pas valide";
+            }
+        }
+        else
+            $sth = $dbh->prepare("INSERT INTO user (email, password, username, user_creation,last_connection) VALUES (?,?,?,NOW(),NOW())");
+            $sth->execute([$_POST['mail'],hash('sha256', $_POST['password']),$_POST['pseudo']]);
+    } 
 }
 
 ?> 
