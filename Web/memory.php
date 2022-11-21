@@ -20,7 +20,7 @@
     <head>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/1.1.9/js/libs/jquery-1.10.2.min.js"></script>
         <link rel="shortcut icon" href="assets/images/icon_site.png" type="images/png">
-        <link rel="stylesheet" href="memory.css">
+        <link rel="stylesheet" href="assets/css/memory.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

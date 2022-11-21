@@ -21,7 +21,7 @@ body{
 }
 
 .backgroundImage{
-    background : url(assets/images/backgroung_register.jpeg) 0% 35%;
+    background : url(../../assets/images/backgroung_register.jpeg) 0% 35%;
     height: 235px;
     padding-top: 20px;
 }

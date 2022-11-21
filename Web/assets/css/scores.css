@@ -56,7 +56,7 @@ h4{
     text-align: right;
     flex-direction: column;
     align-items: center;   
-    background : url(assets/images/scores_header_background.png) 30% 0%;
+    background : url(../../assets/images/scores_header_background.png) 30% 0%;
     background-size: 2000px;
     padding-top: 55px;
     padding-bottom: 55px;

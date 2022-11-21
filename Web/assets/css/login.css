@@ -37,7 +37,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background : url(assets/images/backgroung_register.jpeg) 0% 35%;
+    background : url(../../assets/images/backgroung_register.jpeg) 0% 35%;
     padding-top: 55px;
     padding-bottom: 50px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

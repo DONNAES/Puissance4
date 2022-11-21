@@ -34,7 +34,7 @@ body{
 }
 
 .backgroundImage{
-    background : url(assets/images/Background_Game.jpeg) 0% 57%;
+    background : url(../../assets/images/Background_Game.jpeg) 0% 57%;
     background-repeat: none;
     height: 235px;
     padding-top: 20px;
