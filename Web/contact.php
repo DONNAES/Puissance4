@@ -86,7 +86,7 @@
                     </div>
                     </div>
                     <div>
-                        <input class="integrate_text" type="text" name="sujet" placeholder="Sujet" required> <?php $error ?>
+                        <input class="integrate_text" type="text" name="sujet" placeholder="Sujet" required>
                     </div>
                     <div>
                         <textarea rows="2" name="message" placeholder="Message" minlength="15" required></textarea>
