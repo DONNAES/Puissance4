@@ -26,11 +26,11 @@ function choice(){
         button.style.backgroundColor ="gold";
         button.style.visibility = "visible";
     }else if (difficulty.value=="expert") {
-        difficulty.style.backgroundColor = "rgb(255, 94, 5)";
-        theme.style.backgroundColor = "rgb(255, 94, 5)";
+        difficulty.style.backgroundColor = "rgb(18, 169, 207)";
+        theme.style.backgroundColor = "rgb(18, 169, 207)";
         button.innerHTML = `
         Sûr de toi ?`;
-        button.style.backgroundColor ="rgb(255, 94, 5)";
+        button.style.backgroundColor ="rgb(18, 169, 207)";
         button.style.visibility = "visible";
     }else{
         difficulty.style.backgroundColor = "rgb(242, 27, 27)";
