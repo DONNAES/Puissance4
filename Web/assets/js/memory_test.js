@@ -674,7 +674,7 @@ function afficherTableauIntermediateGame() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifIntermediateGame(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediateGame(\""+i+"-"+j+"\")'><img style='width:150px;height:150px;padding:0%' src='../images/memory_images/point.png'></button>";
             } else {
                 txt += "<img src ='"+getImageGame(grilleIntermediate[i][j])+"' style='width:100px;height:100px' class='m-2'>";
             }
@@ -738,75 +738,3 @@ function generateGrilleAleatoireIntermediateGame() {
 }
 
 ///////////////////////////////////////////////////// Expert - Space /////////////////////////////////////////////////////////////////////
-
-afficherTableauExpertSpace();
-
-function afficherTableauExpertSpace() {
-    var txt = "";
-
-    for (var i=0; i < grilleExpert.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleExpert[i].length ; j++) {
-            if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifExpertSpace(\""+i+"-"+j+"\")'>Afficher</button>";
-            } else {
-                txt += "<img src ='"+getImageSpace(grilleExpert[i][j])+"' style='width:100px;height:100px' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifExpertSpace(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleExpert[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauExpertSpace();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleExpert[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleExpert[ligne][colonne] = 0;
-                    grilleExpert[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauExpertSpace();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireExpertSpace() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 6 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 6 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
