@@ -1,9 +1,11 @@
 let difficulty = document.querySelector('#difficulty');
 let button = document.querySelector('#button');
 let theme = document.querySelector('#theme');
+
 difficulty.addEventListener('change', choice);
 theme.addEventListener('change', choice);
 button.addEventListener.apply('click', start);
+
 function choice(){
     if (difficulty.value=="" || theme.value==""){
         difficulty.style.backgroundColor = "orange";
