@@ -1,7 +1,8 @@
 let difficulty = document.querySelector('#difficulty');
-let button = document.querySelector('#button')
+let button = document.querySelector('#button');
+let theme = document.querySelector('#theme');
 difficulty.addEventListener('change', choice);
-
+button.addEventListener.apply('click', start);
 function choice(){
     if (difficulty.value==""){
         difficulty.style.backgroundColor = "orange";
@@ -36,4 +37,8 @@ function choice(){
         button.style.backgroundColor ="rgb(242, 27, 27)";
         button.style.visibility = "visible";
     }
+}
+
+function start(){
+
 }
