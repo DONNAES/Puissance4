@@ -56,7 +56,12 @@ h1{
     color: white;
 }
 
-
+#button{
+    background-color: rgb(12,11,47);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
 /*------------------------- THEMES ET DIFFICULTES --------------------------------------*/
 
 select {
@@ -75,13 +80,6 @@ select {
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
-}
-
-.send_game{
-    margin-right: 435px;
-    background-color: orange;
-    color: white;
-    border: none;
 }
 
 /*------------------------- FOOTER --------------------------------------*/

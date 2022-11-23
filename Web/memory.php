@@ -40,7 +40,7 @@
         <select name="themes" id="theme">
             <option value="" class="Theme">Thèmes</option>
             <option value="space">Espace</option>
-            <option value="ccartoon">Dessins animés</option>
+            <option value="cartoon">Dessins animés</option>
             <option value="game">Jeux vidéos</option>
         </select>
         <select name="difficulties" id="difficulty">
@@ -50,7 +50,9 @@
             <option value="expert" class="expert">Expert</option>
             <option value="impossible" class="impossible">Impossible</option>
         </select>        
-        <div id="button"></div>
+        <div>
+            <input type="button" id="button" placeholder="Veuillez sélectionner un thème et une difficulté">
+        </div>
         </section>
         <section class="game">
             <div class="boxchat">
