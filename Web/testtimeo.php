@@ -21,14 +21,12 @@
             echo "adresse mail inexistante";
             return false;
         }
-        elseif(){
 
-        }
         else{
             $sql = 'UPDATE user SET email = "'.$newmail.'"';
         }
 
-
+        
 
     }
 ?>
