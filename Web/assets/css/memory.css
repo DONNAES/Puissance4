@@ -83,6 +83,7 @@ select {
     border-radius: 5px;
     visibility: hidden;
     margin-top: 2px;
+    padding: 5px 5px;
 }
 
 /*------------------------- FOOTER --------------------------------------*/
