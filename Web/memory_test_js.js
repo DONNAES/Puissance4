@@ -11,7 +11,7 @@ function choice(){
         difficulty.style.backgroundColor = "rgb(12, 220, 0)";
         theme.style.backgroundColor = "rgb(12, 220, 0)";
         button.innerHTML = `
-        La prairie meuh meuh`;
+        Facile sérieux ??`;
         button.style.backgroundColor ="rgb(12, 220, 0)";
         button.style.visibility = "visible";
     }else if (difficulty.value=="intermediate") {
@@ -32,7 +32,7 @@ function choice(){
         difficulty.style.backgroundColor = "rgb(242, 27, 27)";
         theme.style.backgroundColor = "rgb(242, 27, 27)";
         button.innerHTML = `
-        L'enfer, fuis`;
+        L'enfer, fuis !`;
         button.style.backgroundColor ="rgb(242, 27, 27)";
         button.style.visibility = "visible";
     }
