@@ -128,6 +128,6 @@
                 include 'assets/view/footer.inc.php'
             ?>
         </footer>
-        <script src="memory_test_js.js"></script>
+        <script src="./assets/js/memory.js"></script>
     </body>
 </html>
