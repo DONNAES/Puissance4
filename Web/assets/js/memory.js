@@ -12,11 +12,11 @@ function choice(){
         theme.style.backgroundColor = "orange";
         button.style.visibility = "hidden";
     }else if (difficulty.value=="easy"){
-        difficulty.style.backgroundColor = "rgb(12, 220, 0)";
-        theme.style.backgroundColor = "rgb(12, 220, 0)";
+        difficulty.style.backgroundColor = "rgb(39, 235, 39)";
+        theme.style.backgroundColor = "rgb(39, 235, 39)";
         button.innerHTML = `
         Facile sérieux ??`;
-        button.style.backgroundColor ="rgb(12, 220, 0)";
+        button.style.backgroundColor ="rgb(39, 235, 39)";
         button.style.visibility = "visible";
     }else if (difficulty.value=="intermediate") {
         difficulty.style.backgroundColor = "gold";
