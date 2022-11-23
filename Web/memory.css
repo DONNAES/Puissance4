@@ -34,7 +34,7 @@ body{
 }
 
 .backgroundImage{
-    background : url(../../assets/images/Background_Game.jpeg) 0% 57%;
+    background : url(assets/images/Background_Game.jpeg) 0% 57%;
     background-repeat: none;
     height: 235px;
     padding-top: 20px;
@@ -56,19 +56,7 @@ h1{
     color: white;
 }
 
-
-/*------------------------- THEMES ET DIFFICULTES --------------------------------------*/
-
-select {
-    width: 500px;
-    height: 50px;
-    font-size: 25px;
-    padding: 2px 5px;
-    border-radius: 5px;
-    background-color: orange;
-    color: white;
-    margin-top: 2px;
-}
+/*------------------------- LEVEL --------------------------------------*/
 
 .level{
     display: flex;
@@ -77,11 +65,29 @@ select {
     margin-top: 50px;
 }
 
-.send_game{
-    margin-right: 435px;
-    background-color: orange;
-    color: white;
-    border: none;
+.level button{
+    margin-top: 5px;
+    width: 500px;
+    height: 50px;
+    border: rgba(0, 0, 50, 0.5) solid 1px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+.facile{
+    background-color: rgb(36, 255, 2);
+}
+
+.intermediaire{
+    background-color: rgb(255, 255, 2);
+}
+
+.expert{
+    background-color: rgb(255, 162, 2);
+}
+
+.impossible{
+    background-color: rgb(255, 2, 2);
 }
 
 /*------------------------- FOOTER --------------------------------------*/

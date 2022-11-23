@@ -35,12 +35,22 @@
         </header>
         <section class="backgroundImage">
                 <h1>JEU</h1>
-            </section>
-            <section class="level">
-            <button type="submit" class="facile">FACILE</button>
-            <button type="submit" class="intermediaire">INTERMEDIARE</button>
-            <button type="submit" class="expert">EXPERT</button>
-            <button type="submit" class="impossible">IMPOSSIBLE</button>
+        </section>
+        <section class="level">
+        <select name="themes" id="theme">
+            <option value="" class="Theme">Thèmes</option>
+            <option value="space">Espace</option>
+            <option value="ccartoon">Dessins animés</option>
+            <option value="game">Jeux vidéos</option>
+        </select>
+        <select name="difficulties" id="difficulty">
+            <option value="" class="difficulty" id="here">Difficultés</option>
+            <option value="easy" class="easy">Facile</option>
+            <option value="intermediate" class="intermediate">Intermédiaire</option>
+            <option value="expert" class="expert">Expert</option>
+            <option value="impossible" class="impossible">Impossible</option>
+        </select>        
+        <div id="button"></div>
         </section>
         <section class="game">
             <div class="boxchat">
@@ -111,13 +121,11 @@
                 </div>
             </form>
         </section>
-
-        
-
         <footer>
             <?php
                 include 'assets/view/footer.inc.php'
             ?>
         </footer>
+        <script src="memory_test_js.js"></script>
     </body>
 </html>
