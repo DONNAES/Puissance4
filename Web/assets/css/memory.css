@@ -56,12 +56,6 @@ h1{
     color: white;
 }
 
-#button{
-    background-color: rgb(12,11,47);
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
 /*------------------------- THEMES ET DIFFICULTES --------------------------------------*/
 
 select {
@@ -77,9 +71,18 @@ select {
 
 .level{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     margin-top: 50px;
+    margin-left: 32.5%;
+}
+
+#button{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    visibility: hidden;
+    margin-top: 2px;
 }
 
 /*------------------------- FOOTER --------------------------------------*/

@@ -6,29 +6,34 @@ function choice(){
     if (difficulty.value==""){
         difficulty.style.backgroundColor = "orange";
         theme.style.backgroundColor = "orange";
+        button.style.visibility = "hidden";
     }else if (difficulty.value=="easy"){
         difficulty.style.backgroundColor = "rgb(12, 220, 0)";
         theme.style.backgroundColor = "rgb(12, 220, 0)";
         button.innerHTML = `
-        <button type="button" class="send_game">La prairie meuh meuh</button>`;
-        button.style.backgroundColor ="rgb(12, 220, 0)"
+        La prairie meuh meuh`;
+        button.style.backgroundColor ="rgb(12, 220, 0)";
+        button.style.visibility = "visible";
     }else if (difficulty.value=="intermediate") {
         difficulty.style.backgroundColor = "gold";
         theme.style.backgroundColor = "gold";
         button.innerHTML = `
         En vrai ça passe`;
         button.style.backgroundColor ="gold";
+        button.style.visibility = "visible";
     }else if (difficulty.value=="expert") {
         difficulty.style.backgroundColor = "rgb(255, 94, 5)";
         theme.style.backgroundColor = "rgb(255, 94, 5)";
         button.innerHTML = `
-        <button type="button" class="send_game">Sûr de toi ?</button>`;
+        Sûr de toi ?`;
         button.style.backgroundColor ="rgb(255, 94, 5)";
+        button.style.visibility = "visible";
     }else{
         difficulty.style.backgroundColor = "rgb(242, 27, 27)";
         theme.style.backgroundColor = "rgb(242, 27, 27)";
         button.innerHTML = `
-        <button type="button" class="send_game">L'enfer, fuis</button>`;
+        L'enfer, fuis`;
         button.style.backgroundColor ="rgb(242, 27, 27)";
+        button.style.visibility = "visible";
     }
 }
