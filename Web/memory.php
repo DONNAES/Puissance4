@@ -36,6 +36,11 @@
         <section class="backgroundImage">
                 <h1>JEU</h1>
         </section>
+        <span id="chronotime">0:00:00:00</span>
+            <form name="chronoForm">
+                <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
+                <input type="button" name="stop" value="stop!" onClick="chronoStop()" />
+            </form>
         <section class="level">
         <select name="themes" id="theme">
             <option value="" class="Theme">Thèmes</option>
