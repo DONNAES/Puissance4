@@ -1,3 +1,5 @@
+
+
 <?php
     if (isset($_POST['email']) AND isset($_POST['newmail']) AND isset($_POST['password']) AND isset($_POST['confirmpassword']))
     {
@@ -25,6 +27,6 @@
         else{
             $sql = 'UPDATE user SET email = "'.$newmail.'"';
         }
-        
+
     }
 ?>
