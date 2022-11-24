@@ -63,7 +63,7 @@ h1{
     justify-content: center;
 }
 
-form .zone {
+form div {
     width: 100%;
     display: flex;
     min-height: 20px;
@@ -98,14 +98,11 @@ form {
     flex-direction: column;
     margin-top: 85px;
 }
-.zone{
+.zone {
     display: flex;
     flex-direction: column;
 }
-.space{
-    display: flex;
-    flex-direction: row;
-}
+
 .button{
     width: 100px;
     height: 50px;
@@ -143,7 +140,7 @@ form {
 
     opacity: 50%;
 }
-.alerts-success{
+.alert-success{
     display: flex;
     justify-content: center;
     margin-top: 5%;  
@@ -157,21 +154,31 @@ form {
     margin-left: 2%;
 }
 /*---------password strength------------*/
+.input-group p { 
+    margin: .9rem 0 1.5rem;
+    color: #6a6c80;
+    font-size: 0.8em;
+}
+
+.input-group h5 {
+    margin: .1rem 0 1.5rem;
+    color: #6a6c80;
+    font-size: 0.8em;
+ }
+
 .progress {
-    height: 3px !important;
-    margin-top: -5px !important;
-    margin-bottom: -10px !important;
-    margin-left: 1%;
-    width: 98%;
+    height: 10px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 50px;
 }
-.progress-bar-danger {
-    background-color: #e90f10;
-}
-.progress-bar-warning{
-    background-color: #ffad00;
-}
-.progress-bar-success{
-    background-color: #02b502;
+
+.bar {
+    height: 10px;
+    width: 0%;
+    /* background-color:red; */
+    border-radius: inherit;
+    transition: .4s ease-in-out;
 }
 /*------------------------- COLOR --------------------------------------*/
 
