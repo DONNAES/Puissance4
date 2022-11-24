@@ -312,9 +312,9 @@ function afficherTableauEasySpace() {
         txt += "<div>";
         for (var j=0; j < grilleEasy[i].length ; j++) {
             if (grilleEasy[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifEasySpace(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasySpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageSpace(grilleEasy[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageSpace(grilleEasy[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -384,9 +384,9 @@ function afficherTableauEasyCartoon() {
         txt += "<div>";
         for (var j=0; j < grilleEasy[i].length ; j++) {
             if (grilleEasy[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifEasyCartoon(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasyCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageCartoon(grilleEasy[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageCartoon(grilleEasy[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -456,9 +456,9 @@ function afficherTableauEasyGame() {
         txt += "<div>";
         for (var j=0; j < grilleEasy[i].length ; j++) {
             if (grilleEasy[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifEasyGame(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasyGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageGame(grilleEasy[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageGame(grilleEasy[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -528,9 +528,9 @@ function afficherTableauIntermediateSpace() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifIntermediateSpace(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageSpace(grilleIntermediate[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageSpace(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -600,9 +600,9 @@ function afficherTableauIntermediateCartoon() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifIntermediateCartoon(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageCartoon(grilleIntermediate[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageCartoon(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -672,9 +672,9 @@ function afficherTableauIntermediateGame() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;' onClick='verifIntermediateGame(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageGame(grilleIntermediate[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageGame(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -744,9 +744,9 @@ function afficherTableauExpertSpace() {
         txt += "<div>";
         for (var j=0; j < grilleExpert[i].length ; j++) {
             if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifExpertSpace(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEspertSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageSpace(grilleExpert[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageSpace(grilleExpert[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -816,9 +816,9 @@ function afficherTableauExpertCartoon() {
         txt += "<div>";
         for (var j=0; j < grilleExpert[i].length ; j++) {
             if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifExpertCartoon(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifExpertCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageCartoon(grilleExpert[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageCartoon(grilleExpert[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -888,9 +888,9 @@ function afficherTableauExpertGame() {
         txt += "<div>";
         for (var j=0; j < grilleExpert[i].length ; j++) {
             if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifExpertGame(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifExpertCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageGame(grilleExpert[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageGame(grilleExpert[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -960,9 +960,9 @@ function afficherTableauImpossibleSpace() {
         txt += "<div>";
         for (var j=0; j < grilleImpossible[i].length ; j++) {
             if (grilleImpossible[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifImpossibleSpace(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifImpossibleSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageSpace(grilleImpossible[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageSpace(grilleImpossible[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -1032,9 +1032,9 @@ function afficherTableauImpossibleCartoon() {
         txt += "<div>";
         for (var j=0; j < grilleImpossible[i].length ; j++) {
             if (grilleImpossible[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifImpossibleCartoon(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifImpossibleCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageCartoon(grilleImpossible[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageCartoon(grilleImpossible[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
@@ -1106,9 +1106,9 @@ function afficherTableauImpossibleGame() {
         txt += "<div>";
         for (var j=0; j < grilleImpossible[i].length ; j++) {
             if (grilleImpossible[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifImpossibleGame(\""+i+"-"+j+"\")'>Afficher</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifImpossibleGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
-                txt += "<img src ='"+getImageGame(grilleImpossible[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src ='"+getImageGame(grilleImpossible[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
         }
         txt += "</div>";
