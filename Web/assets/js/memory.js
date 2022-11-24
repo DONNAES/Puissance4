@@ -349,6 +349,7 @@ function start() {
         for (var i=0; i < grilleEasy.length ; i++) {
             txt += "<div>";
             for (var j=0; j < grilleEasy[i].length ; j++) {
+                console.log('azertyuiop');
                 if (grilleEasy[i][j] === 0) {
                     txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasySpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
                 } else {
@@ -357,6 +358,7 @@ function start() {
             }
             txt += "</div>";
         }
+        console.log('ta mere');
         divResultat.innerHTML = txt;
     }
 
