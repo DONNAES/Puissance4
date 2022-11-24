@@ -346,3 +346,8 @@ form {
 .barre{
     flex-direction: row;
 }
+
+.settings {
+    background-color: rgb(12,11,47);color: white;
+    color: white;
+}
