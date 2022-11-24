@@ -5,7 +5,7 @@ const divResultat = document.querySelector("#resultat");
 
 difficulty.addEventListener('change', choice);
 theme.addEventListener('change', choice);
-button.addEventListener.apply('click', start);
+button.addEventListener('click', start);
 
 function choice(){
     if (difficulty.value=="" || theme.value==""){
