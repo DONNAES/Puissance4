@@ -99,7 +99,10 @@
                 maxlength="16"
                 required>
                 <div class="button_email">
-                    <button type="button">Valider</button>
+                <input class="button"
+                    type="submit"
+                    name="reg_user"
+                    placeholder="Inscription">
                 </div>
             </section>
             <section class="passform"> <!--Password-->
