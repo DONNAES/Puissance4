@@ -30,7 +30,7 @@
     </head>
     <body>
 
-        <div class="container text-center">
+        <div class="container text-center settings">
             <div id="resultat"></div>
         </div>
         
