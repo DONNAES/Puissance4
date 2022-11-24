@@ -1,6 +1,6 @@
 const divResultat = document.querySelector("#resultat");
 
-var grilleResultat = generateGrilleAleatoireIntermediateGame();
+var grilleResultat = generateGrilleAleatoireImpossibleGame();
 
 var oldSelection=[];
 var nbAffiche = 0;
@@ -110,7 +110,7 @@ function getImageSpace(valeur) {
         break;
         case 10 : imgTxt += "comete2.png";
         break;
-        case 11 : imgTxt += "entreprise.png";
+        case 11 : imgTxt += "enterprise.png";
         break;
         case 12 : imgTxt += "fusee.png";
         break;
@@ -120,7 +120,7 @@ function getImageSpace(valeur) {
         break;
         case 15 : imgTxt += "mars.png";
         break;
-        case 16 : imgTxt += "mergrez.png";
+        case 16 : imgTxt += "megrez.png";
         break;
         case 17 : imgTxt += "mercure.png";
         break;
@@ -150,9 +150,9 @@ function getImageSpace(valeur) {
         break;
         case 30 : imgTxt += "vega.png";
         break;
-        case 31 : imgTxt += "venux.png";
+        case 31 : imgTxt += "venus.png";
         break;
-        case 32 : imgTxt += "vioelactee.png";
+        case 32 : imgTxt += "voielactee.png";
         break;
         default : console.log("cas non pris en compte")
     }
@@ -528,7 +528,7 @@ function afficherTableauIntermediateSpace() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifIntermediateSpace(\""+i+"-"+j+"\")'>Affichier</button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifIntermediateSpace(\""+i+"-"+j+"\")'>Afficher</button>";
             } else {
                 txt += "<img src ='"+getImageSpace(grilleIntermediate[i][j])+"' style='width:100px;height:100px' class='m-2'>";
             }
@@ -737,8 +737,6 @@ function generateGrilleAleatoireIntermediateGame() {
 
 ///////////////////////////////////////////////////// Expert - Space /////////////////////////////////////////////////////////////////////
 
-afficherTableauExpertSpace();
-
 function afficherTableauExpertSpace() {
     var txt = "";
 
@@ -789,11 +787,373 @@ function verifExpertSpace(bouton) {
 function generateGrilleAleatoireExpertSpace() {
     var tab = [];
 
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0];
+    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
     for (var i = 0; i < 6 ; i++) {
         var ligne = [];
         for (var j = 0; j < 6 ; j++) {
+            var end = false;
+            while(!end) {
+                var randomImage = Math.floor(Math.random() * 32);
+                if (nbImagePosition[randomImage] < 2) {
+                    ligne.push(randomImage+1);
+                    nbImagePosition[randomImage]++;
+                    end = true;
+                }
+            }
+        }
+        tab.push(ligne);
+    }
+    return tab;
+}
+
+///////////////////////////////////////////////////// Expert - Cartoon /////////////////////////////////////////////////////////////////////
+
+function afficherTableauExpertCartoon() {
+    var txt = "";
+
+    for (var i=0; i < grilleExpert.length ; i++) {
+        txt += "<div>";
+        for (var j=0; j < grilleExpert[i].length ; j++) {
+            if (grilleExpert[i][j] === 0) {
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifExpertCartoon(\""+i+"-"+j+"\")'>Afficher</button>";
+            } else {
+                txt += "<img src ='"+getImageCartoon(grilleExpert[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+            }
+        }
+        txt += "</div>";
+    }
+    divResultat.innerHTML = txt;
+}
+
+function verifExpertCartoon(bouton) {
+    if (ready) {
+        nbAffiche++;
+
+        var ligne = bouton.substr(0,1);
+        var colonne = bouton.substr(2,1);
+    
+        grilleExpert[ligne][colonne] = grilleResultat[ligne][colonne];
+        afficherTableauExpertCartoon();
+    
+        if (nbAffiche>1) {
+            ready = false;
+            setTimeout(() => {
+                // Vérification
+                if (grilleExpert[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
+                    grilleExpert[ligne][colonne] = 0;
+                    grilleExpert[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                afficherTableauExpertCartoon();
+                ready = true;
+                nbAffiche = 0;
+                oldSelection = [ligne,colonne];
+            },750)
+    
+        } else {
+            oldSelection = [ligne,colonne];
+        }
+    }
+}
+
+function generateGrilleAleatoireExpertCartoon() {
+    var tab = [];
+
+    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (var i = 0; i < 6 ; i++) {
+        var ligne = [];
+        for (var j = 0; j < 6 ; j++) {
+            var end = false;
+            while(!end) {
+                var randomImage = Math.floor(Math.random() * 32);
+                if (nbImagePosition[randomImage] < 2) {
+                    ligne.push(randomImage+1);
+                    nbImagePosition[randomImage]++;
+                    end = true;
+                }
+            }
+        }
+        tab.push(ligne);
+    }
+    return tab;
+}
+
+///////////////////////////////////////////////////// Expert - Game /////////////////////////////////////////////////////////////////////
+
+function afficherTableauExpertGame() {
+    var txt = "";
+
+    for (var i=0; i < grilleExpert.length ; i++) {
+        txt += "<div>";
+        for (var j=0; j < grilleExpert[i].length ; j++) {
+            if (grilleExpert[i][j] === 0) {
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifExpertGame(\""+i+"-"+j+"\")'>Afficher</button>";
+            } else {
+                txt += "<img src ='"+getImageGame(grilleExpert[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+            }
+        }
+        txt += "</div>";
+    }
+    divResultat.innerHTML = txt;
+}
+
+function verifExpertGame(bouton) {
+    if (ready) {
+        nbAffiche++;
+
+        var ligne = bouton.substr(0,1);
+        var colonne = bouton.substr(2,1);
+    
+        grilleExpert[ligne][colonne] = grilleResultat[ligne][colonne];
+        afficherTableauExpertGame();
+    
+        if (nbAffiche>1) {
+            ready = false;
+            setTimeout(() => {
+                // Vérification
+                if (grilleExpert[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
+                    grilleExpert[ligne][colonne] = 0;
+                    grilleExpert[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                afficherTableauExpertGame();
+                ready = true;
+                nbAffiche = 0;
+                oldSelection = [ligne,colonne];
+            },750)
+    
+        } else {
+            oldSelection = [ligne,colonne];
+        }
+    }
+}
+
+function generateGrilleAleatoireExpertGame() {
+    var tab = [];
+
+    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (var i = 0; i < 6 ; i++) {
+        var ligne = [];
+        for (var j = 0; j < 6 ; j++) {
+            var end = false;
+            while(!end) {
+                var randomImage = Math.floor(Math.random() * 32);
+                if (nbImagePosition[randomImage] < 2) {
+                    ligne.push(randomImage+1);
+                    nbImagePosition[randomImage]++;
+                    end = true;
+                }
+            }
+        }
+        tab.push(ligne);
+    }
+    return tab;
+}
+
+///////////////////////////////////////////////////// Impossible - Space /////////////////////////////////////////////////////////////////////
+
+function afficherTableauImpossibleSpace() {
+    var txt = "";
+
+    for (var i=0; i < grilleImpossible.length ; i++) {
+        txt += "<div>";
+        for (var j=0; j < grilleImpossible[i].length ; j++) {
+            if (grilleImpossible[i][j] === 0) {
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifImpossibleSpace(\""+i+"-"+j+"\")'>Afficher</button>";
+            } else {
+                txt += "<img src ='"+getImageSpace(grilleImpossible[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+            }
+        }
+        txt += "</div>";
+    }
+    divResultat.innerHTML = txt;
+}
+
+function verifImpossibleSpace(bouton) {
+    if (ready) {
+        nbAffiche++;
+
+        var ligne = bouton.substr(0,1);
+        var colonne = bouton.substr(2,1);
+    
+        grilleImpossible[ligne][colonne] = grilleResultat[ligne][colonne];
+        afficherTableauImpossibleSpace();
+    
+        if (nbAffiche>1) {
+            ready = false;
+            setTimeout(() => {
+                // Vérification
+                if (grilleImpossible[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
+                    grilleImpossible[ligne][colonne] = 0;
+                    grilleImpossible[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                afficherTableauImpossibleSpace();
+                ready = true;
+                nbAffiche = 0;
+                oldSelection = [ligne,colonne];
+            },750)
+    
+        } else {
+            oldSelection = [ligne,colonne];
+        }
+    }
+}
+
+function generateGrilleAleatoireImpossibleSpace() {
+    var tab = [];
+
+    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (var i = 0; i < 8 ; i++) {
+        var ligne = [];
+        for (var j = 0; j < 8 ; j++) {
+            var end = false;
+            while(!end) {
+                var randomImage = Math.floor(Math.random() * 32);
+                if (nbImagePosition[randomImage] < 2) {
+                    ligne.push(randomImage+1);
+                    nbImagePosition[randomImage]++;
+                    end = true;
+                }
+            }
+        }
+        tab.push(ligne);
+    }
+    return tab;
+}
+
+///////////////////////////////////////////////////// Impossible - Cartoon /////////////////////////////////////////////////////////////////////
+
+function afficherTableauImpossibleCartoon() {
+    var txt = "";
+
+    for (var i=0; i < grilleImpossible.length ; i++) {
+        txt += "<div>";
+        for (var j=0; j < grilleImpossible[i].length ; j++) {
+            if (grilleImpossible[i][j] === 0) {
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifImpossibleCartoon(\""+i+"-"+j+"\")'>Afficher</button>";
+            } else {
+                txt += "<img src ='"+getImageCartoon(grilleImpossible[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+            }
+        }
+        txt += "</div>";
+    }
+    divResultat.innerHTML = txt;
+}
+
+function verifImpossibleCartoon(bouton) {
+    if (ready) {
+        nbAffiche++;
+
+        var ligne = bouton.substr(0,1);
+        var colonne = bouton.substr(2,1);
+    
+        grilleImpossible[ligne][colonne] = grilleResultat[ligne][colonne];
+        afficherTableauImpossibleCartoon();
+    
+        if (nbAffiche>1) {
+            ready = false;
+            setTimeout(() => {
+                // Vérification
+                if (grilleImpossible[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
+                    grilleImpossible[ligne][colonne] = 0;
+                    grilleImpossible[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                afficherTableauImpossibleCartoon();
+                ready = true;
+                nbAffiche = 0;
+                oldSelection = [ligne,colonne];
+            },750)
+    
+        } else {
+            oldSelection = [ligne,colonne];
+        }
+    }
+}
+
+function generateGrilleAleatoireImpossibleCartoon() {
+    var tab = [];
+
+    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (var i = 0; i < 8 ; i++) {
+        var ligne = [];
+        for (var j = 0; j < 8 ; j++) {
+            var end = false;
+            while(!end) {
+                var randomImage = Math.floor(Math.random() * 32);
+                if (nbImagePosition[randomImage] < 2) {
+                    ligne.push(randomImage+1);
+                    nbImagePosition[randomImage]++;
+                    end = true;
+                }
+            }
+        }
+        tab.push(ligne);
+    }
+    return tab;
+}
+
+///////////////////////////////////////////////////// Impossible - Game /////////////////////////////////////////////////////////////////////
+
+afficherTableauImpossibleGame();
+
+function afficherTableauImpossibleGame() {
+    var txt = "";
+
+    for (var i=0; i < grilleImpossible.length ; i++) {
+        txt += "<div>";
+        for (var j=0; j < grilleImpossible[i].length ; j++) {
+            if (grilleImpossible[i][j] === 0) {
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick='verifImpossibleGame(\""+i+"-"+j+"\")'>Afficher</button>";
+            } else {
+                txt += "<img src ='"+getImageGame(grilleImpossible[i][j])+"' style='width:100px;height:100px' class='m-2'>";
+            }
+        }
+        txt += "</div>";
+    }
+    divResultat.innerHTML = txt;
+}
+
+function verifImpossibleGame(bouton) {
+    if (ready) {
+        nbAffiche++;
+
+        var ligne = bouton.substr(0,1);
+        var colonne = bouton.substr(2,1);
+    
+        grilleImpossible[ligne][colonne] = grilleResultat[ligne][colonne];
+        afficherTableauImpossibleGame();
+    
+        if (nbAffiche>1) {
+            ready = false;
+            setTimeout(() => {
+                // Vérification
+                if (grilleImpossible[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
+                    grilleImpossible[ligne][colonne] = 0;
+                    grilleImpossible[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                afficherTableauImpossibleGame();
+                ready = true;
+                nbAffiche = 0;
+                oldSelection = [ligne,colonne];
+            },750)
+    
+        } else {
+            oldSelection = [ligne,colonne];
+        }
+    }
+}
+
+function generateGrilleAleatoireImpossibleGame() {
+    var tab = [];
+
+    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (var i = 0; i < 8 ; i++) {
+        var ligne = [];
+        for (var j = 0; j < 8 ; j++) {
             var end = false;
             while(!end) {
                 var randomImage = Math.floor(Math.random() * 32);
