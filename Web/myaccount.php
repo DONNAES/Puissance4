@@ -14,6 +14,37 @@
         <title>The Power Of Memory - Mon Compte</title>
     </head>
     <body>
+        <?php
+            if (isset($_POST['email']) AND isset($_POST['newmail']) AND isset($_POST['password']) AND isset($_POST['confirmpassword']))
+            {
+                $mail     = $_POST['email'];
+                $newmail  = $_POST['newmail'];
+                $password = $_POST['password'];
+                $confirmpassword = $_POST['confirmpassword'];
+                
+                $hihi = 'SELECT * FROM user WHERE email= :toto and password = :pass';
+                $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+                $sth->execute(['toto' => $newmail, 'pass' => $password]);
+                $red = $sth->fetch();
+
+
+            
+                if($password != $confirmpassword){
+                    echo "Les mots de passe doivent être identiques";
+                    return false;
+                }
+                
+                elseif($hihi){
+                    echo "adresse mail inexistante";
+                    return false;
+                }
+
+                else{
+                    $sql = 'UPDATE user SET email = "'.$newmail.'"';
+                }
+
+            }
+        ?>
         <header>
             <?php
                 include 'assets/view/header.inc.php'
@@ -23,7 +54,7 @@
             <h2>MON COMPTE</h2>
         </section>
         <section class="userinfo">
-            <form action="traitement.php" method="post"></form>
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post"></form>
             <section class="username">
                 <h3>Pseudo : </h3>
                 <!--request username database-->
