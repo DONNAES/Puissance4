@@ -15,6 +15,9 @@
         <?php
             require ('./assets/includes/database.inc.php');
             session_start();
+            if(isset($_SESSION['email'])){
+                header("location:myaccount.php");
+            }
             $errusername = $erremail = $errpassword = $errconfpassword = $mdperrors = $usererrors = $success = "";
             $mdpreq = $confmdpreq = $userok = $emailok = 0;
             

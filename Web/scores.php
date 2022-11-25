@@ -1,5 +1,6 @@
 <?php
     require ('./assets/includes/database.inc.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>

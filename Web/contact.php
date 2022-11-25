@@ -1,7 +1,6 @@
 <?php
-
-    session_start();
     require_once 'assets/includes/database.inc.php';
+    session_start();
     $error_contact = '';
     $success_contact = '';
     if(isset($_POST['valider'])) {

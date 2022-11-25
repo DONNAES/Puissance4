@@ -1,5 +1,6 @@
 <?php
     require ('./assets/includes/database.inc.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +57,12 @@
         </header>
         <section class="account">
             <h2>MON COMPTE</h2>
+            <?php
+                echo '<div>'.$_SESSION['email'].'</div>'
+            ?>
         </section>
         <section class="userinfo">
+            
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post"></form>
             <section class="usernameform">
                 <h3>Pseudo : </h3>
