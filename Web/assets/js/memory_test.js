@@ -1,6 +1,6 @@
 const divResultat = document.querySelector("#resultat");
 
-var grilleResultat = generateGrilleAleatoireImpossibleGame();
+var grilleResultat = generateGrilleAleatoireIntermediateCartoon();
 
 var oldSelection=[];
 var nbAffiche = 0;
@@ -11,45 +11,6 @@ var ready = true;
 let difficulty = document.querySelector('#difficulty');
 let theme = document.querySelector('#theme');
 
-function choice(){
-    if (difficulty.value=="easy" && theme.value=="space"){
-        grilleResultat = generateGrilleAleatoireEasySpace();
-        afficherTableauEasySpace();
-    } else if (difficulty.value=="easy" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireEasyCartoon();
-        afficherTableauEasyCartoon();
-    } else if (difficulty.value=="easy" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireEasyGame();
-        afficherTableauEasyGame();
-    } else if (difficulty.value=="intermediate" && theme.value=="space") {
-        grilleResultat = generateGrilleAleatoireIntermediateSpace();
-        afficherTableauIntermediateSpace();
-    } else if (difficulty.value=="intermediate" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireIntermediateCartoon();
-        afficherTableauIntermediateCartoon();
-    } else if (difficulty.value=="intermediate" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireIntermediateGame();
-        afficherTableauIntermediateGame();
-    } else if (difficulty.value=="expert" && theme.value=="space") {
-        grilleResultat = generateGrilleAleatoireExpertSpace();
-        afficherTableauExpertSpace();
-    } else if (difficulty.value=="expert" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireExpertCartoon();
-        afficherTableauExpertCartoon();
-    } else if (difficulty.value=="expert" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireExpertGame();
-        afficherTableauExpertGame();
-    } else if (difficulty.value=="impossible" && theme.value=="space") {
-        grilleResultat = generateGrilleAleatoireImpossibleSpace();
-        afficherTableauImpossibleSpace();
-    } else if (difficulty.value=="impossible" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireImpossibleCartoon();
-        afficherTableauImpossibleCartoon();
-    } else if (difficulty.value=="impossible" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireImpossibleGame();
-        afficherTableauImpossibleGame();
-    }
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -528,7 +489,7 @@ function afficherTableauIntermediateSpace() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediateSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
                 txt += "<img src ='"+getImageSpace(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
@@ -593,6 +554,7 @@ function generateGrilleAleatoireIntermediateSpace() {
 
 ///////////////////////////////////////////////////// Intermediate - Cartoon /////////////////////////////////////////////////////////////////////
 
+
 function afficherTableauIntermediateCartoon() {
     var txt = "";
 
@@ -600,7 +562,7 @@ function afficherTableauIntermediateCartoon() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediateCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
                 txt += "<img src ='"+getImageCartoon(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
@@ -672,7 +634,7 @@ function afficherTableauIntermediateGame() {
         txt += "<div>";
         for (var j=0; j < grilleIntermediate[i].length ; j++) {
             if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
+                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediateGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
             } else {
                 txt += "<img src ='"+getImageGame(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
             }
@@ -1097,8 +1059,6 @@ function generateGrilleAleatoireImpossibleCartoon() {
 
 ///////////////////////////////////////////////////// Impossible - Game /////////////////////////////////////////////////////////////////////
 
-afficherTableauImpossibleGame();
-
 function afficherTableauImpossibleGame() {
     var txt = "";
 
@@ -1168,3 +1128,46 @@ function generateGrilleAleatoireImpossibleGame() {
     }
     return tab;
 }
+
+function choice(){
+    if (difficulty.value=="easy" && theme.value=="space"){
+        grilleResultat = generateGrilleAleatoireEasySpace();
+        afficherTableauEasySpace();
+    } else if (difficulty.value=="easy" && theme.value=="cartoon") {
+        grilleResultat = generateGrilleAleatoireEasyCartoon();
+        afficherTableauEasyCartoon();
+    } else if (difficulty.value=="easy" && theme.value=="game") {
+        grilleResultat = generateGrilleAleatoireEasyGame();
+        afficherTableauEasyGame();
+    } else if (difficulty.value=="intermediate" && theme.value=="space") {
+        grilleResultat = generateGrilleAleatoireIntermediateSpace();
+        afficherTableauIntermediateSpace();
+    } else if (difficulty.value=="intermediate" && theme.value=="cartoon") {
+        grilleResultat = generateGrilleAleatoireIntermediateCartoon();
+        afficherTableauIntermediateCartoon();
+    } else if (difficulty.value=="intermediate" && theme.value=="game") {
+        grilleResultat = generateGrilleAleatoireIntermediateGame();
+        afficherTableauIntermediateGame();
+    } else if (difficulty.value=="expert" && theme.value=="space") {
+        grilleResultat = generateGrilleAleatoireExpertSpace();
+        afficherTableauExpertSpace();
+    } else if (difficulty.value=="expert" && theme.value=="cartoon") {
+        grilleResultat = generateGrilleAleatoireExpertCartoon();
+        afficherTableauExpertCartoon();
+    } else if (difficulty.value=="expert" && theme.value=="game") {
+        grilleResultat = generateGrilleAleatoireExpertGame();
+        afficherTableauExpertGame();
+    } else if (difficulty.value=="impossible" && theme.value=="space") {
+        grilleResultat = generateGrilleAleatoireImpossibleSpace();
+        afficherTableauImpossibleSpace();
+    } else if (difficulty.value=="impossible" && theme.value=="cartoon") {
+        grilleResultat = generateGrilleAleatoireImpossibleCartoon();
+        afficherTableauImpossibleCartoon();
+    } else if (difficulty.value=="impossible" && theme.value=="game") {
+        grilleResultat = generateGrilleAleatoireImpossibleGame();
+        afficherTableauImpossibleGame();
+    }
+
+}
+
+afficherTableauIntermediateCartoon();
