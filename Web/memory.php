@@ -13,11 +13,11 @@
       unset($_SESSION['username']);
       header('Location:index.php');
     }
-    ?>
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+<!DOCTYPE html id="game">
+<html lang="en" id="loading">
+    <head id="haut">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/1.1.9/js/libs/jquery-1.10.2.min.js"></script>
         <link rel="shortcut icon" href="assets/images/icon_site.png" type="images/png">
         <link rel="stylesheet" href="assets/css/memory.css">
@@ -28,7 +28,7 @@
         <title>The Power Of Memory - Jeu</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
     </head>
-    <body>
+    <body id="bas">
         <header>
             <?php
                 include 'assets/view/header.inc.php'
@@ -135,7 +135,7 @@
                 <div id="time"></div>
             </div>
             <div class="game-container"></div>
-            <button id="stop" class="hide">Terminé la Partie</button>
+            <button id="stop" class="hide">Terminer la Partie</button>
         </div>
         <div class="controls-container">
             <p id="result"></p>
