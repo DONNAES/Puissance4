@@ -18,11 +18,11 @@
         <div id="time"></div>
       </div>
       <div class="game-container"></div>
-      <button id="stop" class="hide">Stop Game</button>
+      <button id="stop" class="hide">Terminé la Partie</button>
     </div>
     <div class="controls-container">
       <p id="result"></p>
-      <button id="start">Start Game</button>
+      <button id="start">JOUER</button>
     </div>
     <!-- Script -->
     <script src="assets/js/memory_test2.js"></script>

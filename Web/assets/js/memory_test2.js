@@ -12,17 +12,17 @@ let secondCard = false;
 //Items array
 const items = [
   { name: "alex", image: "assets/images/memory_images/jeux_videos/alex.png" },
-  { name: "crocodile", image: "crocodile.png" },
-  { name: "macaw", image: "macaw.png" },
-  { name: "gorilla", image: "gorilla.png" },
-  { name: "tiger", image: "tiger.png" },
-  { name: "monkey", image: "monkey.png" },
-  { name: "chameleon", image: "chameleon.png" },
-  { name: "piranha", image: "piranha.png" },
-  { name: "anaconda", image: "anaconda.png" },
-  { name: "sloth", image: "sloth.png" },
-  { name: "cockatoo", image: "cockatoo.png" },
-  { name: "toucan", image: "toucan.png" },
+  { name: "assassinscreed", image: "assets/images/memory_images/jeux_videos/assassinscreed.png" },
+  { name: "auron", image: "assets/images/memory_images/jeux_videos/auron.png" },
+  { name: "bandicoot", image: "assets/images/memory_images/jeux_videos/bandicoot.png" },
+  { name: "browser", image: "assets/images/memory_images/jeux_videos/browser.png" },
+  { name: "caveira", image: "assets/images/memory_images/jeux_videos/caveira.png" },
+  { name: "gaz", image: "assets/images/memory_images/jeux_videos/gaz.png" },
+  { name: "ghost", image: "assets/images/memory_images/jeux_videos/ghost.png" },
+  { name: "graves", image: "assets/images/memory_images/jeux_videos/graves.png" },
+  { name: "halo", image: "assets/images/memory_images/jeux_videos/halo.png" },
+  { name: "hitman", image: "assets/images/memory_images/jeux_videos/hitman.png" },
+  { name: "kratos", image: "assets/images/memory_images/jeux_videos/kratos.png" },
 ];
 //Initial Time
 let seconds = 0,
@@ -41,12 +41,12 @@ const timeGenerator = () => {
   //format time before displaying
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+  timeValue.innerHTML = `<span>Temps : </span>${minutesValue}:${secondsValue}`;
 };
 //For calculating moves
 const movesCounter = () => {
   movesCount += 1;
-  moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+  moves.innerHTML = `<span>Déplacements :</span>${movesCount}`;
 };
 //Pick random objects from the items array
 const generateRandom = (size = 4) => {
@@ -117,8 +117,8 @@ const matrixGenerator = (cardValues, size = 4) => {
             winCount += 1;
             //check if winCount ==half of cardValues
             if (winCount == Math.floor(cardValues.length / 2)) {
-              result.innerHTML = `<h2>You Won</h2>
-            <h4>Moves: ${movesCount}</h4>`;
+              result.innerHTML = `<h2>Victoire !</h2>
+            <h4>Déplacements : ${movesCount}</h4>`;
               stopGame();
             }
           } else {
@@ -149,7 +149,7 @@ startButton.addEventListener("click", () => {
   //Start timer
   interval = setInterval(timeGenerator, 1000);
   //initial moves
-  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  moves.innerHTML = `<span>Déplacements :</span> ${movesCount}`;
   initializer();
 });
 //Stop game
