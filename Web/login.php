@@ -20,6 +20,7 @@ session_start();
                 }
                 else {
                     $user_id = ('SELECT id FROM user WHERE email= $mail');
+                    $_SESSION["username"]= ("SELECT username FROM user WHERE email=$email AND password=$hashpassword")
                     $_SESSION["email"] = $email;
                     $_SESSION["password"] = $hpass;
                     header("location:index.php");
