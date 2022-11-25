@@ -1,7 +1,6 @@
 let difficulty = document.querySelector('#difficulty');
 let button = document.querySelector('#button');
 let theme = document.querySelector('#theme');
-const divResultat = document.querySelector("#resultat");
 
 difficulty.addEventListener('change', choice);
 theme.addEventListener('change', choice);
@@ -67,7 +66,7 @@ function start() {
         }
     }else{
         if(difficulty.value=="easy"){
-            
+
         }else if(difficulty.value=="intermediate"){
             
         }else if(difficulty.value=="expert"){
