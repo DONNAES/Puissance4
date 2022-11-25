@@ -98,7 +98,7 @@
                 <input class="button"
                     type="submit"
                     name="reg_user"
-                    placeholder="change_mail">
+                    placeholder="change_name">
                 </div>
             </section>
             <section class="emailform"> <!--Email-->
