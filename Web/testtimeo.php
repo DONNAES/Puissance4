@@ -27,7 +27,7 @@
                     
                     $hihi = 'SELECT * FROM user WHERE email= :toto and password = :pass';
                     $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
-                    $sth->execute(['toto' => $newmail, 'pass' => $password]);
+                    $sth->execute(['toto' => $mail, 'pass' => $password]);
                     $red = $sth->fetch();
 
 
@@ -54,13 +54,39 @@
                     $username = $_POST['username'];
                     $passwordname = $_POST['passwordname'];
 
-                    $haha = 'SELECT * FROM user WHERE username= :toto and password = :pass';
+                    $sql = 'SELECT * FROM user WHERE username= :toto and password = :pass';
                     $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
                     $sth->execute(['toto' => $username, 'pass' => $passwordname]);
                     $red = $sth->fetch();
 
-                    if($haha){
+                    if($red){
                     $sql = 'UPDATE user SET username = "'.$username.'"';
+                    }
+                }
+
+                //modification du mot de passe//
+                if (isset($_POST['passwordpass']) AND isset($_POST['newerpassword']) AND isset($_POST['passwordconfirmer']))
+                {
+                    $passwordpass = $_POST['passwordpass'];
+                    $newerpassword = $_POST['newerpassword'];
+                    $passwordconfirmer = $_POST['passwordconfirmer'];
+
+                    $sql = 'SELECT * FROM user WHERE password = :toto';
+                    $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+                    $sth->execute(['toto' => $passwordpass]);
+                    $red = $sth->fetch();
+
+                    if($newerpassword != $passwordconfirmer){
+                        echo "Les mots de passe doivent être identiques";
+                        return false;
+                    }
+
+                    elseif($red){
+                    $sql = 'UPDATE user SET password = "'.$newerpassword.'"';
+                    }
+
+                    else{
+                        echo "erreur";
                     }
                 }
             }
@@ -140,7 +166,7 @@
             <section class="passform"> <!--Password-->
                 <h3>Mot de Passe :</h3>
                 <input class="zone" type="password" 
-                    name="password" 
+                    name="passwordpass" 
                     id="pass" 
                     placeholder="Mot de Passe Actuel"
                     minlength="8"
@@ -149,7 +175,7 @@
                     spellcheck="false"
                     required>
                 <input class="zone" type="password"
-                    name="password"
+                    name="newerpassword"
                     id="pass"
                     placeholder="Nouveau Mot de Passe"
                     autocomplete="off"
@@ -158,7 +184,7 @@
                     maxlength="16"
                     required>
                 <input class="zone" type="password"
-                    name="password"
+                    name="passwordconfirmer"
                     id="pass"
                     placeholder="Confirmer le Mot de Passe"
                     autocomplete="off"
