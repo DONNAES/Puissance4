@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <b>Dwayne johnson</b> a effacé l'historique du chat.<br>
+=======
+<b>Eloi</b> a effacé l'historique du chat.<br>
+>>>>>>> e5f5564 (final)

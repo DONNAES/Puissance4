@@ -13,7 +13,7 @@
       unset($_SESSION['username']);
       header('Location:index.php');
     }
-    ?>
+?>
 
 <!DOCTYPE html id="game">
 <html lang="en" id="loading">
