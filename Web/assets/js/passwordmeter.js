@@ -27,6 +27,9 @@ function checkStrength(password) {
         strength += 1;
         }
 
+    if (password.length > 12) {
+        strength += 1;
+        }
     // If value is less than 2
     if (strength < 2) {
         passwordStrength.classList.remove('progress-bar-warning');
@@ -38,7 +41,7 @@ function checkStrength(password) {
         passwordStrength.classList.remove('progress-bar-danger');
         passwordStrength.classList.add('progress-bar-warning');
         passwordStrength.style = 'width: 60%';
-    } else if (strength == 4) {
+    } else if (strength == 5) {
         passwordStrength.classList.remove('progress-bar-warning');
         passwordStrength.classList.remove('progress-bar-danger');
         passwordStrength.classList.add('progress-bar-success');

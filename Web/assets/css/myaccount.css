@@ -54,7 +54,7 @@ html{
     margin-bottom: 3%;
 }
 
-input{
+.zone{
     width: 100%;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -70,14 +70,18 @@ input{
     color: white;
 }
 .button{
-    padding-right: 200px;
-}
-button{
-    border: none;
-    background-color: orange;
+    width: 100px;
+    height: 50px;
+    background: orange;
+    border: rgba(0, 0, 50, 0.5) solid 1px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     color: white;
-    padding: 10px 15px;
-    border-radius: 2px;
+    margin-top: -15%;
+}
+.usernameform{
+    display: flex;
+    flex-flow: column wrap;
 }
 .emailform{
     display: flex;
