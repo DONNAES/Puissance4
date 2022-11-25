@@ -19,8 +19,7 @@ session_start();
                     echo 'Email ou mot de passe invalide';
                 }
                 else {
-                    $user_id = ('SELECT id FROM user WHERE email= $mail');
-                    $_SESSION["username"]= ("SELECT username FROM user WHERE email=$email AND password=$hashpassword")
+                    $user_id = ('SELECT id FROM user WHERE email= $email');
                     $_SESSION["email"] = $email;
                     $_SESSION["password"] = $hpass;
                     header("location:index.php");

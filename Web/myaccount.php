@@ -101,11 +101,6 @@
             <h2>MON COMPTE</h2>
             
         </section>
-        <section class="infouser">
-            <?php
-                echo '<div>'.$_SESSION['email'].'</div>'
-            ?>
-        </section>
         <section class="userinfo">
             
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post"></form>
@@ -165,6 +160,12 @@
                         </div>
                     </section>
                 </section>
+                <section class="useremailform">
+                <section class="infouser">
+                    <?php
+                        echo '<div>'.$_SESSION['email'].'</div>'
+                    ?>
+                </section>
                 <section class="emailform"> <!--Email-->
                     <h3>Email : </h3>
                     <input class="zone" type="email" 
@@ -200,6 +201,7 @@
                         name="reg_email"
                         placeholder="change_mail">
                     </div>
+                </section>
                 </section>
             </form>
         </section>
