@@ -183,3 +183,8 @@ ul{
     color: rgb(168, 167, 167);
 
 }
+
+.infouser {
+    display: flex;
+    justify-content: center;
+}

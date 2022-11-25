@@ -99,6 +99,9 @@
         </header>
         <section class="account">
             <h2>MON COMPTE</h2>
+            
+        </section>
+        <section class="infouser">
             <?php
                 echo '<div>'.$_SESSION['email'].'</div>'
             ?>
