@@ -1,1175 +1,10 @@
 let difficulty = document.querySelector('#difficulty');
 let button = document.querySelector('#button');
 let theme = document.querySelector('#theme');
-const divResultat = document.querySelector("#resultat");
 
 difficulty.addEventListener('change', choice);
 theme.addEventListener('change', choice);
 button.addEventListener('click', start);
-
-var grilleResultat = ' ';
-
-var oldSelection=[];
-var nbAffiche = 0;
-var ready = true;
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-var grilleEasy = [
-    [0,0],
-    [0,0]
-];
-
-var grilleIntermediate = [
-    [0,0,0,0],
-    [0,0,0,0],
-    [0,0,0,0],
-    [0,0,0,0]
-];
-
-var grilleExpert = [
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0],
-    [0,0,0,0,0,0]
-];
-
-var grilleImpossible = [
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0]
-];
-
-///////////////////////////////////////////////////// Import Images /////////////////////////////////////////////////////////////////////
-
-function getImageSpace(valeur) {
-    var imgTxt = "assets/images/memory_images/espace/";
-    switch(valeur) {
-        case 1 : imgTxt += "alioth.png";
-        break;
-        case 2 : imgTxt += "andromede.png";
-        break;
-        case 3 : imgTxt += "antares.png";
-        break;
-        case 4 : imgTxt += "asteroide.png";
-        break;
-        case 5 : imgTxt += "betelgeuse.png";
-        break;
-        case 6 : imgTxt += "blackhole.png";
-        break;
-        case 7 : imgTxt += "ceinture.png";
-        break;
-        case 8 : imgTxt += "champ.png";
-        break;
-        case 9 : imgTxt += "comete.png";
-        break;
-        case 10 : imgTxt += "comete2.png";
-        break;
-        case 11 : imgTxt += "enterprise.png";
-        break;
-        case 12 : imgTxt += "fusee.png";
-        break;
-        case 13 : imgTxt += "jupiter.png";
-        break;
-        case 14 : imgTxt += "lune.png";
-        break;
-        case 15 : imgTxt += "mars.png";
-        break;
-        case 16 : imgTxt += "megrez.png";
-        break;
-        case 17 : imgTxt += "mercure.png";
-        break;
-        case 18 : imgTxt += "navette.png";
-        break;
-        case 19 : imgTxt += "neptune.png";
-        break;
-        case 20 : imgTxt += "pleiade.png";
-        break;
-        case 21 : imgTxt += "pluton.png";
-        break;
-        case 22 : imgTxt += "pulsar.png";
-        break;
-        case 23 : imgTxt += "quasar.png";
-        break;
-        case 24 : imgTxt += "saturne.png";
-        break;
-        case 25 : imgTxt += "star.png";
-        break;
-        case 26 : imgTxt += "systeme.png";
-        break;
-        case 27 : imgTxt += "terre.png";
-        break;
-        case 28 : imgTxt += "titan.png";
-        break;
-        case 29 : imgTxt += "uranus.png";
-        break;
-        case 30 : imgTxt += "vega.png";
-        break;
-        case 31 : imgTxt += "venus.png";
-        break;
-        case 32 : imgTxt += "voielactee.png";
-        break;
-        default : console.log("cas non pris en compte")
-    }
-    return imgTxt;
-}
-
-function getImageCartoon(valeur) {
-    var imgTxt = "assets/images/memory_images/dessins_animes/";
-    switch(valeur) {
-        case 1 : imgTxt += "ariel.png";
-        break;
-        case 2 : imgTxt += "asterix.png";
-        break;
-        case 3 : imgTxt += "barbapapa.png";
-        break;
-        case 4 : imgTxt += "ben10.png";
-        break;
-        case 5 : imgTxt += "bernie.png";
-        break;
-        case 6 : imgTxt += "bob.png";
-        break;
-        case 7 : imgTxt += "caitlyn.png";
-        break;
-        case 8 : imgTxt += "carlos.png";
-        break;
-        case 9 : imgTxt += "corneil.png";
-        break;
-        case 10 : imgTxt += "crochet.png";
-        break;
-        case 11 : imgTxt += "donald.png";
-        break;
-        case 12 : imgTxt += "dora.png";
-        break;
-        case 13 : imgTxt += "gadget.png";
-        break;
-        case 14 : imgTxt += "gumball.png";
-        break;
-        case 15 : imgTxt += "jumeau1.png";
-        break;
-        case 16 : imgTxt += "jumeau2.png";
-        break;
-        case 17 : imgTxt += "merlin.png";
-        break;
-        case 18 : imgTxt += "mickey.png";
-        break;
-        case 19 : imgTxt += "minion.png";
-        break;
-        case 20 : imgTxt += "mkrabs.png";
-        break;
-        case 21 : imgTxt += "obelix.png";
-        break;
-        case 22 : imgTxt += "oui-oui.png";
-        break;
-        case 23 : imgTxt += "patrick.png";
-        break;
-        case 24 : imgTxt += "peterpan.png";
-        break;
-        case 25 : imgTxt += "sacha.png";
-        break;
-        case 26 : imgTxt += "sakutaazusagawa.png";
-        break;
-        case 27 : imgTxt += "schtroumpfs.png";
-        break;
-        case 28 : imgTxt += "scooby-doo.png";
-        break;
-        case 29 : imgTxt += "simpson.png";
-        break;
-        case 30 : imgTxt += "stitch.png";
-        break;
-        case 31 : imgTxt += "toupie.png";
-        break;
-        case 32 : imgTxt += "winnie.png";
-        break;
-        default : console.log("cas non pris en compte")
-    }
-    return imgTxt;
-}
-
-function getImageGame(valeur) {
-    var imgTxt = "assets/images/memory_images/jeux_videos/";
-    switch(valeur) {
-        case 1 : imgTxt += "alex.png";
-        break;
-        case 2 : imgTxt += "assassinscreed.png";
-        break;
-        case 3 : imgTxt += "auron.png";
-        break;
-        case 4 : imgTxt += "bandicoot.png";
-        break;
-        case 5 : imgTxt += "browser.png";
-        break;
-        case 6 : imgTxt += "caveira.png";
-        break;
-        case 7 : imgTxt += "gaz.png";
-        break;
-        case 8 : imgTxt += "ghost.png";
-        break;
-        case 9 : imgTxt += "graves.png";
-        break;
-        case 10 : imgTxt += "halo.png";
-        break;
-        case 11 : imgTxt += "hitman.png";
-        break;
-        case 12 : imgTxt += "kirby.png";
-        break;
-        case 13 : imgTxt += "kratos.png";
-        break;
-        case 14 : imgTxt += "laitier.png";
-        break;
-        case 15 : imgTxt += "laracroft.png";
-        break;
-        case 16 : imgTxt += "luigi.png";
-        break;
-        case 17 : imgTxt += "mario.png";
-        break;
-        case 18 : imgTxt += "medic_ff2.png";
-        break;
-        case 19 : imgTxt += "nathandrake.png";
-        break;
-        case 20 : imgTxt += "pacman.png";
-        break;
-        case 21 : imgTxt += "petit_zelda.png";
-        break;
-        case 22 : imgTxt += "price.png";
-        break;
-        case 23 : imgTxt += "princepercia.png";
-        break;
-        case 24 : imgTxt += "profete.png";
-        break;
-        case 25 : imgTxt += "reyna.png";
-        break;
-        case 26 : imgTxt += "ryu.png";
-        break;
-        case 27 : imgTxt += "soap.png";
-        break;
-        case 28 : imgTxt += "sonic.png";
-        break;
-        case 29 : imgTxt += "steve.png";
-        break;
-        case 30 : imgTxt += "trevor.png";
-        break;
-        case 31 : imgTxt += "twitch.png";
-        break;
-        case 32 : imgTxt += "vigil.png";
-        break;
-        default : console.log("cas non pris en compte")
-    }
-    return imgTxt;
-}
-
-///////////////////////////////////////////////////// Easy - Space /////////////////////////////////////////////////////////////////////
-
-function afficherTableauEasySpace() {
-    var txt = "";
-
-    for (var i=0; i < grilleEasy.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleEasy[i].length ; j++) {
-            console.log('azertyuiop');
-            if (grilleEasy[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasySpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageSpace(grilleEasy[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    console.log('ta mere');
-    divResultat.innerHTML = txt;
-}
-
-function verifEasySpace(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleEasy[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauEasySpace();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleEasy[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleEasy[ligne][colonne] = 0;
-                    grilleEasy[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauEasySpace();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireEasySpace() {
-    var tab = [];
-
-    var nbImagePosition = [0,0];
-
-    for (var i = 0; i < 2 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 2 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Easy - Cartoon /////////////////////////////////////////////////////////////////////
-
-function afficherTableauEasyCartoon() {
-    var txt = "";
-
-    for (var i=0; i < grilleEasy.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleEasy[i].length ; j++) {
-            if (grilleEasy[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasyCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageCartoon(grilleEasy[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifEasyCartoon(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleEasy[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauEasyCartoon();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleEasy[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleEasy[ligne][colonne] = 0;
-                    grilleEasy[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauEasyCartoon();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireEasyCartoon() {
-    var tab = [];
-
-    var nbImagePosition = [0,0];
-
-    for (var i = 0; i < 2 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 2 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Easy - Game /////////////////////////////////////////////////////////////////////
-
-function afficherTableauEasyGame() {
-    var txt = "";
-
-    for (var i=0; i < grilleEasy.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleEasy[i].length ; j++) {
-            if (grilleEasy[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEasyGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageGame(grilleEasy[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifEasyGame(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleEasy[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauEasyGame();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleEasy[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleEasy[ligne][colonne] = 0;
-                    grilleEasy[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauEasyGame();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireEasyGame() {
-    var tab = [];
-
-    var nbImagePosition = [0,0];
-
-    for (var i = 0; i < 2 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 2 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Intermediate - Space /////////////////////////////////////////////////////////////////////
-
-function afficherTableauIntermediateSpace() {
-    var txt = "";
-
-    for (var i=0; i < grilleIntermediate.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleIntermediate[i].length ; j++) {
-            if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageSpace(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifIntermediateSpace(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleIntermediate[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauIntermediateSpace();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleIntermediate[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleIntermediate[ligne][colonne] = 0;
-                    grilleIntermediate[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauIntermediateSpace();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireIntermediateSpace() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 4 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 4 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Intermediate - Cartoon /////////////////////////////////////////////////////////////////////
-
-function afficherTableauIntermediateCartoon() {
-    var txt = "";
-
-    for (var i=0; i < grilleIntermediate.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleIntermediate[i].length ; j++) {
-            if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageCartoon(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifIntermediateCartoon(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleIntermediate[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauIntermediateCartoon();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleIntermediate[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleIntermediate[ligne][colonne] = 0;
-                    grilleIntermediate[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauIntermediateCartoon();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireIntermediateCartoon() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 4 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 4 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Intermediate - Game /////////////////////////////////////////////////////////////////////
-
-function afficherTableauIntermediateGame() {
-    var txt = "";
-
-    for (var i=0; i < grilleIntermediate.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleIntermediate[i].length ; j++) {
-            if (grilleIntermediate[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifIntermediaireGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageGame(grilleIntermediate[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifIntermediateGame(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleIntermediate[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauIntermediateGame();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleIntermediate[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleIntermediate[ligne][colonne] = 0;
-                    grilleIntermediate[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauIntermediateGame();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireIntermediateGame() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 4 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 4 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Expert - Space /////////////////////////////////////////////////////////////////////
-
-function afficherTableauExpertSpace() {
-    var txt = "";
-
-    for (var i=0; i < grilleExpert.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleExpert[i].length ; j++) {
-            if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifEspertSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageSpace(grilleExpert[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifExpertSpace(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleExpert[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauExpertSpace();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleExpert[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleExpert[ligne][colonne] = 0;
-                    grilleExpert[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauExpertSpace();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireExpertSpace() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 6 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 6 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Expert - Cartoon /////////////////////////////////////////////////////////////////////
-
-function afficherTableauExpertCartoon() {
-    var txt = "";
-
-    for (var i=0; i < grilleExpert.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleExpert[i].length ; j++) {
-            if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifExpertCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageCartoon(grilleExpert[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifExpertCartoon(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleExpert[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauExpertCartoon();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleExpert[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleExpert[ligne][colonne] = 0;
-                    grilleExpert[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauExpertCartoon();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireExpertCartoon() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 6 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 6 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Expert - Game /////////////////////////////////////////////////////////////////////
-
-function afficherTableauExpertGame() {
-    var txt = "";
-
-    for (var i=0; i < grilleExpert.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleExpert[i].length ; j++) {
-            if (grilleExpert[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifExpertCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageGame(grilleExpert[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifExpertGame(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleExpert[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauExpertGame();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleExpert[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleExpert[ligne][colonne] = 0;
-                    grilleExpert[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauExpertGame();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireExpertGame() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 6 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 6 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Impossible - Space /////////////////////////////////////////////////////////////////////
-
-function afficherTableauImpossibleSpace() {
-    var txt = "";
-
-    for (var i=0; i < grilleImpossible.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleImpossible[i].length ; j++) {
-            if (grilleImpossible[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifImpossibleSpace(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageSpace(grilleImpossible[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifImpossibleSpace(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleImpossible[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauImpossibleSpace();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleImpossible[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleImpossible[ligne][colonne] = 0;
-                    grilleImpossible[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauImpossibleSpace();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireImpossibleSpace() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 8 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 8 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Impossible - Cartoon /////////////////////////////////////////////////////////////////////
-
-function afficherTableauImpossibleCartoon() {
-    var txt = "";
-
-    for (var i=0; i < grilleImpossible.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleImpossible[i].length ; j++) {
-            if (grilleImpossible[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifImpossibleCartoon(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageCartoon(grilleImpossible[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifImpossibleCartoon(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleImpossible[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauImpossibleCartoon();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleImpossible[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleImpossible[ligne][colonne] = 0;
-                    grilleImpossible[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauImpossibleCartoon();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireImpossibleCartoon() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 8 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 8 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-///////////////////////////////////////////////////// Impossible - Game /////////////////////////////////////////////////////////////////////
-
-function afficherTableauImpossibleGame() {
-    var txt = "";
-
-    for (var i=0; i < grilleImpossible.length ; i++) {
-        txt += "<div>";
-        for (var j=0; j < grilleImpossible[i].length ; j++) {
-            if (grilleImpossible[i][j] === 0) {
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px;padding:0%' onClick='verifImpossibleGame(\""+i+"-"+j+"\")'><img src='assets/images/memory_images/point.png' style='width:100px;height:100px;padding:0%'></button>";
-            } else {
-                txt += "<img src ='"+getImageGame(grilleImpossible[i][j])+"' style='width:100px;height:100px;padding:0%' class='m-2'>";
-            }
-        }
-        txt += "</div>";
-    }
-    divResultat.innerHTML = txt;
-}
-
-function verifImpossibleGame(bouton) {
-    if (ready) {
-        nbAffiche++;
-
-        var ligne = bouton.substr(0,1);
-        var colonne = bouton.substr(2,1);
-    
-        grilleImpossible[ligne][colonne] = grilleResultat[ligne][colonne];
-        afficherTableauImpossibleGame();
-    
-        if (nbAffiche>1) {
-            ready = false;
-            setTimeout(() => {
-                // Vérification
-                if (grilleImpossible[ligne][colonne] !== grilleResultat[oldSelection[0]][oldSelection[1]]) {
-                    grilleImpossible[ligne][colonne] = 0;
-                    grilleImpossible[oldSelection[0]][oldSelection[1]] = 0;
-                }
-                afficherTableauImpossibleGame();
-                ready = true;
-                nbAffiche = 0;
-                oldSelection = [ligne,colonne];
-            },750)
-    
-        } else {
-            oldSelection = [ligne,colonne];
-        }
-    }
-}
-
-function generateGrilleAleatoireImpossibleGame() {
-    var tab = [];
-
-    var nbImagePosition = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-    for (var i = 0; i < 8 ; i++) {
-        var ligne = [];
-        for (var j = 0; j < 8 ; j++) {
-            var end = false;
-            while(!end) {
-                var randomImage = Math.floor(Math.random() * 32);
-                if (nbImagePosition[randomImage] < 2) {
-                    ligne.push(randomImage+1);
-                    nbImagePosition[randomImage]++;
-                    end = true;
-                }
-            }
-        }
-        tab.push(ligne);
-    }
-    return tab;
-}
-
-var startTime = 0;
-var start = 0;
-var end = 0;
-var diff = 0;
-var timerID = 0;
-function chrono(){
-	end = new Date();
-	diff = end - start;
-	diff = new Date(diff);
-	var msec = diff.getMilliseconds();
-	var sec = diff.getSeconds();
-	var min = diff.getMinutes();
-	var hr = diff.getHours()-1;
-	if (min < 10){
-		min = "0" + min;
-	}
-	if (sec < 10){
-		sec = "0" + sec;
-	}
-	if(msec < 10){
-		msec = "0" +msec;
-	}
-	else if(msec < 100){
-		msec = "0" +msec;
-	}
-	document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + ":" + msec;
-	timerID = setTimeout("chrono()", 10);
-}
-
-function chronoStart(){
-    start = new Date();
-        chrono();
-}
-
-function chronoStop(){
-	clearTimeout(timerID)
-}
 
 function choice(){
     if (difficulty.value=="" || theme.value==""){
@@ -1207,43 +42,316 @@ function choice(){
     }
 }
 
-
 function start() {
-    if (difficulty.value=="easy" && theme.value=="space"){
-        grilleResultat = generateGrilleAleatoireEasySpace();
-        afficherTableauEasySpace();
-    } else if (difficulty.value=="easy" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireEasyCartoon();
-        afficherTableauEasyCartoon();
-    } else if (difficulty.value=="easy" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireEasyGame();
-        afficherTableauEasyGame();
-    } else if (difficulty.value=="intermediate" && theme.value=="space") {
-        grilleResultat = generateGrilleAleatoireIntermediateSpace();
-        afficherTableauIntermediateSpace();
-    } else if (difficulty.value=="intermediate" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireIntermediateCartoon();
-        afficherTableauIntermediateCartoon();
-    } else if (difficulty.value=="intermediate" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireIntermediateGame();
-        afficherTableauIntermediateGame();
-    } else if (difficulty.value=="expert" && theme.value=="space") {
-        grilleResultat = generateGrilleAleatoireExpertSpace();
-        afficherTableauExpertSpace();
-    } else if (difficulty.value=="expert" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireExpertCartoon();
-        afficherTableauExpertCartoon();
-    } else if (difficulty.value=="expert" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireExpertGame();
-        afficherTableauExpertGame();
-    } else if (difficulty.value=="impossible" && theme.value=="space") {
-        grilleResultat = generateGrilleAleatoireImpossibleSpace();
-        afficherTableauImpossibleSpace();
-    } else if (difficulty.value=="impossible" && theme.value=="cartoon") {
-        grilleResultat = generateGrilleAleatoireImpossibleCartoon();
-        afficherTableauImpossibleCartoon();
-    } else if (difficulty.value=="impossible" && theme.value=="game") {
-        grilleResultat = generateGrilleAleatoireImpossibleGame();
-        afficherTableauImpossibleGame();
+    var loading = document.getElementById('loading');
+    var haut = document.getElementById('haut');
+    var bas = document.getElementById('bas');
+    haut.parentNode.removeChild(haut);
+    bas.parentNode.removeChild(bas);
+    loading.innerHTML = `
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Memory Game</title>
+        <!-- Google Fonts -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet"
+        />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="assets/css/memory2.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="stats-container">
+            <div id="moves-count"></div>
+            <div id="time"></div>
+        </div>
+        <div class="game-container"></div>
+        <button id="stop" class="hide">Terminé la Partie</button>
+        </div>
+        <div class="controls-container">
+        <p id="result"></p>
+        <button id="start">JOUER</button>
+        </div>
+        <!-- Script -->
+        <script src="assets/js/memory_test2.js"></script>
+    </body>`;
+    const moves = document.getElementById("moves-count");
+    const timeValue = document.getElementById("time");
+    const startButton = document.getElementById("start");
+    const stopButton = document.getElementById("stop");
+    const gameContainer = document.querySelector(".game-container");
+    const result = document.getElementById("result");
+    const controls = document.querySelector(".controls-container");
+    let cards;
+    let interval;
+    let firstCard = false;
+    let secondCard = false;
+    let size = 0;
+    if (theme.value=="space") {
+        const items = [
+            { name: "alioth", image: "assets/images/memory_images/espace/alioth.png" },
+            { name: "andromede", image: "assets/images/memory_images/espace/andromede.png" },
+            { name: "antares", image: "assets/images/memory_images/espace/antares.png" },
+            { name: "asteroide", image: "assets/images/memory_images/espace/asteroide.png" },
+            { name: "betelgeuse", image: "assets/images/memory_images/espace/betelgeuse.png" },
+            { name: "blackhole", image: "assets/images/memory_images/espace/blackhole.png" },
+            { name: "ceinture", image: "assets/images/memory_images/espace/ceinture.png" },
+            { name: "champ", image: "assets/images/memory_images/espace/champ.png" },
+            { name: "comete", image: "assets/images/memory_images/espace/comete.png" },
+            { name: "comete2", image: "assets/images/memory_images/espace/comete2.png" },
+            { name: "enterprise", image: "assets/images/memory_images/espace/enterprise.png" },
+            { name: "fusee", image: "assets/images/memory_images/espace/fusee.png" },
+            { name: "jupiter", image: "assets/images/memory_images/espace/jupiter.png" },
+            { name: "lune", image: "assets/images/memory_images/espace/lune.png" },
+            { name: "mars", image: "assets/images/memory_images/espace/mars.png" },
+            { name: "megrez", image: "assets/images/memory_images/espace/megrez.png" },
+            { name: "mercure", image: "assets/images/memory_images/espace/mercure.png" },
+            { name: "navette", image: "assets/images/memory_images/espace/navette.png" },
+            { name: "neptune", image: "assets/images/memory_images/espace/neptune.png" },
+            { name: "pleiade", image: "assets/images/memory_images/espace/pleiade.png" },
+            { name: "pluton", image: "assets/images/memory_images/espace/pluton.png" },
+            { name: "pulsar", image: "assets/images/memory_images/espace/pulsar.png" },
+            { name: "quasar", image: "assets/images/memory_images/espace/quasar.png" },
+            { name: "saturne", image: "assets/images/memory_images/espace/saturne.png" },
+            { name: "star", image: "assets/images/memory_images/espace/star.png" },
+            { name: "systeme", image: "assets/images/memory_images/espace/systeme.png" },
+            { name: "terre", image: "assets/images/memory_images/espace/terre.png" },
+            { name: "titan", image: "assets/images/memory_images/espace/titan.png" },
+            { name: "uranus", image: "assets/images/memory_images/espace/uranus.png" },
+            { name: "vega", image: "assets/images/memory_images/espace/vega.png" },
+            { name: "venus", image: "assets/images/memory_images/espace/venus.png" },
+            { name: "voilactee", image: "assets/images/memory_images/espace/voilactee.png" }
+          ];
+        if (difficulty.value=="easy") {
+            size = 2;
+        } else if (difficulty.value=="intermediate") {
+            size = 4;
+        } else if (difficulty.value=="expert") {
+            size = 6;
+        } else {
+            size = 8;
+        }
+    } else if (theme.value=="cartoon") {
+        const items = [
+            { name: "ariel", image: "assets/images/memory_images/desssins_animes/ariel.png" },
+            { name: "asterix", image: "assets/images/memory_images/desssins_animes/asterix.png" },
+            { name: "barbapapa", image: "assets/images/memory_images/desssins_animes/barbapapa.png" },
+            { name: "ben10", image: "assets/images/memory_images/desssins_animes/ben10.png" },
+            { name: "bernie", image: "assets/images/memory_images/desssins_animes/bernie.png" },
+            { name: "bob", image: "assets/images/memory_images/desssins_animes/bob.png" },
+            { name: "caitlyn", image: "assets/images/memory_images/desssins_animes/caitlyn.png" },
+            { name: "carlos", image: "assets/images/memory_images/desssins_animes/carlos.png" },
+            { name: "corneil", image: "assets/images/memory_images/desssins_animes/corneil.png" },
+            { name: "crochet", image: "assets/images/memory_images/desssins_animes/crochet.png" },
+            { name: "donald", image: "assets/images/memory_images/desssins_animes/donald.png" },
+            { name: "dora", image: "assets/images/memory_images/desssins_animes/dora.png" },
+            { name: "gadget", image: "assets/images/memory_images/desssins_animes/gadget.png" },
+            { name: "gumball", image: "assets/images/memory_images/desssins_animes/gumball.png" },
+            { name: "jumeau1", image: "assets/images/memory_images/desssins_animes/jumeau1.png" },
+            { name: "jumeau2", image: "assets/images/memory_images/desssins_animes/jumeau2.png" },
+            { name: "merlin", image: "assets/images/memory_images/desssins_animes/merlin.png" },
+            { name: "mickey", image: "assets/images/memory_images/desssins_animes/mickey.png" },
+            { name: "minion", image: "assets/images/memory_images/desssins_animes/minion.png" },
+            { name: "mkrabs", image: "assets/images/memory_images/desssins_animes/mkrabs.png" },
+            { name: "obelix", image: "assets/images/memory_images/desssins_animes/obelix.png" },
+            { name: "oui-oui", image: "assets/images/memory_images/desssins_animes/oui.png" },
+            { name: "patrick", image: "assets/images/memory_images/desssins_animes/patrick.png" },
+            { name: "peterpan", image: "assets/images/memory_images/desssins_animes/peterpan.png" },
+            { name: "sacha", image: "assets/images/memory_images/desssins_animes/sacha.png" },
+            { name: "sakutaazusagawa", image: "assets/images/memory_images/desssins_animes/sakutaazusagawa.png" },
+            { name: "schtroumpfs", image: "assets/images/memory_images/desssins_animes/schtroumpfs.png" },
+            { name: "scooby-doo", image: "assets/images/memory_images/desssins_animes/scooby-doo.png" },
+            { name: "simpson", image: "assets/images/memory_images/desssins_animes/simpson.png" },
+            { name: "stitch", image: "assets/images/memory_images/desssins_animes/stitch.png" },
+            { name: "toupie", image: "assets/images/memory_images/desssins_animes/toupie.png" },
+            { name: "winnie", image: "assets/images/memory_images/desssins_animes/winnie.png" }
+          ];
+        if(difficulty.value=="easy") {
+            size = 2;
+        } else if (difficulty.value=="intermediate") {
+            size = 4;
+        } else if (difficulty.value=="expert") {
+            size = 6; 
+        } else {
+            size = 8;
+        }
+    } else {
+        const items = [
+            { name: "alex", image: "assets/images/memory_images/jeux_videos/alex.png" },
+            { name: "assassinscreed", image: "assets/images/memory_images/jeux_videos/assassinscreed.png" },
+            { name: "auron", image: "assets/images/memory_images/jeux_videos/auron.png" },
+            { name: "bandicoot", image: "assets/images/memory_images/jeux_videos/bandicoot.png" },
+            { name: "browser", image: "assets/images/memory_images/jeux_videos/browser.png" },
+            { name: "caveira", image: "assets/images/memory_images/jeux_videos/caveira.png" },
+            { name: "gaz", image: "assets/images/memory_images/jeux_videos/gaz.png" },
+            { name: "ghost", image: "assets/images/memory_images/jeux_videos/ghost.png" },
+            { name: "graves", image: "assets/images/memory_images/jeux_videos/graves.png" },
+            { name: "halo", image: "assets/images/memory_images/jeux_videos/halo.png" },
+            { name: "hitman", image: "assets/images/memory_images/jeux_videos/hitman.png" },
+            { name: "kirby", image: "assets/images/memory_images/jeux_videos/kirby.png" },
+            { name: "kratos", image: "assets/images/memory_images/jeux_videos/kratos.png" },
+            { name: "laitier", image: "assets/images/memory_images/jeux_videos/laitier.png" },
+            { name: "laracroft", image: "assets/images/memory_images/jeux_videos/laracroft.png" },
+            { name: "luigi", image: "assets/images/memory_images/jeux_videos/luigi.png" },
+            { name: "mario", image: "assets/images/memory_images/jeux_videos/mario.png" },
+            { name: "medic_ff2", image: "assets/images/memory_images/jeux_videos/medic_ff2.png" },
+            { name: "nathandrake", image: "assets/images/memory_images/jeux_videos/nathandrake.png" },
+            { name: "pacman", image: "assets/images/memory_images/jeux_videos/pacman.png" },
+            { name: "petit_zelda", image: "assets/images/memory_images/jeux_videos/petit_zelda.png" },
+            { name: "price", image: "assets/images/memory_images/jeux_videos/price.png" },
+            { name: "princepercia", image: "assets/images/memory_images/jeux_videos/princepercia.png" },
+            { name: "profete", image: "assets/images/memory_images/jeux_videos/profete.png" },
+            { name: "reyna", image: "assets/images/memory_images/jeux_videos/reyna.png" },
+            { name: "ryu", image: "assets/images/memory_images/jeux_videos/ryu.png" },
+            { name: "soap", image: "assets/images/memory_images/jeux_videos/soap.png" },
+            { name: "sonic", image: "assets/images/memory_images/jeux_videos/sonic.png" },
+            { name: "steve", image: "assets/images/memory_images/jeux_videos/steve.png" },
+            { name: "trevor", image: "assets/images/memory_images/jeux_videos/trevor.png" },
+            { name: "twitch", image: "assets/images/memory_images/jeux_videos/twitch.png" },
+            { name: "vigil", image: "assets/images/memory_images/jeux_videos/vigil.png" }
+          ];
+        if (difficulty.value=="easy") {
+            size = 2;
+        } else if (difficulty.value=="intermediate") {
+            size = 4;
+        } else if (difficulty.value=="expert") {
+            size = 6;
+        } else {
+            size = 8;
+        }
     }
+
+    let seconds = 0,
+    minutes = 0;
+    let movesCount = 0,
+    winCount = 0;
+    const timeGenerator = () => {
+        seconds += 1;
+        if (seconds >= 60) {
+            minutes += 1;
+            seconds = 0;
+        }
+
+        let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+        let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+        timeValue.innerHTML = `<span>Temps : </span>${minutesValue}:${secondsValue}`;
+    };
+
+    const movesCounter = () => {
+        movesCount += 1;
+        moves.innerHTML = `<span>Déplacements : </span>${movesCount}`;
+    };
+
+    const generateRandom = (size) => {
+        let tempArray = [...items];
+        let cardValues = [];
+        size = (size * size) / 2;
+        for (let i = 0; i < size; i++) {
+        const randomIndex = Math.floor(Math.random() * tempArray.length);
+        cardValues.push(tempArray[randomIndex]);
+        tempArray.splice(randomIndex, 1);
+    }
+        return cardValues;
+    };
+    
+    const matrixGenerator = (cardValues, size) => {
+        gameContainer.innerHTML = "";
+        cardValues = [...cardValues, ...cardValues];
+        // mélange simple
+        cardValues.sort(() => Math.random() - 0.5);
+        for (let i = 0; i < size * size; i++) {
+            gameContainer.innerHTML += `
+            <div class="card-container" data-card-value="${cardValues[i].name}">
+                <div class="card-before">?</div>
+                <div class="card-after">
+                <img src="${cardValues[i].image}" class="image"/></div>
+            </div>
+            `;
+        }
+        // Grille
+        gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+        // Cartes
+        cards = document.querySelectorAll(".card-container");
+        cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            // Si la carte sélectionnée n'est pas encore associée, exécutez-la uniquement (c'est-à-dire que la carte déjà associée lorsque vous cliquez dessus serait ignorée)
+            if (!card.classList.contains("matched")) {
+                // retourner la carte cliqué
+                card.classList.add("flipped");
+                // s'il s'agit de la première carte (!firstCard puisque firstCard vaut initialement false)
+                if (!firstCard) {
+                    // donc la carte actuelle deviendra firstCard
+                    firstCard = card;
+                    // la valeur actuelle des cartes devient firstCardValue
+                    firstCardValue = card.getAttribute("data-card-value");
+                } else {
+                    // incrémenter les mouvements depuis que l'utilisateur a sélectionné la deuxième carte
+                    movesCounter();
+                    // secondCard et valeur
+                    secondCard = card;
+                    let secondCardValue = card.getAttribute("data-card-value");
+                    if (firstCardValue == secondCardValue) {
+                    // si les deux cartes correspondent, ajoutez la classe correspondante afin que ces cartes soient ignorées la prochaine fois
+                    firstCard.classList.add("matched");
+                    secondCard.classList.add("matched");
+                    // définir firstCard sur false puisque la prochaine carte serait la première maintenant
+                    firstCard = false;
+                    // Incrément de winCount lorsque l'utilisateur a trouvé une correspondance correcte
+                    winCount += 1;
+                    // vérifier si winCount == la moitié de cardValues
+                    if (winCount == Math.floor(cardValues.length / 2)) {
+                        result.innerHTML = `<h2>Victoire !</h2>
+                        <h4>Déplacements : ${movesCount}</h4>`;
+                        stopGame();
+                    }
+                    } else {
+                        // si les cartes ne correspondent pas
+                        // retourner les cartes à la normale
+                        let [tempFirst, tempSecond] = [firstCard, secondCard];
+                        firstCard = false;
+                        secondCard = false;
+                        let delay = setTimeout(() => {
+                            tempFirst.classList.remove("flipped");
+                            tempSecond.classList.remove("flipped");
+                        }, 900);
+                    }
+                }
+            }
+        });
+        });
+    };
+    // Démarrer jeu
+    startButton.addEventListener("click", () => {
+        movesCount = 0;
+        seconds = 0;
+        minutes = 0;
+        // contrôle la visibilité des boutons et des boutons
+        controls.classList.add("hide");
+        stopButton.classList.remove("hide");
+        startButton.classList.add("hide");
+        // Démarrer la minuterie
+        interval = setInterval(timeGenerator, 1000);
+        //initial moves
+        moves.innerHTML = `<span>Déplacements :</span> ${movesCount}`;
+        initializer();
+    });
+    // Arrêter le jeu
+    stopButton.addEventListener(
+    "click",
+    (stopGame = () => {
+        controls.classList.remove("hide");
+        stopButton.classList.add("hide");
+        startButton.classList.remove("hide");
+        clearInterval(interval);
+    })
+    );
+    // Initialiser les valeurs et les appels de fonction
+    const initializer = () => {
+        result.innerText = "";
+        winCount = 0;
+        let cardValues = generateRandom();
+        console.log(cardValues);
+        matrixGenerator(cardValues);
+    };
 }

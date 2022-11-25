@@ -15,9 +15,9 @@
     }
     ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+<!DOCTYPE html id="game">
+<html lang="en" id="loading">
+    <head id="haut">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/1.1.9/js/libs/jquery-1.10.2.min.js"></script>
         <link rel="shortcut icon" href="assets/images/icon_site.png" type="images/png">
         <link rel="stylesheet" href="assets/css/memory.css">
@@ -26,8 +26,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Power Of Memory - Jeu</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
     </head>
-    <body>
+    <body id="bas">
         <header>
             <?php
                 include 'assets/view/header.inc.php'
@@ -40,7 +41,7 @@
         <select name="themes" id="theme">
             <option value="" class="Theme">Thèmes</option>
             <option value="space">Espace</option>
-            <option value="ccartoon">Dessins animés</option>
+            <option value="cartoon">Dessins animés</option>
             <option value="game">Jeux vidéos</option>
         </select>
         <select name="difficulties" id="difficulty">
@@ -128,14 +129,19 @@
                 include 'assets/view/footer.inc.php'
             ?>
         </footer>
-        <div class="container text-center settings">
-            <div id="resultat"></div>
+        <div class="wrapper">
+            <div class="stats-container">
+                <div id="moves-count"></div>
+                <div id="time"></div>
+            </div>
+            <div class="game-container"></div>
+            <button id="stop" class="hide">Terminer la Partie</button>
+        </div>
+        <div class="controls-container">
+            <p id="result"></p>
+            <button id="start">JOUER</button>
         </div>
 
         <script src="assets/js/memory.js"></script>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>
