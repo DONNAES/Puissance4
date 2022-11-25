@@ -52,10 +52,11 @@
                 if (isset($_POST['username']) AND isset($_POST['passwordname']))
                 {
                     $username = $_POST['username'];
+                    $passwordname = $_POST['passwordname'];
 
-                    $haha = 'SELECT * FROM user WHERE email= :toto and password = :pass';
+                    $haha = 'SELECT * FROM user WHERE username= :toto and password = :pass';
                     $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
-                    $sth->execute(['toto' => $newmail, 'pass' => $password]);
+                    $sth->execute(['toto' => $username, 'pass' => $passwordname]);
                     $red = $sth->fetch();
 
                     if($haha){
