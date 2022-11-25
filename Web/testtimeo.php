@@ -60,7 +60,7 @@
                     $red = $sth->fetch();
 
                     if($haha){
-                    $sql = 'UPDATE user SET email = "'.$username.'"';
+                    $sql = 'UPDATE user SET username = "'.$username.'"';
                     }
                 }
             }
