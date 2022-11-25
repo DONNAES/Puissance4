@@ -1,3 +1,8 @@
 <?php
-    $sql = 'UPDATE user SET email = "'.$newmail.'"';
+    if (isset($_POST['username']))
+    {
+        $username = $_POST['username'];
+
+        $sql = 'UPDATE user SET email = "'.$username.'"';
+    }
 ?>
