@@ -17,6 +17,7 @@
         <?php
             if (isset($_POST['reg_email']))
             {
+                //modification du mail//
                 if (isset($_POST['email']) AND isset($_POST['newmail']) AND isset($_POST['password']) AND isset($_POST['confirmpassword']))
                 {
                     $mail     = $_POST['email'];
@@ -47,6 +48,20 @@
 
                 }
 
+                //modification du pseudo//
+                if (isset($_POST['username']) AND isset($_POST['passwordname']))
+                {
+                    $username = $_POST['username'];
+
+                    $haha = 'SELECT * FROM user WHERE email= :toto and password = :pass';
+                    $sth = $dbh->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+                    $sth->execute(['toto' => $newmail, 'pass' => $password]);
+                    $red = $sth->fetch();
+
+                    if($haha){
+                    $sql = 'UPDATE user SET email = "'.$username.'"';
+                    }
+                }
             }
         ?>
         <header>
@@ -70,7 +85,7 @@
                     spellcheck="false"
                     autocomplete="off">
                 <input class="zone" type="password"
-                    name="password"
+                    name="passwordname"
                     id="pass"
                     placeholder="Mot de Passe"
                     autocomplete="off"
