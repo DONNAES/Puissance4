@@ -40,7 +40,7 @@
         <select name="themes" id="theme">
             <option value="" class="Theme">Thèmes</option>
             <option value="space">Espace</option>
-            <option value="ccartoon">Dessins animés</option>
+            <option value="cartoon">Dessins animés</option>
             <option value="game">Jeux vidéos</option>
         </select>
         <select name="difficulties" id="difficulty">
