@@ -121,7 +121,7 @@ function start() {
             { name: "uranus", image: "assets/images/memory_images/espace/uranus.png" },
             { name: "vega", image: "assets/images/memory_images/espace/vega.png" },
             { name: "venus", image: "assets/images/memory_images/espace/venus.png" },
-            { name: "voilactee", image: "assets/images/memory_images/espace/voilactee.png" },
+            { name: "voilactee", image: "assets/images/memory_images/espace/voilactee.png" }
           ];
         if (difficulty.value=="easy") {
             size = 2;
@@ -165,7 +165,7 @@ function start() {
             { name: "simpson", image: "assets/images/memory_images/desssins_animes/simpson.png" },
             { name: "stitch", image: "assets/images/memory_images/desssins_animes/stitch.png" },
             { name: "toupie", image: "assets/images/memory_images/desssins_animes/toupie.png" },
-            { name: "winnie", image: "assets/images/memory_images/desssins_animes/winnie.png" },
+            { name: "winnie", image: "assets/images/memory_images/desssins_animes/winnie.png" }
           ];
         if(difficulty.value=="easy") {
             size = 2;
@@ -209,7 +209,7 @@ function start() {
             { name: "steve", image: "assets/images/memory_images/jeux_videos/steve.png" },
             { name: "trevor", image: "assets/images/memory_images/jeux_videos/trevor.png" },
             { name: "twitch", image: "assets/images/memory_images/jeux_videos/twitch.png" },
-            { name: "vigil", image: "assets/images/memory_images/jeux_videos/vigil.png" },
+            { name: "vigil", image: "assets/images/memory_images/jeux_videos/vigil.png" }
           ];
         if (difficulty.value=="easy") {
             size = 2;
@@ -227,99 +227,99 @@ function start() {
     let movesCount = 0,
     winCount = 0;
     const timeGenerator = () => {
-    seconds += 1;
-    if (seconds >= 60) {
-    minutes += 1;
-    seconds = 0;
-    }
+        seconds += 1;
+        if (seconds >= 60) {
+            minutes += 1;
+            seconds = 0;
+        }
 
-    let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
-    let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-    timeValue.innerHTML = `<span>Temps : </span>${minutesValue}:${secondsValue}`;
+        let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+        let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+        timeValue.innerHTML = `<span>Temps : </span>${minutesValue}:${secondsValue}`;
     };
 
     const movesCounter = () => {
-    movesCount += 1;
-    moves.innerHTML = `<span>Déplacements : </span>${movesCount}`;
+        movesCount += 1;
+        moves.innerHTML = `<span>Déplacements : </span>${movesCount}`;
     };
 
     const generateRandom = (size) => {
-    let tempArray = [...items];
-    let cardValues = [];
-    size = (size * size) / 2;
-    for (let i = 0; i < size; i++) {
-    const randomIndex = Math.floor(Math.random() * tempArray.length);
-    cardValues.push(tempArray[randomIndex]);
-    tempArray.splice(randomIndex, 1);
+        let tempArray = [...items];
+        let cardValues = [];
+        size = (size * size) / 2;
+        for (let i = 0; i < size; i++) {
+        const randomIndex = Math.floor(Math.random() * tempArray.length);
+        cardValues.push(tempArray[randomIndex]);
+        tempArray.splice(randomIndex, 1);
     }
-    return cardValues;
+        return cardValues;
     };
     
     const matrixGenerator = (cardValues, size) => {
-    gameContainer.innerHTML = "";
-    cardValues = [...cardValues, ...cardValues];
-    // mélange simple
-    cardValues.sort(() => Math.random() - 0.5);
-    for (let i = 0; i < size * size; i++) {
-        gameContainer.innerHTML += `
-        <div class="card-container" data-card-value="${cardValues[i].name}">
-            <div class="card-before">?</div>
-            <div class="card-after">
-            <img src="${cardValues[i].image}" class="image"/></div>
-        </div>
-        `;
-    }
-    // Grille
-    gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
-    // Cartes
-    cards = document.querySelectorAll(".card-container");
-    cards.forEach((card) => {
-    card.addEventListener("click", () => {
-        // Si la carte sélectionnée n'est pas encore associée, exécutez-la uniquement (c'est-à-dire que la carte déjà associée lorsque vous cliquez dessus serait ignorée)
-        if (!card.classList.contains("matched")) {
-        // retourner la carte cliqué
-        card.classList.add("flipped");
-        // s'il s'agit de la première carte (!firstCard puisque firstCard vaut initialement false)
-        if (!firstCard) {
-            // donc la carte actuelle deviendra firstCard
-            firstCard = card;
-            // la valeur actuelle des cartes devient firstCardValue
-            firstCardValue = card.getAttribute("data-card-value");
-        } else {
-            // incrémenter les mouvements depuis que l'utilisateur a sélectionné la deuxième carte
-            movesCounter();
-            // secondCard et valeur
-            secondCard = card;
-            let secondCardValue = card.getAttribute("data-card-value");
-            if (firstCardValue == secondCardValue) {
-            // si les deux cartes correspondent, ajoutez la classe correspondante afin que ces cartes soient ignorées la prochaine fois
-            firstCard.classList.add("matched");
-            secondCard.classList.add("matched");
-            // définir firstCard sur false puisque la prochaine carte serait la première maintenant
-            firstCard = false;
-            // Incrément de winCount lorsque l'utilisateur a trouvé une correspondance correcte
-            winCount += 1;
-            // vérifier si winCount == la moitié de cardValues
-            if (winCount == Math.floor(cardValues.length / 2)) {
-                result.innerHTML = `<h2>Victoire !</h2>
-            <h4>Déplacements : ${movesCount}</h4>`;
-                stopGame();
-            }
-            } else {
-            // si les cartes ne correspondent pas
-            // retourner les cartes à la normale
-            let [tempFirst, tempSecond] = [firstCard, secondCard];
-            firstCard = false;
-            secondCard = false;
-            let delay = setTimeout(() => {
-                tempFirst.classList.remove("flipped");
-                tempSecond.classList.remove("flipped");
-            }, 900);
-            }
+        gameContainer.innerHTML = "";
+        cardValues = [...cardValues, ...cardValues];
+        // mélange simple
+        cardValues.sort(() => Math.random() - 0.5);
+        for (let i = 0; i < size * size; i++) {
+            gameContainer.innerHTML += `
+            <div class="card-container" data-card-value="${cardValues[i].name}">
+                <div class="card-before">?</div>
+                <div class="card-after">
+                <img src="${cardValues[i].image}" class="image"/></div>
+            </div>
+            `;
         }
-        }
-    });
-    });
+        // Grille
+        gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+        // Cartes
+        cards = document.querySelectorAll(".card-container");
+        cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            // Si la carte sélectionnée n'est pas encore associée, exécutez-la uniquement (c'est-à-dire que la carte déjà associée lorsque vous cliquez dessus serait ignorée)
+            if (!card.classList.contains("matched")) {
+                // retourner la carte cliqué
+                card.classList.add("flipped");
+                // s'il s'agit de la première carte (!firstCard puisque firstCard vaut initialement false)
+                if (!firstCard) {
+                    // donc la carte actuelle deviendra firstCard
+                    firstCard = card;
+                    // la valeur actuelle des cartes devient firstCardValue
+                    firstCardValue = card.getAttribute("data-card-value");
+                } else {
+                    // incrémenter les mouvements depuis que l'utilisateur a sélectionné la deuxième carte
+                    movesCounter();
+                    // secondCard et valeur
+                    secondCard = card;
+                    let secondCardValue = card.getAttribute("data-card-value");
+                    if (firstCardValue == secondCardValue) {
+                    // si les deux cartes correspondent, ajoutez la classe correspondante afin que ces cartes soient ignorées la prochaine fois
+                    firstCard.classList.add("matched");
+                    secondCard.classList.add("matched");
+                    // définir firstCard sur false puisque la prochaine carte serait la première maintenant
+                    firstCard = false;
+                    // Incrément de winCount lorsque l'utilisateur a trouvé une correspondance correcte
+                    winCount += 1;
+                    // vérifier si winCount == la moitié de cardValues
+                    if (winCount == Math.floor(cardValues.length / 2)) {
+                        result.innerHTML = `<h2>Victoire !</h2>
+                        <h4>Déplacements : ${movesCount}</h4>`;
+                        stopGame();
+                    }
+                    } else {
+                        // si les cartes ne correspondent pas
+                        // retourner les cartes à la normale
+                        let [tempFirst, tempSecond] = [firstCard, secondCard];
+                        firstCard = false;
+                        secondCard = false;
+                        let delay = setTimeout(() => {
+                            tempFirst.classList.remove("flipped");
+                            tempSecond.classList.remove("flipped");
+                        }, 900);
+                    }
+                }
+            }
+        });
+        });
     };
     // Démarrer jeu
     startButton.addEventListener("click", () => {

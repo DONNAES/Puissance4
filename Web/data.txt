@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <b>Dwayne Johnson</b> a effacé l'historique du chat.<br><b>:</b> <br><b>:</b> <br>
+=======
+<b>Eloi</b> a effacé l'historique du chat.<br><b>Eloi:</b> feijhfih"g<br><b>Eloi:</b> g"rfz<br><b>Eloi:</b> azertyu<br><b>Eloi:</b> erty<br>
+>>>>>>> 0fb2738 (jeux du memory)
