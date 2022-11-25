@@ -1,6 +1,7 @@
 let difficulty = document.querySelector('#difficulty');
 let button = document.querySelector('#button');
 let theme = document.querySelector('#theme');
+var items = [];
 
 difficulty.addEventListener('change', choice);
 theme.addEventListener('change', choice);
@@ -74,7 +75,7 @@ function start() {
         <button id="start">JOUER</button>
         </div>
         <!-- Script -->
-        <script src="assets/js/memory_test2.js"></script>
+        <script src="assets/js/memory.js"></script>
     </body>`;
     const moves = document.getElementById("moves-count");
     const timeValue = document.getElementById("time");
@@ -87,9 +88,9 @@ function start() {
     let interval;
     let firstCard = false;
     let secondCard = false;
-    let size = 0;
+    let taille = 0;
     if (theme.value=="space") {
-        const items = [
+        items = [
             { name: "alioth", image: "assets/images/memory_images/espace/alioth.png" },
             { name: "andromede", image: "assets/images/memory_images/espace/andromede.png" },
             { name: "antares", image: "assets/images/memory_images/espace/antares.png" },
@@ -123,17 +124,17 @@ function start() {
             { name: "venus", image: "assets/images/memory_images/espace/venus.png" },
             { name: "voilactee", image: "assets/images/memory_images/espace/voilactee.png" }
           ];
-        if (difficulty.value=="easy") {
-            size = 2;
+        if(difficulty.value=="easy") {
+            taille = 2;
         } else if (difficulty.value=="intermediate") {
-            size = 4;
+            taille = 4;
         } else if (difficulty.value=="expert") {
-            size = 6;
+            taille = 6; 
         } else {
-            size = 8;
+            taille = 8;
         }
     } else if (theme.value=="cartoon") {
-        const items = [
+        items = [
             { name: "ariel", image: "assets/images/memory_images/desssins_animes/ariel.png" },
             { name: "asterix", image: "assets/images/memory_images/desssins_animes/asterix.png" },
             { name: "barbapapa", image: "assets/images/memory_images/desssins_animes/barbapapa.png" },
@@ -168,16 +169,16 @@ function start() {
             { name: "winnie", image: "assets/images/memory_images/desssins_animes/winnie.png" }
           ];
         if(difficulty.value=="easy") {
-            size = 2;
+            taille = 2;
         } else if (difficulty.value=="intermediate") {
-            size = 4;
+            taille = 4;
         } else if (difficulty.value=="expert") {
-            size = 6; 
+            taille = 6; 
         } else {
-            size = 8;
+            taille = 8;
         }
     } else {
-        const items = [
+        items = [
             { name: "alex", image: "assets/images/memory_images/jeux_videos/alex.png" },
             { name: "assassinscreed", image: "assets/images/memory_images/jeux_videos/assassinscreed.png" },
             { name: "auron", image: "assets/images/memory_images/jeux_videos/auron.png" },
@@ -209,149 +210,160 @@ function start() {
             { name: "steve", image: "assets/images/memory_images/jeux_videos/steve.png" },
             { name: "trevor", image: "assets/images/memory_images/jeux_videos/trevor.png" },
             { name: "twitch", image: "assets/images/memory_images/jeux_videos/twitch.png" },
-            { name: "vigil", image: "assets/images/memory_images/jeux_videos/vigil.png" }
-          ];
-        if (difficulty.value=="easy") {
-            size = 2;
+            { name: "vigil", image: "assets/images/memory_images/jeux_videos/vigil.png" },
+        ];
+        if(difficulty.value=="easy") {
+            taille = 2;
         } else if (difficulty.value=="intermediate") {
-            size = 4;
+            taille = 4;
         } else if (difficulty.value=="expert") {
-            size = 6;
+            taille = 6; 
         } else {
-            size = 8;
+            taille = 8;
         }
     }
-
-    let seconds = 0,
-    minutes = 0;
-    let movesCount = 0,
-    winCount = 0;
-    const timeGenerator = () => {
+      //Initial Time
+      let seconds = 0,
+        minutes = 0;
+      //Initial moves and win count
+      let movesCount = 0,
+        winCount = 0;
+      //For timer
+      const timeGenerator = () => {
         seconds += 1;
+        //minutes logic
         if (seconds >= 60) {
-            minutes += 1;
-            seconds = 0;
+          minutes += 1;
+          seconds = 0;
         }
-
+        //format time before displaying
         let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
         let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
         timeValue.innerHTML = `<span>Temps : </span>${minutesValue}:${secondsValue}`;
-    };
-
-    const movesCounter = () => {
+      };
+      //For calculating moves
+      const movesCounter = () => {
         movesCount += 1;
         moves.innerHTML = `<span>Déplacements : </span>${movesCount}`;
-    };
-
-    const generateRandom = (size) => {
+      };
+      //Pick random objects from the items array
+      const generateRandom = (size = taille) => {
+        //temporary array
         let tempArray = [...items];
+        //initializes cardValues array
         let cardValues = [];
+        //size should be double (4*4 matrix)/2 since pairs of objects would exist
         size = (size * size) / 2;
+        //Random object selection
         for (let i = 0; i < size; i++) {
-        const randomIndex = Math.floor(Math.random() * tempArray.length);
-        cardValues.push(tempArray[randomIndex]);
-        tempArray.splice(randomIndex, 1);
-    }
+          const randomIndex = Math.floor(Math.random() * tempArray.length);
+          cardValues.push(tempArray[randomIndex]);
+          //once selected remove the object from temp array
+          tempArray.splice(randomIndex, 1);
+        }
         return cardValues;
-    };
-    
-    const matrixGenerator = (cardValues, size) => {
+      };
+      const matrixGenerator = (cardValues, size = taille) => {
         gameContainer.innerHTML = "";
         cardValues = [...cardValues, ...cardValues];
-        // mélange simple
+        //simple shuffle
         cardValues.sort(() => Math.random() - 0.5);
         for (let i = 0; i < size * size; i++) {
-            gameContainer.innerHTML += `
-            <div class="card-container" data-card-value="${cardValues[i].name}">
-                <div class="card-before">?</div>
-                <div class="card-after">
-                <img src="${cardValues[i].image}" class="image"/></div>
-            </div>
-            `;
+          /*
+              Create Cards
+              before => front side (contains question mark)
+              after => back side (contains actual image);
+              data-card-values is a custom attribute which stores the names of the cards to match later
+            */
+          gameContainer.innerHTML += `
+           <div class="card-container" data-card-value="${cardValues[i].name}">
+              <div class="card-before">?</div>
+              <div class="card-after">
+              <img src="${cardValues[i].image}" class="image"/></div>
+           </div>
+           `;
         }
-        // Grille
+        //Grid
         gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
-        // Cartes
+        //Cards
         cards = document.querySelectorAll(".card-container");
         cards.forEach((card) => {
-        card.addEventListener("click", () => {
-            // Si la carte sélectionnée n'est pas encore associée, exécutez-la uniquement (c'est-à-dire que la carte déjà associée lorsque vous cliquez dessus serait ignorée)
+          card.addEventListener("click", () => {
+            //If selected card is not matched yet then only run (i.e already matched card when clicked would be ignored)
             if (!card.classList.contains("matched")) {
-                // retourner la carte cliqué
-                card.classList.add("flipped");
-                // s'il s'agit de la première carte (!firstCard puisque firstCard vaut initialement false)
-                if (!firstCard) {
-                    // donc la carte actuelle deviendra firstCard
-                    firstCard = card;
-                    // la valeur actuelle des cartes devient firstCardValue
-                    firstCardValue = card.getAttribute("data-card-value");
+              //flip the cliked card
+              card.classList.add("flipped");
+              //if it is the firstcard (!firstCard since firstCard is initially false)
+              if (!firstCard) {
+                //so current card will become firstCard
+                firstCard = card;
+                //current cards value becomes firstCardValue
+                firstCardValue = card.getAttribute("data-card-value");
+              } else {
+                //increment moves since user selected second card
+                movesCounter();
+                //secondCard and value
+                secondCard = card;
+                let secondCardValue = card.getAttribute("data-card-value");
+                if (firstCardValue == secondCardValue) {
+                  //if both cards match add matched class so these cards would beignored next time
+                  firstCard.classList.add("matched");
+                  secondCard.classList.add("matched");
+                  //set firstCard to false since next card would be first now
+                  firstCard = false;
+                  //winCount increment as user found a correct match
+                  winCount += 1;
+                  //check if winCount ==half of cardValues
+                  if (winCount == Math.floor(cardValues.length / 2)) {
+                    result.innerHTML = `<h2>Victoire !</h2>
+                  <h4>Déplacements : ${movesCount}</h4>`;
+                    stopGame();
+                  }
                 } else {
-                    // incrémenter les mouvements depuis que l'utilisateur a sélectionné la deuxième carte
-                    movesCounter();
-                    // secondCard et valeur
-                    secondCard = card;
-                    let secondCardValue = card.getAttribute("data-card-value");
-                    if (firstCardValue == secondCardValue) {
-                    // si les deux cartes correspondent, ajoutez la classe correspondante afin que ces cartes soient ignorées la prochaine fois
-                    firstCard.classList.add("matched");
-                    secondCard.classList.add("matched");
-                    // définir firstCard sur false puisque la prochaine carte serait la première maintenant
-                    firstCard = false;
-                    // Incrément de winCount lorsque l'utilisateur a trouvé une correspondance correcte
-                    winCount += 1;
-                    // vérifier si winCount == la moitié de cardValues
-                    if (winCount == Math.floor(cardValues.length / 2)) {
-                        result.innerHTML = `<h2>Victoire !</h2>
-                        <h4>Déplacements : ${movesCount}</h4>`;
-                        stopGame();
-                    }
-                    } else {
-                        // si les cartes ne correspondent pas
-                        // retourner les cartes à la normale
-                        let [tempFirst, tempSecond] = [firstCard, secondCard];
-                        firstCard = false;
-                        secondCard = false;
-                        let delay = setTimeout(() => {
-                            tempFirst.classList.remove("flipped");
-                            tempSecond.classList.remove("flipped");
-                        }, 900);
-                    }
+                  //if the cards dont match
+                  //flip the cards back to normal
+                  let [tempFirst, tempSecond] = [firstCard, secondCard];
+                  firstCard = false;
+                  secondCard = false;
+                  let delay = setTimeout(() => {
+                    tempFirst.classList.remove("flipped");
+                    tempSecond.classList.remove("flipped");
+                  }, 900);
                 }
+              }
             }
+          });
         });
-        });
-    };
-    // Démarrer jeu
-    startButton.addEventListener("click", () => {
+      };
+      //Start game
+      startButton.addEventListener("click", () => {
         movesCount = 0;
         seconds = 0;
         minutes = 0;
-        // contrôle la visibilité des boutons et des boutons
+        //controls amd buttons visibility
         controls.classList.add("hide");
         stopButton.classList.remove("hide");
         startButton.classList.add("hide");
-        // Démarrer la minuterie
+        //Start timer
         interval = setInterval(timeGenerator, 1000);
         //initial moves
         moves.innerHTML = `<span>Déplacements :</span> ${movesCount}`;
         initializer();
-    });
-    // Arrêter le jeu
-    stopButton.addEventListener(
-    "click",
-    (stopGame = () => {
-        controls.classList.remove("hide");
-        stopButton.classList.add("hide");
-        startButton.classList.remove("hide");
-        clearInterval(interval);
-    })
-    );
-    // Initialiser les valeurs et les appels de fonction
-    const initializer = () => {
+      });
+      //Stop game
+      stopButton.addEventListener(
+        "click",
+        (stopGame = () => {
+          clearInterval(interval);
+          location.reload();
+        })
+      );
+      //Initialize values and func calls
+      const initializer = () => {
         result.innerText = "";
         winCount = 0;
         let cardValues = generateRandom();
         console.log(cardValues);
         matrixGenerator(cardValues);
-    };
+      };
 }

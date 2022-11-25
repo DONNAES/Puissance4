@@ -1,4 +1,5 @@
 <?php
+
     require_once 'assets/includes/database.inc.php';
     session_start();
     $error_contact = '';
