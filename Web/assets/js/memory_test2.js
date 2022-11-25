@@ -46,7 +46,7 @@ const timeGenerator = () => {
 //For calculating moves
 const movesCounter = () => {
   movesCount += 1;
-  moves.innerHTML = `<span>Déplacements :</span>${movesCount}`;
+  moves.innerHTML = `<span>Déplacements : </span>${movesCount}`;
 };
 //Pick random objects from the items array
 const generateRandom = (size = 4) => {
