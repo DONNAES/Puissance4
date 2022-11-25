@@ -354,10 +354,8 @@ function start() {
       stopButton.addEventListener(
         "click",
         (stopGame = () => {
-          controls.classList.remove("hide");
-          stopButton.classList.add("hide");
-          startButton.classList.remove("hide");
           clearInterval(interval);
+          location.reload();
         })
       );
       //Initialize values and func calls
