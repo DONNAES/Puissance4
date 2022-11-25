@@ -91,7 +91,7 @@
                         $sth = $dbh->prepare("INSERT INTO user (email, `password`, username, user_creation, last_connection) VALUES (?,?,?,NOW(),NOW())");
                         $sth->execute([$_POST['email'],hash('sha256', $_POST['password']),$_POST['username']]);
                         $success = 'User has been created successfully';
-                        header('Location: http://localhost:8888/Puissance4/Web/login.php');
+                        header("Refresh: 2; url=http://localhost:8888/Puissance4/Web/login.php");
                     }
                 }   
             }
