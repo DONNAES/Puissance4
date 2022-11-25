@@ -22,7 +22,7 @@
     </div>
     <div class="controls-container">
       <p id="result"></p>
-      <button id="start">JOUER</button>
+
     </div>
     <!-- Script -->
     <script src="assets/js/memory_test2.js"></script>
