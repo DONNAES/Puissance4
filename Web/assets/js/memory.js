@@ -2,19 +2,6 @@ let difficulty = document.querySelector('#difficulty');
 let button = document.querySelector('#button');
 let theme = document.querySelector('#theme');
 
-const moves = document.getElementById("moves-count");
-const timeValue = document.getElementById("time");
-const startButton = document.getElementById("start");
-const stopButton = document.getElementById("stop");
-const gameContainer = document.querySelector(".game-container");
-const result = document.getElementById("result");
-const controls = document.querySelector(".controls-container");
-let cards;
-let interval;
-let firstCard = false;
-let secondCard = false;
-let size = 0;
-
 difficulty.addEventListener('change', choice);
 theme.addEventListener('change', choice);
 button.addEventListener('click', start);
@@ -56,6 +43,51 @@ function choice(){
 }
 
 function start() {
+    var loading = document.getElementById('loading');
+    var haut = document.getElementById('haut');
+    var bas = document.getElementById('bas');
+    haut.parentNode.removeChild(haut);
+    bas.parentNode.removeChild(bas);
+    loading.innerHTML = `
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Memory Game</title>
+        <!-- Google Fonts -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet"
+        />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="assets/css/memory2.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="stats-container">
+            <div id="moves-count"></div>
+            <div id="time"></div>
+        </div>
+        <div class="game-container"></div>
+        <button id="stop" class="hide">Terminé la Partie</button>
+        </div>
+        <div class="controls-container">
+        <p id="result"></p>
+        <button id="start">JOUER</button>
+        </div>
+        <!-- Script -->
+        <script src="assets/js/memory_test2.js"></script>
+    </body>`;
+    const moves = document.getElementById("moves-count");
+    const timeValue = document.getElementById("time");
+    const startButton = document.getElementById("start");
+    const stopButton = document.getElementById("stop");
+    const gameContainer = document.querySelector(".game-container");
+    const result = document.getElementById("result");
+    const controls = document.querySelector(".controls-container");
+    let cards;
+    let interval;
+    let firstCard = false;
+    let secondCard = false;
+    let size = 0;
     if (theme.value=="space") {
         const items = [
             { name: "alioth", image: "assets/images/memory_images/espace/alioth.png" },
@@ -98,7 +130,7 @@ function start() {
         } else if (difficulty.value=="expert") {
             size = 6;
         } else {
-
+            size = 8;
         }
     } else if (theme.value=="cartoon") {
         const items = [
@@ -142,7 +174,7 @@ function start() {
         } else if (difficulty.value=="expert") {
             size = 6; 
         } else {
-
+            size = 8;
         }
     } else {
         const items = [
@@ -186,7 +218,7 @@ function start() {
         } else if (difficulty.value=="expert") {
             size = 6;
         } else {
-
+            size = 8;
         }
     }
 
@@ -291,35 +323,35 @@ function start() {
     };
     // Démarrer jeu
     startButton.addEventListener("click", () => {
-    movesCount = 0;
-    seconds = 0;
-    minutes = 0;
-    // contrôle la visibilité des boutons et des boutons
-    controls.classList.add("hide");
-    stopButton.classList.remove("hide");
-    startButton.classList.add("hide");
-    // Démarrer la minuterie
-    interval = setInterval(timeGenerator, 1000);
-    //initial moves
-    moves.innerHTML = `<span>Déplacements :</span> ${movesCount}`;
-    initializer();
+        movesCount = 0;
+        seconds = 0;
+        minutes = 0;
+        // contrôle la visibilité des boutons et des boutons
+        controls.classList.add("hide");
+        stopButton.classList.remove("hide");
+        startButton.classList.add("hide");
+        // Démarrer la minuterie
+        interval = setInterval(timeGenerator, 1000);
+        //initial moves
+        moves.innerHTML = `<span>Déplacements :</span> ${movesCount}`;
+        initializer();
     });
     // Arrêter le jeu
     stopButton.addEventListener(
     "click",
     (stopGame = () => {
-    controls.classList.remove("hide");
-    stopButton.classList.add("hide");
-    startButton.classList.remove("hide");
-    clearInterval(interval);
+        controls.classList.remove("hide");
+        stopButton.classList.add("hide");
+        startButton.classList.remove("hide");
+        clearInterval(interval);
     })
     );
     // Initialiser les valeurs et les appels de fonction
     const initializer = () => {
-    result.innerText = "";
-    winCount = 0;
-    let cardValues = generateRandom();
-    console.log(cardValues);
-    matrixGenerator(cardValues);
+        result.innerText = "";
+        winCount = 0;
+        let cardValues = generateRandom();
+        console.log(cardValues);
+        matrixGenerator(cardValues);
     };
 }
