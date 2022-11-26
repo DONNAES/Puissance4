@@ -18,7 +18,7 @@
         <div id="time"></div>
       </div>
       <div class="game-container"></div>
-      <button id="stop" class="hide">Terminé la Partie</button>
+      <button id="stop" class="hide">Terminer la Partie</button>
     </div>
     <div class="controls-container">
       <p id="result"></p>
