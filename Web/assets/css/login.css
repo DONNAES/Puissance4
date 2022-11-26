@@ -103,6 +103,10 @@ body{
     color: white;
     font-size: 22px;
 }
+.error{
+    margin-bottom: 2%;
+    margin-top: -2%;    
+}
 
 
 /*------------------------- COLOR --------------------------------------*/

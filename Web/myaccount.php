@@ -170,13 +170,13 @@
                 <section class="useremailform">
                 <section class="infouser">
                     <?php
-                        echo '<div>'.$_SESSION['email'].'</div>'
+                        echo '<div class="session">'.$_SESSION['email'].'</div>'
                     ?>
                     <div>
-                    <input class="button"
-                        type="submit"
-                        name="logout"
-                        value="Logout">
+                    <input class='button'
+                    type="submit"
+                    value="logout"
+                    name="logout">
                     </div>
                 </section>
                 <section class="emailform"> <!--Email-->

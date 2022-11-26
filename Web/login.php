@@ -1,12 +1,13 @@
 <?php
 require ('./assets/includes/database.inc.php');
 session_start();
+$loginerror = $emptyfield = "";
     if(isset($_SESSION['email'])){
         header("location:myaccount.php");
     }
         if(ISSET($_POST['connexion'])){
             if (isset($_POST['email']) && isset($_POST['password'])){
-                $email     = $_POST['email'];
+                $email    = $_POST['email'];
                 $password = $_POST['password'];
 
                 if (!empty($email) AND !empty($password)){
@@ -16,7 +17,7 @@ session_start();
                     $resultat = $req->fetch(); 
                 }
                 if (!$resultat){
-                    echo 'Email ou mot de passe invalide';
+                    $loginerror = 'Email ou mot de passe invalide';
                 }
                 else {
                     $user_id = ('SELECT id FROM user WHERE email= $email');
@@ -24,6 +25,8 @@ session_start();
                     $_SESSION["password"] = $hpass;
                     header("location:index.php");
                 }
+            }else{
+                $emptyfield = "All field are required";
             }
         }
     
@@ -50,6 +53,7 @@ session_start();
             <h2>CONNEXION</h2>
         </section>
         <section class="login">
+            <section class="error">
             <?php
                 if(isset($emptyfield)){
                     echo '<div class="alerts alerts-success">'.$emptyfield.'</div>';
@@ -58,6 +62,7 @@ session_start();
                     echo '<div class="alerts alerts-success">'.$loginerror.'</div>';
                 }
             ?>
+            </section>
             <form method="post">
                 <div>
                     <input class="zone" type="email" 

@@ -80,6 +80,10 @@ html{
     color: white;
     margin-top: -15%;
 }
+.session{
+    margin-right: 155px;
+}
+
 .userpassform{
     display: flex;
     flex-direction: column;
