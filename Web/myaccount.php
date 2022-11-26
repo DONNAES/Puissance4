@@ -16,6 +16,13 @@
     </head>
     <body>
         <?php
+        if (isset($_SESSION['email'])){
+            if(isset($_POST['logout'])){
+                session_unset();
+                session_destroy();
+                header('location:index.php');
+            }
+        }
             if (isset($_POST['reg_email']))
             {
                 //modification du mail//
@@ -120,7 +127,7 @@
                         <input class="button"
                             type="submit"
                             name="reg_user"
-                            placeholder="change_name">
+                            value="change_name">
                         </div>
                     </section>
                     <section class="passform"> <!--Password-->
@@ -156,7 +163,7 @@
                         <input class="button"
                             type="submit"
                             name="reg_pass"
-                            placeholder="change_mail">
+                            value="change_mail">
                         </div>
                     </section>
                 </section>
@@ -165,6 +172,12 @@
                     <?php
                         echo '<div>'.$_SESSION['email'].'</div>'
                     ?>
+                    <div>
+                    <input class="button"
+                        type="submit"
+                        name="logout"
+                        value="Logout">
+                    </div>
                 </section>
                 <section class="emailform"> <!--Email-->
                     <h3>Email : </h3>
@@ -199,7 +212,7 @@
                     <input class="button"
                         type="submit"
                         name="reg_email"
-                        placeholder="change_mail">
+                        value="change_mail">
                     </div>
                 </section>
                 </section>
